@@ -1,0 +1,2419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Optional Practice Lab: AI and Technology in Helping Professions</title>
+ <meta name="description" content="Optional visual practice lab for AI and technology concepts in helping professions.">
+ <style>
+ :root{
+ --bg:#f3f4f6;
+ --paper:#ffffff;
+ --ink:#1c1d22;
+ --muted:#585c66;
+ --line:#d5d7dd;
+ --accent:#2c6d77;
+ --accent-soft:#edf6f8;
+ --warm:#eef0f4;
+ --good:#2c6d4f;
+ --good-soft:#e9f4ee;
+ --warn:#7a4b1c;
+ --focus:#1b4fd6;
+ --max:1120px;
+ --radius:10px;
+ }
+ *{box-sizing:border-box}
+ body[data-lens="socialwork"]{--accent:#2c6d77;--accent-soft:#edf6f8;--lens-band:#d1e8eb}
+ body[data-lens="nurse"]{--accent:#2c4d77;--accent-soft:#edf2f8;--lens-band:#d1dceb}
+ body[data-lens="psychiatrist"]{--accent:#522c77;--accent-soft:#f2edf8;--lens-band:#ded1eb}
+ body[data-lens="publichealth"]{--accent:#2c7736;--accent-soft:#edf8ee;--lens-band:#d1ebd4}
+ body[data-lens="peer"]{--accent:#77452c;--accent-soft:#f8f0ed;--lens-band:#ebd9d1}
+ body{transition:background-color .35s ease}
+ .accent-swatch{
+ display:inline-block;
+ width:12px;height:12px;
+ border-radius:3px;
+ background:var(--accent);
+ vertical-align:middle;
+ margin-right:5px;
+ transition:background-color .35s ease;
+ }
+ html{scroll-behavior:smooth}
+ body{
+ margin:0;
+ background:var(--bg);
+ color:var(--ink);
+ font-family:Arial, Helvetica, sans-serif;
+ font-size:16px;
+ line-height:1.55;
+ }
+ a{color:#1b4fd6}
+ button,input,select{font:inherit}
+ button:focus,input:focus,select:focus,a:focus,.term:focus{
+ outline:3px solid var(--focus);
+ outline-offset:2px;
+ }
+ .wrap{width:min(calc(100% - 32px),var(--max));margin:0 auto}
+ header{
+ background:var(--paper);
+ border-bottom:1px solid var(--line);
+ }
+ .header-inner{padding:28px 0 20px}
+ .kicker{font-weight:700;color:var(--accent);margin-bottom:5px}
+ h1,h2,h3{line-height:1.22;margin-top:0}
+ h1{font-size:clamp(1.8rem,4vw,2.55rem);margin-bottom:8px}
+ h2{font-size:1.48rem;margin-bottom:9px}
+ h3{font-size:1.08rem;margin-bottom:7px}
+ p{margin:0 0 12px}
+ .subhead{max-width:850px;color:var(--muted)}
+ .badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+ .badge{
+ border:1px solid var(--line);
+ background:#fff;
+ border-radius:999px;
+ padding:4px 9px;
+ font-size:.88rem;
+ }
+ .badge.good{background:var(--good-soft);border-color:#bcd3c6;color:var(--good)}
+ main{padding:24px 0 48px}
+ .notice,.privacy,.course-map,.role-picker{
+ border-radius:var(--radius);
+ padding:17px 18px;
+ margin-bottom:18px;
+ background:var(--paper);
+ border:1px solid var(--line);
+ }
+ .notice{background:#fbf3e6;border-color:#e6cfa3}
+ .notice strong{color:var(--warn)}
+ .privacy{background:var(--accent-soft);border-color:#cfdbe0}
+ .course-map table{
+ width:100%;
+ border-collapse:collapse;
+ margin-top:10px;
+ font-size:.95rem;
+ }
+ .course-map th,.course-map td{
+ border:1px solid var(--line);
+ padding:8px 9px;
+ text-align:left;
+ vertical-align:top;
+ }
+ .course-map th{background:#eef0f4}
+ .role-grid{
+ display:grid;
+ grid-template-columns:repeat(5,minmax(0,1fr));
+ gap:8px;
+ margin-top:11px;
+ }
+ .role-btn{
+ border:1px solid var(--line);
+ background:#fff;
+ color:var(--ink);
+ border-radius:8px;
+ padding:12px 9px;
+ cursor:pointer;
+ min-height:64px;
+ }
+ .role-btn.active{
+ background:var(--accent);
+ border-color:var(--accent);
+ color:white;
+ }
+ .role-summary{
+ margin-top:13px;
+ padding:11px 13px;
+ border-left:4px solid var(--accent);
+ background:#f7f8fa;
+ }
+ .tabs{
+ display:flex;
+ flex-wrap:wrap;
+ gap:8px;
+ margin:22px 0 14px;
+ }
+ .tab{
+ appearance:none;
+ border:1px solid var(--line);
+ background:#fff;
+ color:var(--ink);
+ border-radius:8px;
+ padding:9px 11px;
+ cursor:pointer;
+ }
+ .tab[aria-selected="true"]{
+ background:var(--accent);
+ color:#fff;
+ border-color:var(--accent);
+ }
+ .panel{
+ display:none;
+ background:var(--paper);
+ border:1px solid var(--line);
+ border-radius:var(--radius);
+ padding:21px;
+ margin-bottom:18px;
+ }
+ .panel.active{display:block}
+ .week-tag{
+ display:inline-block;
+ border-radius:999px;
+ background:var(--accent-soft);
+ padding:3px 9px;
+ color:var(--accent);
+ font-size:.88rem;
+ font-weight:700;
+ margin-bottom:9px;
+ }
+ .scenario{
+ background:#f7f8fa;
+ border:1px solid var(--line);
+ border-radius:8px;
+ padding:14px;
+ margin:14px 0;
+ }
+ .grid-2{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:16px;
+ }
+ .grid-3{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:12px;
+ }
+ .choice-grid{display:grid;gap:9px;margin-top:12px}
+ .choice{
+ display:flex;
+ gap:9px;
+ align-items:flex-start;
+ border:1px solid var(--line);
+ border-radius:8px;
+ padding:11px 12px;
+ background:#fff;
+ }
+ .choice input{margin-top:4px;transform:scale(1.08)}
+ .button-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
+ .action{
+ border:1px solid var(--accent);
+ background:var(--accent);
+ color:#fff;
+ border-radius:8px;
+ padding:9px 12px;
+ cursor:pointer;
+ }
+ .secondary{background:#fff;color:var(--ink);border-color:var(--line)}
+ .feedback{
+ margin-top:13px;
+ border:1px solid var(--line);
+ background:#f5f6f8;
+ border-radius:8px;
+ padding:12px 13px;
+ }
+ .term{
+ display:inline-block;
+ color:#1f5673;
+ border-bottom:1px dotted #1f5673;
+ cursor:help;
+ position:relative;
+ }
+ .term::after{
+ content:"?";
+ display:inline-flex;
+ justify-content:center;
+ align-items:center;
+ width:16px;
+ height:16px;
+ margin-left:3px;
+ border-radius:50%;
+ background:#e4ecf2;
+ color:#1f5673;
+ font-size:.72rem;
+ font-weight:700;
+ vertical-align:middle;
+ }
+ .tooltip{
+ position:fixed;
+ z-index:20;
+ max-width:320px;
+ background:#1c1d22;
+ color:white;
+ padding:10px 11px;
+ border-radius:7px;
+ font-size:.9rem;
+ box-shadow:0 5px 16px rgba(0,0,0,.2);
+ display:none;
+ }
+ .tooltip.show{display:block}
+ .plain-callout{
+ background:var(--accent-soft);
+ border-left:5px solid var(--accent);
+ padding:12px 14px;
+ margin:14px 0;
+ }
+ .control{margin-bottom:17px}
+ .control label{
+ display:flex;
+ justify-content:space-between;
+ gap:10px;
+ font-weight:700;
+ margin-bottom:7px;
+ }
+ input[type="range"]{width:100%;accent-color:var(--accent)}
+ .metrics{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:10px;
+ margin-bottom:12px;
+ }
+ .metric{
+ border:1px solid var(--line);
+ background:#f7f8fa;
+ border-radius:8px;
+ padding:12px;
+ }
+ .metric .label{font-size:.88rem;color:var(--muted);margin-bottom:3px}
+ .metric .value{font-size:1.55rem;font-weight:700;line-height:1.1}
+ .decision{
+ border-left:5px solid var(--accent);
+ background:var(--accent-soft);
+ padding:11px 13px;
+ margin:12px 0;
+ }
+ .path{
+ display:grid;
+ grid-template-columns:repeat(5,1fr);
+ gap:8px;
+ margin:15px 0;
+ }
+ .path-step{
+ border:1px solid var(--line);
+ border-radius:8px;
+ background:#fff;
+ padding:11px;
+ min-height:112px;
+ }
+ .path-step strong{display:block;margin-bottom:5px}
+ .compare-cases{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:12px;
+ margin:14px 0;
+ }
+ .case-card{
+ border:1px solid var(--line);
+ border-radius:8px;
+ padding:13px;
+ background:#fff;
+ }
+ .case-card .result{
+ margin-top:10px;
+ padding:8px 10px;
+ background:#eef0f4;
+ border-radius:6px;
+ font-weight:700;
+ }
+ .summary-box{
+ border:1px solid var(--line);
+ border-radius:8px;
+ padding:13px;
+ margin-bottom:10px;
+ }
+ .summary-box .summary-actions{
+ display:flex;
+ flex-wrap:wrap;
+ gap:8px;
+ margin-top:10px;
+ }
+ .summary-box .summary-feedback{
+ margin-top:10px;
+ padding:9px 10px;
+ border-radius:7px;
+ background:#f5f6f8;
+ border:1px solid var(--line);
+ }
+ .summary-box.correct{
+ border-color:#bcd3c6;
+ background:var(--good-soft);
+ }
+ .summary-box.incorrect{
+ border-color:#e6cfa3;
+ background:#fbf3e6;
+ }
+ .principle-grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:11px;
+ }
+ .principle{
+ border:1px solid var(--line);
+ border-radius:8px;
+ padding:12px;
+ background:#fff;
+ }
+ .principle strong{display:block;margin-bottom:5px}
+ .option-grid{
+ display:grid;
+ grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:11px;
+ margin:14px 0;
+ }
+ .option-card{
+ border:1px solid var(--line);
+ border-radius:8px;
+ padding:13px;
+ background:#fff;
+ }
+ .option-card button{margin-top:8px}
+ .option-grid.two-col{grid-template-columns:repeat(2,minmax(0,1fr))}
+ @media(max-width:720px){.option-grid.two-col{grid-template-columns:1fr}}
+ .record-table{
+ width:100%;
+ border-collapse:collapse;
+ margin-top:10px;
+ background:#fff;
+ }
+ .record-table td{
+ border:1px solid var(--line);
+ padding:8px 10px;
+ vertical-align:top;
+ }
+ .record-table td:first-child{
+ font-weight:700;
+ width:38%;
+ background:#eef0f4;
+ }
+ .engine-grid{
+ display:grid;
+ grid-template-columns:repeat(4,minmax(0,1fr));
+ gap:9px;
+ margin:12px 0 18px;
+ }
+ .engine-btn{
+ border:1px solid var(--line);
+ background:#fff;
+ color:var(--ink);
+ border-radius:8px;
+ padding:12px 10px;
+ cursor:pointer;
+ text-align:left;
+ display:flex;
+ flex-direction:column;
+ gap:4px;
+ min-height:72px;
+ }
+ .engine-btn[aria-pressed="true"]{
+ background:var(--accent-soft);
+ border-color:var(--accent);
+ box-shadow:inset 0 0 0 1px var(--accent);
+ }
+ .engine-btn[aria-pressed="true"] strong::after{
+ content:" \2713";
+ color:var(--good);
+ }
+ @media(max-width:940px){.engine-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+ @media(max-width:720px){.engine-grid{grid-template-columns:1fr}}
+ .engine-output{
+ border:1px solid var(--line);
+ border-left:5px solid var(--accent);
+ border-radius:8px;
+ background:#fff;
+ padding:15px 16px;
+ margin-bottom:16px;
+ }
+ .trace{
+ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+ font-size:.92rem;
+ background:#f5f6f8;
+ border:1px solid var(--line);
+ border-radius:8px;
+ padding:12px 13px;
+ margin:10px 0;
+ overflow-x:auto;
+ }
+ .trace .trace-line{
+ display:block;
+ padding:3px 0;
+ }
+ .trace .fired{color:var(--good);font-weight:700}
+ .trace .skipped{color:var(--muted)}
+ .trace .trace-result{
+ margin-top:8px;
+ padding-top:8px;
+ border-top:1px dashed var(--line);
+ font-weight:700;
+ }
+ .gen-sentences{margin:10px 0}
+ .gen-sentence{
+ display:block;
+ width:100%;
+ text-align:left;
+ font:inherit;
+ background:#f7f8fa;
+ border:1px solid var(--line);
+ border-radius:8px;
+ padding:10px 12px;
+ margin-bottom:7px;
+ cursor:pointer;
+ color:var(--ink);
+ }
+ .gen-sentence:hover{background:var(--accent-soft)}
+ .gen-sentence.flag-right{
+ background:var(--good-soft);
+ border-color:#bcd3c6;
+ }
+ .gen-sentence.flag-wrong{
+ background:#fbf3e6;
+ border-color:#e6cfa3;
+ }
+ .glossary-search{
+ width:100%;
+ border:1px solid #a3a7b0;
+ border-radius:8px;
+ padding:10px 11px;
+ margin-bottom:13px;
+ }
+ .glossary-list{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:11px;
+ }
+ .glossary-item{
+ border:1px solid var(--line);
+ background:#fff;
+ border-radius:8px;
+ padding:12px;
+ }
+ .glossary-item h3{margin-bottom:5px}
+ .glossary-item .why{font-size:.92rem;color:var(--muted);margin-bottom:0}
+ .small{font-size:.92rem;color:var(--muted)}
+ .visually-hidden{
+ position:absolute;
+ width:1px;height:1px;
+ padding:0;margin:-1px;
+ overflow:hidden;
+ clip:rect(0,0,0,0);
+ white-space:nowrap;
+ border:0;
+ }
+ .skip-link{
+ position:absolute;
+ left:8px;top:-48px;
+ background:var(--ink);
+ color:#fff;
+ padding:10px 14px;
+ border-radius:0 0 8px 8px;
+ z-index:50;
+ transition:top .15s ease;
+ text-decoration:none;
+ }
+ .skip-link:focus{top:0}
+ .resource-grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:14px;
+ margin:14px 0 20px;
+ }
+ .resource-card{
+ border:1px solid var(--line);
+ border-radius:8px;
+ padding:14px;
+ background:#fff;
+ }
+ .resource-meta{
+ display:flex;
+ flex-wrap:wrap;
+ gap:6px;
+ margin-bottom:8px;
+ }
+ .resource-link{
+ display:inline-flex;
+ align-items:center;
+ gap:5px;
+ font-weight:700;
+ margin-top:6px;
+ }
+ .resource-link .arrow{text-decoration:none}
+ .resource-prompt{
+ margin-top:10px;
+ padding:9px 10px;
+ background:#f7f8fa;
+ border-left:4px solid var(--accent);
+ font-size:.94rem;
+ }
+ .accordion-toggle{
+ width:100%;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:10px;
+ background:#fff;
+ border:1px solid var(--line);
+ border-radius:8px;
+ padding:12px 13px;
+ cursor:pointer;
+ text-align:left;
+ font:inherit;
+ font-weight:700;
+ color:var(--ink);
+ min-height:44px;
+ }
+ .accordion-toggle[aria-expanded="true"]{
+ background:var(--accent-soft);
+ border-color:#cfdbe0;
+ }
+ .accordion-toggle .chev{
+ transition:transform .15s ease;
+ color:var(--accent);
+ }
+ .accordion-toggle[aria-expanded="true"] .chev{transform:rotate(45deg)}
+ .accordion-panel{
+ border:1px solid var(--line);
+ border-top:0;
+ border-radius:0 0 8px 8px;
+ padding:12px 13px;
+ background:#f7f8fa;
+ margin-bottom:9px;
+ }
+ .accordion-item{margin-bottom:0}
+ .bring-to-class{
+ margin-top:18px;
+ border:1px solid #e6cfa3;
+ border-left:5px solid var(--warn);
+ background:#fbf3e6;
+ border-radius:8px;
+ padding:12px 14px;
+ }
+ .bring-to-class strong{color:var(--warn)}
+ .scan-link{
+ margin-top:10px;
+ font-size:.92rem;
+ color:var(--muted);
+ border-top:1px dashed var(--line);
+ padding-top:9px;
+ }
+ .pocket-list{
+ list-style:none;
+ padding:0;
+ margin:14px 0;
+ counter-reset:pocket;
+ }
+ .pocket-list li{
+ counter-increment:pocket;
+ border:1px solid var(--line);
+ border-radius:8px;
+ background:#fff;
+ padding:12px 14px 12px 52px;
+ margin-bottom:9px;
+ position:relative;
+ }
+ .pocket-list li::before{
+ content:counter(pocket);
+ position:absolute;
+ left:13px;
+ top:11px;
+ width:26px;height:26px;
+ display:flex;align-items:center;justify-content:center;
+ border-radius:50%;
+ background:var(--accent);
+ color:#fff;
+ font-weight:700;
+ }
+ .pocket-list li strong{display:block;margin-bottom:3px}
+ .pocket-list li .small{margin:0}
+ .lens-band{
+ display:flex;
+ align-items:center;
+ gap:8px;
+ background:var(--lens-band);
+ border-radius:8px;
+ padding:7px 12px;
+ margin:-4px 0 16px;
+ font-size:.9rem;
+ font-weight:700;
+ color:var(--ink);
+ transition:background-color .35s ease;
+ }
+ .lens-band .lens-dot{
+ width:14px;height:14px;
+ border-radius:50%;
+ background:var(--accent);
+ flex:none;
+ transition:background-color .35s ease;
+ }
+ .lens-band .lens-switch{
+ margin-left:auto;
+ font-weight:400;
+ color:var(--muted);
+ font-size:.85rem;
+ }
+ .week-due{
+ display:flex;
+ gap:9px;
+ align-items:flex-start;
+ background:var(--accent-soft);
+ border-radius:8px;
+ padding:9px 12px;
+ margin:0 0 16px;
+ font-size:.9rem;
+ transition:background-color .35s ease;
+ }
+ .week-due .due-icon{
+ flex:none;
+ font-weight:700;
+ color:var(--accent);
+ }
+ .week-due strong{color:var(--ink)}
+ .week-due .due-label{
+ display:inline-block;
+ background:var(--accent);
+ color:#fff;
+ font-size:.74rem;
+ font-weight:700;
+ letter-spacing:.02em;
+ text-transform:uppercase;
+ padding:2px 8px;
+ border-radius:999px;
+ margin-right:6px;
+ vertical-align:baseline;
+ transition:background-color .35s ease;
+ }
+ .week-due .due-note{color:var(--muted);display:block;margin-top:2px;font-size:.85rem}
+ .role-btn .role-swatch{
+ display:block;
+ width:22px;height:6px;
+ border-radius:3px;
+ margin:0 auto 7px;
+ }
+ .role-btn[data-role="socialwork"] .role-swatch{background:#2c6d77}
+ .role-btn[data-role="nurse"] .role-swatch{background:#2c4d77}
+ .role-btn[data-role="psychiatrist"] .role-swatch{background:#522c77}
+ .role-btn[data-role="publichealth"] .role-swatch{background:#2c7736}
+ .role-btn[data-role="peer"] .role-swatch{background:#77452c}
+ .role-btn.active .role-swatch{background:#fff}
+ .my-answer{
+ margin-top:12px;
+ }
+ .my-answer label{
+ display:block;
+ font-weight:700;
+ margin-bottom:6px;
+ font-size:.95rem;
+ }
+ .my-answer textarea{
+ width:100%;
+ min-height:70px;
+ border:1px solid #a3a7b0;
+ border-radius:8px;
+ padding:10px 11px;
+ font:inherit;
+ resize:vertical;
+ background:#fff;
+ }
+ .my-answer textarea:focus{outline:3px solid var(--focus);outline-offset:2px}
+ .my-answer .saved-hint{
+ font-size:.85rem;
+ color:var(--good);
+ margin-top:5px;
+ min-height:1.1em;
+ }
+ .sheet-entry{
+ border:1px solid var(--line);
+ border-left:4px solid var(--accent);
+ border-radius:8px;
+ background:#fff;
+ padding:12px 14px;
+ margin-bottom:10px;
+ }
+ .sheet-entry h3{margin-bottom:4px;font-size:1rem}
+ .sheet-entry .prompt{color:var(--muted);font-size:.92rem;margin-bottom:7px}
+ .sheet-entry .response{white-space:pre-wrap}
+ .sheet-empty{
+ border:1px dashed var(--line);
+ border-radius:8px;
+ padding:20px;
+ text-align:center;
+ color:var(--muted);
+ }
+ .roster-row{
+ display:flex;
+ align-items:center;
+ gap:10px;
+ border:1px solid var(--line);
+ border-radius:8px;
+ background:#fff;
+ padding:9px 11px;
+ margin-bottom:7px;
+ transition:background-color .2s ease,border-color .2s ease;
+ }
+ .roster-row .who{font-weight:700;flex:none;min-width:74px}
+ .roster-row .bar{
+ flex:1;
+ height:8px;
+ border-radius:4px;
+ background:var(--line);
+ position:relative;
+ overflow:hidden;
+ }
+ .roster-row .bar span{
+ display:block;
+ height:100%;
+ background:var(--accent);
+ transition:width .2s ease;
+ }
+ .roster-row .status{
+ flex:none;
+ min-width:118px;
+ text-align:right;
+ font-size:.86rem;
+ font-weight:700;
+ }
+ .roster-row.flagged{border-color:var(--accent);background:var(--accent-soft)}
+ .roster-row.flagged .status{color:var(--accent)}
+ .roster-row.skipped .status{color:var(--muted)}
+ .roster-row.mismatch{border-color:#e6cfa3;background:#fbf3e6}
+ .roster-row .score-num{flex:none;min-width:30px;text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+ .reveal-person{margin-bottom:9px}
+ .reveal-person strong{display:block}
+ .reveal-person .tag{
+ display:inline-block;
+ font-size:.8rem;
+ font-weight:700;
+ padding:1px 7px;
+ border-radius:999px;
+ margin-bottom:3px;
+ }
+ .reveal-person .tag.wrong{background:#fbf3e6;color:var(--warn)}
+ .reveal-person .tag.ok{background:var(--good-soft);color:var(--good)}
+ .l3-task-intro{margin-top:14px}
+ .l3-context-btn{
+ display:block;
+ width:100%;
+ text-align:left;
+ font:inherit;
+ background:#fff;
+ border:1px solid var(--line);
+ border-radius:8px;
+ padding:11px 13px;
+ cursor:pointer;
+ color:var(--ink);
+ }
+ .l3-context-btn:hover{background:var(--accent-soft)}
+ .l3-context-btn.picked-yes{background:var(--good-soft);border-color:#bcd3c6}
+ .l3-context-btn.picked-no{background:#fbf3e6;border-color:#e6cfa3}
+ .l3-context-btn .verdict{
+ display:block;
+ margin-top:6px;
+ font-size:.9rem;
+ font-weight:400;
+ }
+ .reflection{
+ border-top:1px solid var(--line);
+ margin-top:18px;
+ padding-top:15px;
+ }
+ footer{
+ border-top:1px solid var(--line);
+ background:#fff;
+ padding:24px 0 36px;
+ color:var(--muted);
+ font-size:.92rem;
+ }
+ footer ul{padding-left:20px}
+ footer li{margin-bottom:5px}
+ @media(max-width:940px){
+ .role-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .path{grid-template-columns:1fr}
+ .path-step{min-height:auto}
+ .option-grid{grid-template-columns:1fr}
+ }
+ @media(max-width:720px){
+ .grid-2,.grid-3,.compare-cases,.principle-grid,.glossary-list,.metrics{grid-template-columns:1fr}
+ .role-grid{grid-template-columns:1fr}
+ .panel{padding:16px}
+ .course-map{overflow-x:auto}
+ .course-map table{min-width:650px}
+ }
+ @media print{
+ body{background:#fff;font-size:11pt}
+ .tabs,.role-grid,.button-row,.badges,.glossary-search{display:none!important}
+ .panel{display:block!important;border:0;padding:0;margin-bottom:28px}
+ .wrap{width:100%}
+ .course-map{overflow:visible}
+ .course-map table{min-width:0}
+ .tooltip{display:none!important}
+ body.print-pocket header,body.print-pocket .notice,body.print-pocket .privacy,
+ body.print-pocket .course-map,body.print-pocket .role-picker,
+ body.print-pocket footer{display:none!important}
+ body.print-pocket .panel{display:none!important}
+ body.print-pocket #panelp{display:block!important}
+ body.print-notes header,body.print-notes .notice,body.print-notes .privacy,
+ body.print-notes .course-map,body.print-notes .role-picker,
+ body.print-notes footer,body.print-notes #notes-actions{display:none!important}
+ body.print-notes .panel{display:none!important}
+ body.print-notes #paneln{display:block!important}
+ }
+ </style>
+</head>
+ <body data-lens="socialwork">
+ <a href="#main-content" class="skip-link">Skip to main content</a>
+ <div id="tooltip" class="tooltip" role="tooltip"></div>
+
+ <header>
+ <div class="wrap header-inner">
+ <div class="kicker">Optional visual practice resource</div>
+ <h1>Practice Lab: AI and Technology in Helping Professions</h1>
+ <p class="subhead">Use any of these short practice activities to make technical course concepts easier to see. Nothing is graded, submitted, tracked, or required.</p>
+ <div class="badges" aria-label="Resource features">
+ <span class="badge good">Optional</span>
+ <span class="badge good">Ungraded</span>
+ <span class="badge good">No data collection</span>
+ <span class="badge">Fictional examples</span>
+ <span class="badge">No live AI</span>
+ </div>
+ </div>
+ </header>
+
+ <main class="wrap" id="main-content">
+ <section class="notice">
+ <p><strong>Teaching practice only.</strong> The examples, scores, and outputs in this lab are invented for learning. They are not clinical tools, risk assessments, eligibility systems, public-health models, or professional recommendations.</p>
+ </section>
+
+ <section class="privacy">
+ <p><strong>Privacy:</strong> Do not enter real client, patient, student, coworker, agency, practicum, or workplace information. This page has no account, analytics, cookies, database, AI connection, or submission form.</p>
+ </section>
+
+ <section class="course-map" aria-labelledby="map-heading">
+ <h2 id="map-heading">How this connects to the course</h2>
+ <div class="plain-callout">
+ <strong>New to AI?</strong> A good place to start is Lab 1 and the Plain-Language Glossary. Explore the other labs when a course topic makes them useful.
+ </div>
+ <p>You do not need to complete the labs in order. Each one corresponds with a course topic and can be opened only when it would help.</p>
+ <table>
+ <thead><tr><th>Course week</th><th>Course topic</th><th>Optional visual practice</th></tr></thead>
+ <tbody>
+ <tr><td>Week 1</td><td>AI and Automated Systems in the Helping Professions</td><td>Lab 1: What kind of technology is this?</td></tr>
+ <tr><td>Week 2</td><td>Automated Decision-Making, Prediction, and Error</td><td>Lab 2: What information counts?</td></tr>
+ <tr><td>Week 3</td><td>Data, Design, and Algorithmic Bias</td><td>Lab 3: Same system, different consequences</td></tr>
+ <tr><td>Week 4</td><td>Automation in Public and Social Service Systems</td><td>Lab 4: Follow the decision</td></tr>
+ <tr><td>Week 5</td><td>AI in Clinical and Helping Relationships</td><td>Lab 5: Did the meaning change?</td></tr>
+ <tr><td>Week 6</td><td>Trauma-Informed Practice, Consent, and Accountability</td><td>Lab 6: Look through a trauma-informed lens</td></tr>
+ <tr><td>Week 7</td><td>Power, Cost, and Alternatives</td><td>Lab 7: Does this problem need technology?</td></tr>
+ <tr><td>Week 8</td><td>Technology Practice Analysis</td><td>Return to any earlier lab as a refresher if useful</td></tr>
+ <tr><td>Week 9</td><td>Data Governance, Authority, and Community Knowledge</td><td>Return to any earlier lab as a refresher if useful</td></tr>
+ <tr><td>Week 10</td><td>Making an Evidence-Based Practice Decision</td><td>Switch professional lenses and compare what changes</td></tr>
+ </tbody>
+ </table>
+ <p class="small">The <strong>Watch &amp; Explore</strong> tab has optional outside videos and an interactive simulation tied to Weeks 2 through 5, if you want to see these ideas in a real documentary, talk, or news report instead of a fictional example.</p>
+ </section>
+
+ <section class="role-picker" aria-labelledby="role-heading">
+ <h2 id="role-heading">Choose a professional lens</h2>
+ <p class="small">The concept stays the same. The examples change. You can switch at any time.</p>
+ <div class="role-grid">
+ <button type="button" class="role-btn active" data-role="socialwork"><span class="role-swatch" aria-hidden="true"></span>Social Worker</button>
+ <button type="button" class="role-btn" data-role="nurse"><span class="role-swatch" aria-hidden="true"></span>Nurse</button>
+ <button type="button" class="role-btn" data-role="psychiatrist"><span class="role-swatch" aria-hidden="true"></span>Psychiatrist</button>
+ <button type="button" class="role-btn" data-role="publichealth"><span class="role-swatch" aria-hidden="true"></span>Public Health</button>
+ <button type="button" class="role-btn" data-role="peer"><span class="role-swatch" aria-hidden="true"></span>Peer Mentor / Worker</button>
+ </div>
+ <div class="role-summary" id="role-summary" aria-live="polite"></div>
+ </section>
+
+ <div class="tabs" role="tablist" aria-label="Practice labs">
+ <button class="tab" role="tab" id="tab1" aria-controls="panel1" aria-selected="true">Lab 1</button>
+ <button class="tab" role="tab" id="tab2" aria-controls="panel2" aria-selected="false">Lab 2</button>
+ <button class="tab" role="tab" id="tab3" aria-controls="panel3" aria-selected="false">Lab 3</button>
+ <button class="tab" role="tab" id="tab4" aria-controls="panel4" aria-selected="false">Lab 4</button>
+ <button class="tab" role="tab" id="tab5" aria-controls="panel5" aria-selected="false">Lab 5</button>
+ <button class="tab" role="tab" id="tab6" aria-controls="panel6" aria-selected="false">Lab 6</button>
+ <button class="tab" role="tab" id="tab7" aria-controls="panel7" aria-selected="false">Lab 7</button>
+ <button class="tab" role="tab" id="tabv" aria-controls="panelv" aria-selected="false">Watch &amp; Explore</button>
+ <button class="tab" role="tab" id="tabp" aria-controls="panelp" aria-selected="false">Pocket Questions</button>
+ <button class="tab" role="tab" id="tabn" aria-controls="paneln" aria-selected="false">My Practice Notes</button>
+ <button class="tab" role="tab" id="tabg" aria-controls="panelg" aria-selected="false">Plain-Language Glossary</button>
+ </div>
+
+ <section id="panel1" class="panel active" role="tabpanel" aria-labelledby="tab1">
+ <span class="week-tag">Week 1 companion</span>
+ <div class="lens-band"><span class="lens-dot" aria-hidden="true"></span><span>Viewing through the <span id="lens-label-1">Social Worker</span> lens</span><span class="lens-switch">Switch lenses above</span></div>
+ <div class="week-due"><span class="due-icon" aria-hidden="true">&#9679;</span><span><span class="due-label">Course connection</span> <strong>Week 1: CSWE Technology Report (pp. 12-26)</strong> connects with this lab's work on identifying where AI and automated systems already appear in helping professions.</span></div>
+ <h2>Run the same case through four different systems</h2>
+ <p>People argue about "AI" as if it were one thing. It isn't. Below is one fictional record. Run it through each system type and watch what each one actually does with the same information - and what each one ignores.</p>
+
+ <div class="scenario">
+ <h3 id="l1-title"></h3>
+ <p class="small" id="l1-context"></p>
+ <table class="record-table" aria-label="Fictional record">
+ <tbody id="l1-record"></tbody>
+ </table>
+ </div>
+
+ <h3>Choose a system to run this record through</h3>
+ <div class="engine-grid">
+ <button type="button" class="engine-btn" id="l1-run-rules" aria-pressed="false">
+ <strong>Rules-based system</strong>
+ <span class="small">Follows preset if-then steps</span>
+ </button>
+ <button type="button" class="engine-btn" id="l1-run-pred" aria-pressed="false">
+ <strong>Predictive model</strong>
+ <span class="small">Turns data into a score</span>
+ </button>
+ <button type="button" class="engine-btn" id="l1-run-gen" aria-pressed="false">
+ <strong>Generative AI</strong>
+ <span class="small">Writes new text</span>
+ </button>
+ <button type="button" class="engine-btn" id="l1-run-human" aria-pressed="false">
+ <strong>A person</strong>
+ <span class="small">Reads with judgment and context</span>
+ </button>
+ </div>
+
+ <div id="l1-rules-out" class="engine-output" hidden>
+ <h3>What the rules-based system did</h3>
+ <p class="small">It checked each preset rule against the record, one at a time. Watch which rules fired:</p>
+ <div id="l1-rules-trace" class="trace" aria-live="polite"></div>
+ <div class="plain-callout" id="l1-rules-lesson"></div>
+ </div>
+
+ <div id="l1-pred-out" class="engine-output" hidden>
+ <h3>What the predictive model did</h3>
+ <p class="small">It pulled only the fields it was built to count, multiplied each by a preset weight (how much that field influences the result), and compared the total to a cutoff:</p>
+ <div id="l1-pred-trace" class="trace" aria-live="polite"></div>
+ <div class="plain-callout" id="l1-pred-lesson"></div>
+ </div>
+
+ <div id="l1-gen-out" class="engine-output" hidden>
+ <h3>What the generative AI did</h3>
+ <p class="small">It wrote a fluent summary. It reads well. But one sentence below is not supported by the record. <strong>Click the sentence you think crossed the line.</strong></p>
+ <div id="l1-gen-sentences" class="gen-sentences"></div>
+ <div class="feedback" id="l1-gen-feedback" aria-live="polite">Read each sentence against the record above, then click the one that added something the record does not say.</div>
+ </div>
+
+ <div id="l1-human-out" class="engine-output" hidden>
+ <h3>What a person could do</h3>
+ <p id="l1-human-prompt"></p>
+ <div class="button-row"><button type="button" class="action secondary" id="l1-human-reveal">Show what none of the systems used</button></div>
+ <div class="feedback" id="l1-human-note" aria-live="polite" hidden></div>
+ </div>
+
+ <div id="l1-compare" class="reflection" hidden>
+ <h3>Same record, four different behaviors</h3>
+ <p>You just watched a rules system match literal fields, a predictive model reduce a person to a number, a generative system write past its evidence, and a person notice what the record's own footnote meant. When someone says "we're adding AI," your first question now has teeth: <strong>which one of these do you mean?</strong></p>
+ </div>
+ <div class="bring-to-class">
+ <strong>Optional reflection:</strong> Pick one system from your work or daily life - a scheduling tool, a screening form, anything automated. Which of the four types is it closest to, and what would you need to know to be sure?
+ 
+ <div class="my-answer"><label for="ans-lab1">Your answer (optional - stays on this page, nothing is saved or sent):</label><textarea id="ans-lab1" data-lab="lab1" data-title="Lab 1 · Naming the system"></textarea><p class="saved-hint" id="hint-lab1" aria-live="polite"></p></div>
+ </div>
+ <p class="scan-link">Practice Scan connection: this is the "What the system does" question in your Practice Scan - is it rules-based, predictive, generative, or mainly administrative?</p>
+ </section>
+
+ <section id="panel2" class="panel" role="tabpanel" aria-labelledby="tab2">
+ <span class="week-tag">Week 2 companion</span>
+ <div class="lens-band"><span class="lens-dot" aria-hidden="true"></span><span>Viewing through the <span id="lens-label-2">Social Worker</span> lens</span><span class="lens-switch">Switch lenses above</span></div>
+ <div class="week-due"><span class="due-icon" aria-hidden="true">&#9679;</span><span><span class="due-label">Course connection</span> <strong>Week 2: Obermeyer et al., "Dissecting Racial Bias..."</strong> connects with this lab's work on prediction, false positives, false negatives, and the wrong-proxy problem.</span></div>
+ <h2>What information counts?</h2>
+ <p>Automated systems do not simply “look at everything.” People decide what information enters the system and how much influence different information has.</p>
+
+ <div class="plain-callout">
+ <strong>Plain language:</strong> A <span class="term" tabindex="0" data-term="weight">weight</span> is simply how much influence one piece of information has on a result. A <span class="term" tabindex="0" data-term="threshold">threshold</span> is the cutoff where the system changes what happens next.
+ </div>
+
+ <div class="scenario"><p id="l2-intro"></p></div>
+
+ <div class="grid-2">
+ <div>
+ <div class="control">
+ <label for="l2a"><span id="l2a-label"></span><span id="l2a-value">2</span></label>
+ <input id="l2a" type="range" min="0" max="10" value="2">
+ </div>
+ <div class="control">
+ <label for="l2b"><span id="l2b-label"></span><span id="l2b-value">2</span></label>
+ <input id="l2b" type="range" min="0" max="10" value="2">
+ </div>
+ <div class="control">
+ <label for="l2cut"><span>Cutoff to be flagged</span><span id="l2cut-value">10</span></label>
+ <input id="l2cut" type="range" min="0" max="40" step="1" value="10">
+ </div>
+ <p class="small">Each person's score = (their first number &times; its weight) + (their second number &times; its weight). Anyone at or above the cutoff gets flagged.</p>
+ </div>
+ <div>
+ <div id="l2-roster" aria-live="polite"></div>
+ <div class="decision" id="l2-tally" aria-live="polite"></div>
+ </div>
+ </div>
+
+ <div class="button-row">
+ <button type="button" class="action secondary" id="l2-reveal">Reveal what the numbers missed</button>
+ </div>
+ <div class="feedback" id="l2-reveal-box" aria-live="polite" hidden></div>
+ <div class="bring-to-class">
+ <strong>Optional reflection:</strong> What is one piece of information about the people you serve that should never become a number in a system like this? Why that one?
+ 
+ <div class="my-answer"><label for="ans-lab2">Your answer (optional - stays on this page, nothing is saved or sent):</label><textarea id="ans-lab2" data-lab="lab2" data-title="Lab 2 · What should never be a number"></textarea><p class="saved-hint" id="hint-lab2" aria-live="polite"></p></div>
+ </div>
+ <p class="scan-link">Practice Scan connection: this is the "Choice, privacy, and data" question - what information is used, and who decided it counts?</p>
+ </section>
+
+ <section id="panel3" class="panel" role="tabpanel" aria-labelledby="tab3">
+ <span class="week-tag">Week 3 companion</span>
+ <div class="lens-band"><span class="lens-dot" aria-hidden="true"></span><span>Viewing through the <span id="lens-label-3">Social Worker</span> lens</span><span class="lens-switch">Switch lenses above</span></div>
+ <div class="week-due"><span class="due-icon" aria-hidden="true">&#9679;</span><span><span class="due-label">Course connection</span> <strong>Week 3: Benjamin, <em>Race After Technology</em>, Chapter 1</strong> connects with this lab's work on how bias can enter through data, design, categories, testing, and implementation.</span></div>
+ <h2>Same system, different consequences</h2>
+ <p>Bias does not require a system to use race, gender, or another identity directly. Historical patterns, missing information, and <span class="term" tabindex="0" data-term="proxy">proxy variables</span> can still shape who is advantaged or disadvantaged.</p>
+ <div class="scenario"><p id="l3-intro"></p></div>
+ <div class="compare-cases" id="l3-cases"></div>
+ <p class="l3-task-intro">Both people got the <strong>same score</strong>, so the system treats them the same. Here are three things that might be true about one of them. <strong>Which one, if true, should change what that score means?</strong> Pick each to test it.</p>
+ <div class="choice-grid" id="l3-options"></div>
+ <div class="feedback" id="l3-feedback" aria-live="polite">Pick a piece of context to see whether it changes the meaning - and whether any system could have known it.</div>
+ <div class="reflection" id="l3-close" hidden>
+ <p id="l3-close-text"></p>
+ </div>
+ <div class="bring-to-class">
+ <strong>Optional reflection:</strong> Come with one example - from work, school, or life - where the same data point could mean two very different things depending on someone's circumstances.
+ 
+ <div class="my-answer"><label for="ans-lab3">Your answer (optional - stays on this page, nothing is saved or sent):</label><textarea id="ans-lab3" data-lab="lab3" data-title="Lab 3 · Same data, different meaning"></textarea><p class="saved-hint" id="hint-lab3" aria-live="polite"></p></div>
+ </div>
+ <p class="scan-link">Practice Scan connection: this is the "Who benefits and who carries risk" question - who may face new errors, burden, or exclusion?</p>
+ </section>
+
+ <section id="panel4" class="panel" role="tabpanel" aria-labelledby="tab4">
+ <span class="week-tag">Week 4 companion</span>
+ <div class="lens-band"><span class="lens-dot" aria-hidden="true"></span><span>Viewing through the <span id="lens-label-4">Social Worker</span> lens</span><span class="lens-switch">Switch lenses above</span></div>
+ <div class="week-due"><span class="due-icon" aria-hidden="true">&#9679;</span><span><span class="due-label">Course connection</span> <strong>Week 4: Eubanks, <em>Automating Inequality</em>, Chapter 4</strong> connects with this lab's work on automation in benefits, housing, child welfare, healthcare, and other public-service systems.</span></div>
+ <h2>Follow the decision</h2>
+ <p>An automated result is rarely the end of the story. Trace how information becomes an <span class="term" tabindex="0" data-term="output">output</span>, how a person acts on it, and whether anyone can question or correct the result.</p>
+ <div class="scenario"><p id="l4-intro"></p></div>
+ <p class="small">Reveal the path one step at a time. At each step, pause and think about what could go wrong or who could question it before you move to the next.</p>
+ <div class="path" id="l4-path">
+ <div class="path-step" id="l4-step-1"><strong>1. Information recorded</strong><span id="l4-1"></span></div>
+ <div class="path-step" id="l4-step-2" hidden><strong>2. System interprets it</strong><span id="l4-2"></span></div>
+ <div class="path-step" id="l4-step-3" hidden><strong>3. Output appears</strong><span id="l4-3"></span></div>
+ <div class="path-step" id="l4-step-4" hidden><strong>4. Human action</strong><span id="l4-4"></span></div>
+ <div class="path-step" id="l4-step-5" hidden><strong>5. Correction or appeal</strong><span id="l4-5"></span></div>
+ </div>
+ <div class="button-row"><button type="button" class="action" id="l4-next">Reveal what happens next</button></div>
+ <div class="reflection" id="l4-reflection" hidden><h3>Questions</h3><ul id="l4-questions"></ul></div>
+ <div class="bring-to-class">
+ <strong>Optional reflection:</strong> In a setting you know, who has the authority to override a system's output - on paper? And who actually does it in practice? Are those the same person?
+ 
+ <div class="my-answer"><label for="ans-lab4">Your answer (optional - stays on this page, nothing is saved or sent):</label><textarea id="ans-lab4" data-lab="lab4" data-title="Lab 4 · Who can override"></textarea><p class="saved-hint" id="hint-lab4" aria-live="polite"></p></div>
+ </div>
+ <p class="scan-link">Practice Scan connection: this is the "Human review and correction" question - who can question, correct, or override the system, and what happens when it is wrong?</p>
+ </section>
+
+ <section id="panel5" class="panel" role="tabpanel" aria-labelledby="tab5">
+ <span class="week-tag">Week 5 companion</span>
+ <div class="lens-band"><span class="lens-dot" aria-hidden="true"></span><span>Viewing through the <span id="lens-label-5">Social Worker</span> lens</span><span class="lens-switch">Switch lenses above</span></div>
+ <div class="week-due"><span class="due-icon" aria-hidden="true">&#9679;</span><span><span class="due-label">Course connection</span> <strong>Week 5: Lawrence et al. on large language models in mental health</strong> connects with this lab's work on documentation, client-facing tools, professional judgment, and generated language.</span></div>
+ <h2>Did the meaning change?</h2>
+ <p><span class="term" tabindex="0" data-term="generative-ai">Generative AI</span> can produce polished language that sounds plausible. The question is whether the output stays faithful to the source.</p>
+ <div class="scenario"><h3>Source information</h3><p id="l5-source"></p></div>
+ <p class="small"><strong>Your task:</strong> For each summary, decide whether it stays faithful to the source or changes the meaning. Your choice will receive feedback specific to that summary.</p>
+ <div id="l5-summaries"></div>
+ <div class="feedback" id="l5-feedback" aria-live="polite">Work through all three summaries. The goal is to notice where polished language adds interpretation, certainty, or action that the source does not support.</div>
+ <div class="bring-to-class">
+ <strong>Optional reflection:</strong> What is one word or phrase you have seen in a record or report that carried more judgment than evidence? (Disguise any identifying details.)
+ 
+ <div class="my-answer"><label for="ans-lab5">Your answer (optional - stays on this page, nothing is saved or sent):</label><textarea id="ans-lab5" data-lab="lab5" data-title="Lab 5 · Judgment vs. evidence"></textarea><p class="saved-hint" id="hint-lab5" aria-live="polite"></p></div>
+ </div>
+ <p class="scan-link">Practice Scan connection: this feeds the "Relationship, access, and culture" question - what changes in how a person is represented and treated?</p>
+ </section>
+
+ <section id="panel6" class="panel" role="tabpanel" aria-labelledby="tab6">
+ <span class="week-tag">Week 6 companion</span>
+ <div class="lens-band"><span class="lens-dot" aria-hidden="true"></span><span>Viewing through the <span id="lens-label-6">Social Worker</span> lens</span><span class="lens-switch">Switch lenses above</span></div>
+ <div class="week-due"><span class="due-icon" aria-hidden="true">&#9679;</span><span><span class="due-label">Course connection</span> <strong>Week 6: SAMHSA trauma-informed guidance</strong> connects with this lab's work on applying the six trauma-informed principles to technology use, consent, and accountability.</span></div>
+ <h2>Look through a trauma-informed lens</h2>
+ <p>SAMHSA identifies six guiding principles of a trauma-informed approach. The questions below are course applications of those principles to technology use. They are not a SAMHSA technology checklist.</p>
+ <div class="scenario"><h3 id="l6-title"></h3><p id="l6-scenario"></p></div>
+ <p class="small">Open each principle to see how it applies to the scenario above. Try answering the question yourself before you open it.</p>
+ <div id="l6-accordion">
+ <div class="accordion-item">
+ <button type="button" class="accordion-toggle l6-toggle" id="l6-safety-btn" aria-expanded="false" aria-controls="l6-safety-panel">
+ <span>Safety</span><span class="chev" aria-hidden="true">+</span>
+ </button>
+ <div class="accordion-panel" id="l6-safety-panel" role="region" aria-labelledby="l6-safety-btn" hidden><p id="l6-safety"></p></div>
+ </div>
+ <div class="accordion-item">
+ <button type="button" class="accordion-toggle l6-toggle" id="l6-trust-btn" aria-expanded="false" aria-controls="l6-trust-panel">
+ <span>Trustworthiness and Transparency</span><span class="chev" aria-hidden="true">+</span>
+ </button>
+ <div class="accordion-panel" id="l6-trust-panel" role="region" aria-labelledby="l6-trust-btn" hidden><p id="l6-trust"></p></div>
+ </div>
+ <div class="accordion-item">
+ <button type="button" class="accordion-toggle l6-toggle" id="l6-peer-btn" aria-expanded="false" aria-controls="l6-peer-panel">
+ <span>Peer Support</span><span class="chev" aria-hidden="true">+</span>
+ </button>
+ <div class="accordion-panel" id="l6-peer-panel" role="region" aria-labelledby="l6-peer-btn" hidden><p id="l6-peer"></p></div>
+ </div>
+ <div class="accordion-item">
+ <button type="button" class="accordion-toggle l6-toggle" id="l6-collab-btn" aria-expanded="false" aria-controls="l6-collab-panel">
+ <span>Collaboration and Mutuality</span><span class="chev" aria-hidden="true">+</span>
+ </button>
+ <div class="accordion-panel" id="l6-collab-panel" role="region" aria-labelledby="l6-collab-btn" hidden><p id="l6-collab"></p></div>
+ </div>
+ <div class="accordion-item">
+ <button type="button" class="accordion-toggle l6-toggle" id="l6-choice-btn" aria-expanded="false" aria-controls="l6-choice-panel">
+ <span>Empowerment, Voice and Choice</span><span class="chev" aria-hidden="true">+</span>
+ </button>
+ <div class="accordion-panel" id="l6-choice-panel" role="region" aria-labelledby="l6-choice-btn" hidden><p id="l6-choice"></p></div>
+ </div>
+ <div class="accordion-item">
+ <button type="button" class="accordion-toggle l6-toggle" id="l6-culture-btn" aria-expanded="false" aria-controls="l6-culture-panel">
+ <span>Cultural, Historical, and Gender Issues</span><span class="chev" aria-hidden="true">+</span>
+ </button>
+ <div class="accordion-panel" id="l6-culture-panel" role="region" aria-labelledby="l6-culture-btn" hidden><p id="l6-culture"></p></div>
+ </div>
+ </div>
+ <div class="button-row">
+ <button type="button" class="action secondary" id="l6-expand-all">Open all six</button>
+ </div>
+ <div class="bring-to-class">
+ <strong>Optional reflection:</strong> Which of the six principles would be hardest for a setting you know to honor if it adopted a new tool tomorrow? What makes that one hard?
+ 
+ <div class="my-answer"><label for="ans-lab6">Your answer (optional - stays on this page, nothing is saved or sent):</label><textarea id="ans-lab6" data-lab="lab6" data-title="Lab 6 · Hardest principle to honor"></textarea><p class="saved-hint" id="hint-lab6" aria-live="polite"></p></div>
+ </div>
+ <p class="scan-link">Practice Scan connection: these six principles are the trauma-informed lens your whole Practice Scan looks through.</p>
+ </section>
+
+ <section id="panel7" class="panel" role="tabpanel" aria-labelledby="tab7">
+ <span class="week-tag">Week 7 companion</span>
+ <div class="lens-band"><span class="lens-dot" aria-hidden="true"></span><span>Viewing through the <span id="lens-label-7">Social Worker</span> lens</span><span class="lens-switch">Switch lenses above</span></div>
+ <div class="week-due"><span class="due-icon" aria-hidden="true">&#9679;</span><span><span class="due-label">Course connection</span> <strong>Week 7: Garrett, "Magic Moments..."</strong> connects with this lab's work on comparing AI-supported responses with simpler tools, staffing, policy, and other alternatives.</span></div>
+ <h2>Does this problem need technology?</h2>
+ <p>Technology is one possible response to a practice problem. It is not automatically the best response.</p>
+ <div class="scenario"><h3 id="l7-title"></h3><p id="l7-scenario"></p></div>
+ <div class="option-grid" id="l7-options"></div>
+ <div class="feedback" id="l7-feedback" aria-live="polite">Choose any option to see what questions it raises. There is no single correct answer.</div>
+ <div class="reflection">
+ <h3>The larger question</h3>
+ <p id="l7-larger"></p>
+ </div>
+ <div class="bring-to-class">
+ <strong>Optional reflection:</strong> Bring one problem from a setting you know that people assume needs technology. Does it? What else could address it?
+ 
+ <div class="my-answer"><label for="ans-lab7">Your answer (optional - stays on this page, nothing is saved or sent):</label><textarea id="ans-lab7" data-lab="lab7" data-title="Lab 7 · Does it need technology"></textarea><p class="saved-hint" id="hint-lab7" aria-live="polite"></p></div>
+ </div>
+ <p class="scan-link">Practice Scan connection: this is the "Recommendation and alternatives" question - what should continue, change, pause, or end, and what other options exist?</p>
+ </section>
+
+ <section id="panelv" class="panel" role="tabpanel" aria-labelledby="tabv">
+ <h2>Watch &amp; Explore</h2>
+ <p>These are real, publicly available resources made outside this course - a documentary, a talk, a news investigation, and an interactive simulation. Nothing here is fictional and nothing is scored. Each item lists its format, an approximate length, and a short prompt to think about while you watch. Videos linked below include captions or a transcript.</p>
+
+ <div class="resource-grid">
+ <div class="resource-card">
+ <span class="week-tag">Week 2 companion</span>
+ <div class="resource-meta">
+ <span class="badge">Interactive simulation</span>
+ <span class="badge">About 10 minutes</span>
+ </div>
+ <h3>Survival of the Best Fit</h3>
+ <p>A short browser simulation where you play the founder of a hiring startup and decide whether, and how, to automate resume screening. Built by NYU students with Mozilla Foundation support.</p>
+ <p class="resource-prompt"><strong>While you explore:</strong> Notice the moment the tool starts making choices you didn't directly ask for. Where did that pattern come from?</p>
+ <a class="resource-link" href="https://www.survivalofthebestfit.com/" target="_blank" rel="noopener noreferrer">Open the simulation <span class="arrow" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens survivalofthebestfit.com in a new tab)</span></a>
+ </div>
+
+ <div class="resource-card">
+ <span class="week-tag">Week 3 companion</span>
+ <div class="resource-meta">
+ <span class="badge">Documentary</span>
+ <span class="badge">About 90 minutes</span>
+ </div>
+ <h3>Coded Bias</h3>
+ <p>Follows MIT researcher Joy Buolamwini's discovery that facial recognition software misidentifies women and darker-skinned faces, and the advocacy that followed. Features Virginia Eubanks, already on this course's reading list.</p>
+ <p class="resource-prompt"><strong>While you watch:</strong> Listen for the difference between a technology being biased and a technology being used in a biased way.</p>
+ <a class="resource-link" href="https://www.pbs.org/independentlens/documentaries/coded-bias/" target="_blank" rel="noopener noreferrer">Watch on PBS Independent Lens <span class="arrow" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens pbs.org in a new tab)</span></a>
+ <p class="small">Also available through PSU Library's Kanopy service - check the library catalog for current access.</p>
+ </div>
+
+ <div class="resource-card">
+ <span class="week-tag">Week 3 companion</span>
+ <div class="resource-meta">
+ <span class="badge">Talk</span>
+ <span class="badge">About 9 minutes</span>
+ </div>
+ <h3>Joy Buolamwini: "How I'm Fighting Bias in Algorithms"</h3>
+ <p>A short TED talk on how Buolamwini first noticed that facial-analysis software failed to recognize her face, and what she calls the "coded gaze."</p>
+ <p class="resource-prompt"><strong>While you watch:</strong> Whose faces were used to build and test the system? Who was in the room, and who wasn't?</p>
+ <a class="resource-link" href="https://www.ted.com/talks/joy_buolamwini_how_i_m_fighting_bias_in_algorithms" target="_blank" rel="noopener noreferrer">Watch on TED.com <span class="arrow" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens ted.com in a new tab)</span></a>
+ </div>
+
+ <div class="resource-card">
+ <span class="week-tag">Week 4 companion</span>
+ <div class="resource-meta">
+ <span class="badge">News coverage</span>
+ <span class="badge">Short read</span>
+ </div>
+ <h3>The Allegheny Family Screening Tool</h3>
+ <p>PBS NewsHour coverage of the Associated Press investigation into the child-welfare risk-scoring algorithm used in Allegheny County, Pennsylvania - the same tool discussed in this week's Eubanks reading.</p>
+ <p class="resource-prompt"><strong>While you read:</strong> The county maintains the tool supports, rather than replaces, worker judgment. What would need to be true for that to hold up in practice?</p>
+ <a class="resource-link" href="https://www.pbs.org/newshour/nation/ap-report-doj-examining-ai-screening-tool-used-by-pa-child-welfare-agency" target="_blank" rel="noopener noreferrer">Read the coverage on PBS NewsHour <span class="arrow" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens pbs.org in a new tab)</span></a>
+ </div>
+
+ <div class="resource-card">
+ <span class="week-tag">Week 5 companion</span>
+ <div class="resource-meta">
+ <span class="badge">Article</span>
+ <span class="badge">Short read</span>
+ </div>
+ <h3>Exploring the Dangers of AI in Mental Health Care</h3>
+ <p>Stanford HAI's summary of research testing whether AI therapy chatbots respond appropriately to mental health symptoms, and where they introduced stigma or unsafe responses. Pairs directly with this week's Lawrence et al. reading.</p>
+ <p class="resource-prompt"><strong>While you read:</strong> What would "appropriate" mean here, and who decided?</p>
+ <a class="resource-link" href="https://hai.stanford.edu/news/exploring-the-dangers-of-ai-in-mental-health-care" target="_blank" rel="noopener noreferrer">Read the article on Stanford HAI <span class="arrow" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens hai.stanford.edu in a new tab)</span></a>
+ </div>
+
+ <div class="resource-card">
+ <span class="week-tag">Practice Scan companion</span>
+ <div class="resource-meta">
+ <span class="badge">Searchable database</span>
+ <span class="badge">Browse as needed</span>
+ </div>
+ <h3>The AI Incident Database</h3>
+ <p>A free, searchable archive of real-world cases where deployed AI systems caused harm or nearly did - modeled on aviation and cybersecurity incident databases. Researchers at Carnegie Mellon studied it as a classroom tool and found it helps people grasp how common and serious these harms are. Search by sector (healthcare, child welfare, hiring, benefits) to find a documented case for your Practice Scan.</p>
+ <p class="resource-prompt"><strong>While you browse:</strong> Pick one incident in a setting close to your work. Who was harmed, who was accountable, and what did people do after?</p>
+ <a class="resource-link" href="https://incidentdatabase.ai/" target="_blank" rel="noopener noreferrer">Open the AI Incident Database <span class="arrow" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens incidentdatabase.ai in a new tab)</span></a>
+ </div>
+
+ <div class="resource-card">
+ <span class="week-tag">Week 2 companion</span>
+ <div class="resource-meta">
+ <span class="badge">Guide</span>
+ <span class="badge">Plain-language PDF</span>
+ </div>
+ <h3>The Algorithmic Bias Playbook</h3>
+ <p>The plain-language companion to this week's Obermeyer reading, from the University of Chicago Booth Center for Applied AI. It walks through how a healthcare algorithm rated Black patients as &ldquo;healthier&rdquo; than equally sick white patients - because it used cost as a stand-in for need. The clearest worked example of "same score, different meaning" you can point a Practice Scan at.</p>
+ <p class="resource-prompt"><strong>While you read:</strong> What was the algorithm actually predicting, versus what everyone assumed it predicted? Where else might that gap hide?</p>
+ <a class="resource-link" href="https://www.chicagobooth.edu/-/media/project/chicago-booth/centers/caai/docs/algorithmic-bias-playbook-june-2021" target="_blank" rel="noopener noreferrer">Read the Playbook (PDF) <span class="arrow" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens chicagobooth.edu in a new tab)</span></a>
+ </div>
+ </div>
+
+ <p class="small">Have something better for Week 6 or 7 - a peer-support or alternatives-focused resource? Send it along and it can be added here.</p>
+ </section>
+
+ <section id="panelp" class="panel" role="tabpanel" aria-labelledby="tabp">
+ <h2>Pocket Questions: Eight Things to Ask About Any System</h2>
+ <p>These are the questions this whole lab practices, in one place. You do not need any technical background to ask them - and you are allowed to ask them about any system that affects your work or the people you serve. Print this page and take it with you.</p>
+ <ol class="pocket-list">
+ <li><strong>What is this system actually doing?</strong><p class="small">Is it following preset rules, turning data into a score, generating new text, or is a person doing this step? "AI" is not one thing.</p></li>
+ <li><strong>What information does it use?</strong><p class="small">And just as important: what information about people never becomes an input at all?</p></li>
+ <li><strong>Who decided what counts, and how much it counts?</strong><p class="small">Someone chose the inputs, the influence each one has, and the cutoff. Those were human decisions.</p></li>
+ <li><strong>Could the same data point mean different things for different people?</strong><p class="small">A missed appointment can mean disengagement, a lost bus route, a double shift, or a caregiving emergency. The system sees one number.</p></li>
+ <li><strong>Do people know the system is being used?</strong><p class="small">Can they decline it, ask questions about it, or ask for a person instead?</p></li>
+ <li><strong>Who can question, correct, or override the result?</strong><p class="small">On paper - and in practice, with the time and authority they actually have.</p></li>
+ <li><strong>Whose circumstances could the system misread?</strong><p class="small">Language, disability, culture, family structure, work schedules, digital access, history with services.</p></li>
+ <li><strong>Does this problem actually need technology?</strong><p class="small">Or would staffing, policy change, a simpler tool, or no tool address it better?</p></li>
+ </ol>
+ <div class="button-row">
+ <button type="button" class="action" id="pocket-print">Print this page</button>
+ </div>
+ <p class="small">These questions align with the areas your Trauma-Informed Technology Practice Scan asks you to examine.</p>
+ </section>
+
+ <section id="paneln" class="panel" role="tabpanel" aria-labelledby="tabn">
+ <h2>My Practice Notes</h2>
+ <p>As you answer the optional reflection at the end of each lab, your responses gather here for your own review, Canvas discussion, or a designated synchronous session. This is just for you - nothing is saved, stored, sent, or seen by anyone. Closing or refreshing the page clears it, so print or copy anything you want to keep.</p>
+ <div id="notes-collected"></div>
+ <div class="button-row" id="notes-actions" hidden>
+ <button type="button" class="action" id="notes-print">Print my notes</button>
+ <button type="button" class="action secondary" id="notes-copy">Copy to clipboard</button>
+ </div>
+ <p class="saved-hint" id="notes-copy-hint" aria-live="polite"></p>
+ </section>
+
+ <section id="panelg" class="panel" role="tabpanel" aria-labelledby="tabg">
+ <h2>Plain-Language Glossary</h2>
+ <p>Search or browse terms used in the course. Each definition includes a short helping-professions example and why the term matters.</p>
+ <input id="glossary-search" class="glossary-search" type="search" placeholder="Search terms, for example: threshold, bias, hallucination" aria-label="Search glossary">
+ <div class="glossary-list" id="glossary-list"></div>
+ </section>
+ </main>
+
+ <footer>
+ <div class="wrap">
+ <p><strong>Optional teaching practice tool.</strong> This page is not a clinical, diagnostic, eligibility, risk, or public-health decision system.</p>
+ <p>Sources that inform the course framing:</p>
+ <ul>
+ <li><a href="https://www.samhsa.gov/mental-health/trauma-violence/trauma-informed-approaches-programs">SAMHSA: Trauma-Informed Approaches and Programs</a></li>
+ <li><a href="https://www.socialworkers.org/Practice/NASW-Practice-Standards-Guidelines/Standards-for-Technology-in-Social-Work-Practice">Standards for Technology in Social Work Practice</a></li>
+ <li><a href="https://www.cswe.org/getmedia/3785b60b-5fae-4c39-a0ec-c052eddf9588/COEP-Technology-Report.pdf">CSWE Commission on Educational Policy Task Force on Technology and Social Work Education Report</a></li>
+ </ul>
+ <p>Static HTML. No external scripts, tracking, storage, or live AI connection.</p>
+ <p>Accessibility: this page was checked against WCAG 2.1 AA (automated audit and keyboard testing). If anything is hard to use with your assistive technology, please tell your instructor so it can be fixed.</p>
+ </div>
+ </footer>
+
+ <script>
+ (function(){
+ "use strict";
+
+ const glossary = {
+ "algorithm":{
+ term:"Algorithm",
+ meaning:"A set of steps or rules a computer follows to produce a result.",
+ example:"A scheduling system may use rules to decide which appointment times to show first.",
+ why:"The word can sound more mysterious than the process actually is. Asking what steps or rules are being followed makes the system easier to examine."
+ },
+ "automated-system":{
+ term:"Automated system",
+ meaning:"Technology that carries out part of a task with limited or no human action at that step.",
+ example:"A system automatically sends appointment reminders based on the schedule.",
+ why:"Automation is not the same thing as artificial intelligence."
+ },
+ "rules-based":{
+ term:"Rules-based automation",
+ meaning:"A system that follows preset if-then rules.",
+ example:"If an appointment is tomorrow, send a reminder at 3 p.m.",
+ why:"Rules may still affect people even when no AI model is involved."
+ },
+ "predictive-model":{
+ term:"Predictive model",
+ meaning:"A system that uses available data to estimate a future event, category, or likelihood.",
+ example:"A program estimates which outreach requests are most likely to need follow-up.",
+ why:"Predictions depend on the data and assumptions used to build the model."
+ },
+ "generative-ai":{
+ term:"Generative AI",
+ meaning:"Technology that creates new content such as text, images, audio, or code from patterns learned from data.",
+ example:"A documentation assistant creates a draft note from information supplied by a clinician.",
+ why:"Generated content can sound confident even when it is incomplete or wrong."
+ },
+ "training-data":{
+ term:"Training data",
+ meaning:"Examples a machine-learning system learns patterns from during development.",
+ example:"A language model learns patterns from large collections of text.",
+ why:"What is included, excluded, overrepresented, or historically biased in the training data can affect later outputs."
+ },
+ "input":{
+ term:"Input",
+ meaning:"Information given to a system.",
+ example:"An intake form, a message, a score, or a piece of text may become an input.",
+ why:"A system cannot consider information it never receives."
+ },
+ "variable":{
+ term:"Variable",
+ meaning:"A piece of information that can take different values and is used by a system.",
+ example:"Days waiting for a response might be one variable in a workflow system.",
+ why:"Choosing what becomes a variable is itself a human decision."
+ },
+ "weight":{
+ term:"Weight",
+ meaning:"How much influence one piece of information has on a result.",
+ example:"A callback request might count more than the number of previous messages.",
+ why:"Giving one factor more weight can change who is flagged, prioritized, or overlooked."
+ },
+ "threshold":{
+ term:"Threshold",
+ meaning:"The cutoff where a system changes what happens next.",
+ example:"Scores of 60 or higher may be sent for additional review.",
+ why:"Moving the threshold changes who is included and excluded."
+ },
+ "output":{
+ term:"Output",
+ meaning:"What a system produces after processing information.",
+ example:"A ranked list, a score, a draft note, or a suggested resource can all be outputs.",
+ why:"An output is not automatically a fact or a decision. Someone still has to decide what to do with it."
+ },
+ "confidence":{
+ term:"Confidence",
+ meaning:"A measure a model may use to express how strongly it favors one result over others. It is not the same as being correct.",
+ example:"A model can be highly confident and still be wrong.",
+ why:"Confidence can be mistaken for certainty."
+ },
+ "false-positive":{
+ term:"False positive",
+ meaning:"The system flags something as present when it is not.",
+ example:"A screening system sends a case for additional review even though the condition it is looking for is not actually present.",
+ why:"False positives can create extra burden, surveillance, worry, or unnecessary intervention."
+ },
+ "false-negative":{
+ term:"False negative",
+ meaning:"The system misses something that is actually present.",
+ example:"A case that needs additional review is not flagged.",
+ why:"The cost of missing something may fall unevenly across people and settings."
+ },
+ "proxy":{
+ term:"Proxy variable",
+ meaning:"A piece of information that stands in for, or is closely connected with, something else the system does not directly measure.",
+ example:"Past service use may partly reflect access barriers rather than actual level of need.",
+ why:"A proxy can carry historical patterns or inequities into a model."
+ },
+ "bias":{
+ term:"Bias",
+ meaning:"A systematic pattern that can produce unfair or distorted results.",
+ example:"A system built from records shaped by unequal access may reproduce those patterns.",
+ why:"Bias can enter through data, design choices, measurement, implementation, or how people act on outputs."
+ },
+ "human-review":{
+ term:"Human review",
+ meaning:"A person checks, interprets, or can change what a system produces.",
+ example:"A clinician reviews an AI-generated draft before it enters the record.",
+ why:"Human review helps only when the person has enough time, authority, information, and skill to catch problems."
+ },
+ "override":{
+ term:"Override",
+ meaning:"A person can reject or change a system's recommendation or result.",
+ example:"A worker moves a case up the queue because important context was not captured by the score.",
+ why:"An override matters only if people are allowed and supported to use it."
+ },
+ "decision-support":{
+ term:"Decision support",
+ meaning:"Technology that supplies information or suggestions intended to help a person make a decision.",
+ example:"A tool suggests resources, but a worker and client decide whether any are useful.",
+ why:"Decision support can become de facto decision-making if people are expected to follow the system automatically."
+ },
+ "data-drift":{
+ term:"Data drift",
+ meaning:"A change over time in the patterns of data a model sees compared with what it was built or tested on.",
+ example:"A model developed before a major policy change may perform differently after the policy changes who seeks services.",
+ why:"A system that once performed acceptably may not keep performing the same way."
+ },
+ "hallucination":{
+ term:"Hallucination",
+ meaning:"When a generative AI system produces information that sounds plausible but is unsupported or false.",
+ example:"A draft note states that a person denied a symptom even though that question was never discussed.",
+ why:"Polished wording can make invented information hard to notice."
+ },
+ "explainability":{
+ term:"Explainability",
+ meaning:"How well people can understand why a system produced a result.",
+ example:"A worker can see which factors contributed to a prioritization score.",
+ why:"People may need an explanation in order to question, correct, or appeal a result."
+ },
+ "transparency":{
+ term:"Transparency",
+ meaning:"Being clear that technology is being used, what role it plays, what information it uses, and what its limits are.",
+ example:"A patient is told that a note assistant creates a draft that the clinician must review.",
+ why:"People cannot make informed choices about a process they do not know exists."
+ }
+ };
+
+ const roles = {
+ socialwork:{
+ name:"Social Worker",
+ summary:"Examples focus on access, case systems, client choice, documentation, resource matching, and professional judgment.",
+ lab1:{
+ title:"One intake record",
+ context:"A fictional person completed intake at a community agency. This is what the record holds.",
+ record:[
+ ["Stated needs","Housing support and food assistance"],
+ ["Missed contacts","3 in the past month"],
+ ["Address changes","2 in the past six months"],
+ ["Contact preference","Evening, by text"],
+ ["Worker's note","Works rotating shifts; regular bus route was discontinued last month"]
+ ],
+ rules:[
+ {rule:"IF stated needs include \"housing\" THEN add housing resource list",fired:true},
+ {rule:"IF stated needs include \"food\" THEN add food resource list",fired:true},
+ {rule:"IF missed contacts \u2265 3 THEN attach \"engagement concern\" flag",fired:true},
+ {rule:"IF safety concern documented THEN route to supervisor",fired:false}
+ ],
+ rulesResult:"Output: housing list + food list + ENGAGEMENT CONCERN flag attached to the file.",
+ rulesLesson:"Every rule fired exactly as written - including the engagement flag. The rules cannot read the worker's note about shift work and the discontinued bus route. A rule matches literal fields; it does not understand them.",
+ pred:{fields:[["Missed contacts","3","\u00d7 3 points","= 9"],["Address changes","2","\u00d7 2 points","= 4"],["Base score","","","= 20"]],total:33,cutoff:30,above:"33 \u2265 30 \u2192 case moved to PRIORITY OUTREACH review",lesson:"The model used exactly two fields. The stated needs, the contact preference, and the worker's note contributed nothing - they were never inputs. A person became the number 33."},
+ gen:{sentences:[
+ "Client requested housing support and food assistance at intake.",
+ "Client missed three scheduled contacts and reported two address changes.",
+ "Client's pattern suggests low motivation to engage with services.",
+ "Client asked to be contacted in the evening by text."
+ ],badIndex:2,
+ why:"Nothing in the record says anything about motivation. The record actually contains a plausible explanation - rotating shifts and a discontinued bus route - that points the other way. The sentence reads smoothly, which is exactly what makes it dangerous in a case file.",
+ missPraise:"That sentence is supported - check it against the record fields. One of the other sentences added a judgment the record never made."},
+ humanPrompt:"Before revealing anything: if this were your case, what would you want to ask this person first?",
+ humanNote:"A worker reading the whole record might connect the missed contacts to the shift work and the lost bus route, and offer evening text contact - which the person already asked for. None of the three systems used the worker's note or the contact preference. The most important fields in this record were the ones no system touched."
+ },
+ lab2:{
+ intro:"A fictional agency scores open cases to decide which get priority outreach. You set how much each factor counts and where the cutoff sits. Four real-feeling people are waiting on your line.",
+ aLabel:"Weight: missed contacts",
+ bLabel:"Weight: recent address changes",
+ flagVerb:"Priority outreach",
+ skipVerb:"Standard queue",
+ people:[
+ {name:"Dana",a:3,b:2,needs:false,context:"Missed contacts were during rotating night shifts; already stably housed and doing fine."},
+ {name:"Marcus",a:1,b:0,needs:true,context:"Only one missed contact, no moves - but lost his job last week and is running out of food."},
+ {name:"Rosa",a:2,b:3,needs:true,context:"Three moves in six months because she's fleeing an unsafe situation and needs urgent help."},
+ {name:"Ken",a:2,b:1,needs:false,context:"A couple of missed calls during a planned vacation; asked to pause services and is fine."}
+ ]
+ },
+ lab3:{
+ intro:"An outreach score flags people for priority based on missed contacts and address changes. Devon and Renata both scored the same, so the system queues them identically.",
+ cases:[
+ ["Devon","3 missed contacts, 2 address changes.","Priority outreach"],
+ ["Renata","3 missed contacts, 2 address changes.","Priority outreach"]
+ ],
+ contexts:[
+ {text:"Devon missed contacts because a bus route was cut and he works rotating night shifts.",changes:true,canSee:false,
+ verdict:"Changes the meaning - and no system saw it. The score reads \u201Cdisengaged,\u201D but this is an access barrier. The bus route and shift schedule were never fields in the data."},
+ {text:"Renata's two address changes are both within the same apartment building (unit corrections).",changes:true,canSee:false,
+ verdict:"Changes the meaning - and no system saw it. \u201CTwo moves\u201D sounds like instability; it was a clerical fix. The system counted the number, not the reason."},
+ {text:"Both records were entered on a Tuesday.",changes:false,canSee:true,
+ verdict:"The system can see this - and it doesn't matter. Not every visible fact is meaningful; the meaningful facts here happen to be the invisible ones."}
+ ],
+ close:"The two pieces of context that actually change what the score means are exactly the two the system could not see. The data flattened very different situations into one number - and the only fact it could see was the one that didn't matter."
+ },
+ lab4:{
+ intro:"A resource-matching tool is used after intake.",
+ steps:["Needs and preferences are entered.","The system matches categories and ranks resources.","A list of suggested resources appears.","A social worker reviews the list with the client.","The client can correct information, reject suggestions, or ask for another approach."],
+ questions:["What happens if the top result is outdated or culturally inappropriate?","Can the person see why a resource appeared?","Can a worker easily ignore the ranking?"]
+ },
+ lab5:{
+ source:"A client missed three scheduled contacts during changing work shifts and transportation problems. The client requested evening contact and text reminders. No urgent safety concern is documented.",
+ summaries:[
+ {label:"A",text:"The client has demonstrated poor engagement and inconsistent follow-through. Increased monitoring may be needed.",faithful:false,feedback:"This changes the meaning. 'Poor engagement' and 'inconsistent follow-through' are judgments, and 'increased monitoring' adds an action the source does not support."},
+ {label:"B",text:"The client missed three contacts during work-schedule and transportation changes and requested evening contact and text reminders. No urgent safety concern is documented.",faithful:true,feedback:"This stays closest to the source. It preserves the work and transportation context, the requested accommodations, and the documented safety information without adding a judgment."},
+ {label:"C",text:"The client appears resistant to services and at elevated risk of disengagement.",faithful:false,feedback:"This changes the meaning. 'Resistant' is an unsupported label, and 'elevated risk of disengagement' adds certainty the source does not establish."}
+ ]
+ },
+ lab6:{
+ title:"Automated intake and resource matching",
+ scenario:"Leadership proposes making automated resource matching the default first step because staff time is limited.",
+ safety:"Could the process increase confusion, unwanted disclosure, surveillance, or exclusion?",
+ trust:"Will people know the tool is being used and what it can and cannot do?",
+ peer:"How can people with lived experience identify what the tool misses?",
+ collab:"Were workers and people receiving services involved in deciding how it should be used?",
+ choice:"Can someone decline the tool, ask for a human conversation, or correct the information used?",
+ culture:"Whose language, family structure, disability, cultural context, or community resources might be misunderstood?"
+ },
+ lab7:{
+ title:"Long intake waits",
+ scenario:"An agency wants to reduce the time people wait for an initial connection.",
+ options:[
+ ["AI-supported","Use an AI-supported intake assistant to gather and summarize information before a worker reviews it.","What would it improve? What privacy, consent, accuracy, and review burdens would it create?"],
+ ["Simpler technology","Use a shorter online form, text reminders, and clearer scheduling options.","Would simpler technology solve enough of the problem with less risk?"],
+ ["Staffing/workflow","Change staffing, hours, triage responsibilities, or intake workflow.","Is the actual problem insufficient capacity rather than missing technology?"]
+ ],
+ larger:"What evidence would help you decide? Who defined the problem? Who experiences the burden now, and who would carry any new burden?"
+ }
+ },
+
+ nurse:{
+ name:"Nurse",
+ summary:"Examples focus on workflow, handoffs, patient communication, documentation, review burden, and professional judgment.",
+ lab1:{
+ title:"One patient's portal activity",
+ context:"A fictional patient's recent activity in a clinic's system. This is what the record holds.",
+ record:[
+ ["Portal messages","2 non-urgent messages about follow-up scheduling"],
+ ["Days waiting","4 business days without a response"],
+ ["New symptoms reported","None"],
+ ["Chart note","Caring for a parent at home; asked whether phone calls are possible instead of portal messages"]
+ ],
+ rules:[
+ {rule:"IF message topic = \"scheduling\" THEN route to scheduling queue",fired:true},
+ {rule:"IF new symptoms reported THEN route to triage nurse",fired:false},
+ {rule:"IF messages \u2265 2 on same topic THEN attach \"repeat contact\" tag",fired:true},
+ {rule:"IF days waiting \u2265 5 THEN escalate to charge nurse",fired:false}
+ ],
+ rulesResult:"Output: routed to scheduling queue with a REPEAT CONTACT tag. No escalation (4 days is under the 5-day rule).",
+ rulesLesson:"The rules worked exactly as written - which means the patient sits one day short of escalation while a \"repeat contact\" tag frames them as the problem. The chart note about caregiving and preferring phone calls matched no rule, so it did nothing.",
+ pred:{fields:[["Days waiting","4","\u00d7 3 points","= 12"],["Repeat messages","2","\u00d7 2 points","= 4"],["Base score","","","= 18"]],total:34,cutoff:35,above:"34 < 35 \u2192 message stays in the STANDARD review queue",lesson:"One point short of priority. The model counted days and message volume - it has no field for \"caring for a parent\" or \"portal is hard for me.\" The patient's actual barrier was never an input."},
+ gen:{sentences:[
+ "Patient sent two portal messages regarding follow-up scheduling.",
+ "Four business days have passed without a clinic response.",
+ "Patient appears increasingly anxious about their care.",
+ "No new symptoms were reported."
+ ],badIndex:2,
+ why:"The record documents message counts and dates - nothing about the patient's emotional state. \"Appears increasingly anxious\" is an inference dressed as an observation, and once it enters a chart, later readers treat it as something someone witnessed.",
+ missPraise:"That sentence is supported - check it against the record fields. One of the other sentences added an observation nobody made."},
+ humanPrompt:"Before revealing anything: what would you check before deciding how urgent this message is?",
+ humanNote:"A nurse reading the chart note might simply call the patient - which is what they asked for. The note explaining the caregiving situation and the phone preference was invisible to all three systems: it matched no rule, carried no weight, and the generative draft replaced it with invented anxiety."
+ },
+ lab2:{
+ intro:"A fictional clinic scores non-urgent portal messages to decide which nurses review first. You set the weights and the cutoff. Four patients are waiting on your line.",
+ aLabel:"Weight: days waiting",
+ bLabel:"Weight: repeated messages",
+ flagVerb:"Priority review",
+ skipVerb:"Standard queue",
+ people:[
+ {name:"Priya",a:1,b:4,needs:false,context:"Four messages in two days - all about a parking question for an appointment. Nothing clinical."},
+ {name:"Sam",a:2,b:1,needs:true,context:"Waited a few days, messaged once - politely, but describing a symptom that's getting worse."},
+ {name:"Ana",a:5,b:1,needs:true,context:"Waited over a week with no reply; only messaged once because reaching the portal is hard for her."},
+ {name:"Tom",a:1,b:3,needs:false,context:"Several messages, but each one just says thanks or confirms he got the last reply."}
+ ]
+ },
+ lab3:{
+ intro:"A workflow score prioritizes portal messages by days waiting and message count. Two patients scored identically, so the queue treats them the same.",
+ cases:[
+ ["Patient A","4 days waiting, 2 messages.","Priority review"],
+ ["Patient B","4 days waiting, 2 messages.","Priority review"]
+ ],
+ contexts:[
+ {text:"Patient A's second message says a symptom is getting worse; the first was purely administrative.",changes:true,canSee:false,
+ verdict:"Changes the meaning - and the score couldn't see it. \u201CTwo messages\u201D is a count; whether one of them signals a worsening symptom is content the workflow score never reads."},
+ {text:"Patient B's refill question was already resolved by another department; the messages are duplicates.",changes:true,canSee:false,
+ verdict:"Changes the meaning - and the score couldn't see it. The same count here means a closed issue, not an urgent one. The reason never became data."},
+ {text:"Both patients use the same insurance plan.",changes:false,canSee:true,
+ verdict:"The system can see this - and it doesn't matter here. A visible field that has no bearing on urgency; the facts that do matter are the unread ones."}
+ ],
+ close:"The context that actually changes urgency - what the messages say - is exactly what the score can't read. It counts messages; it can't tell a worsening symptom from a duplicate."
+ },
+ lab4:{
+ intro:"A clinic uses automated message prioritization.",
+ steps:["Portal and scheduling data are recorded.","The system assigns a priority score.","Messages appear in a reordered work queue.","A nurse reviews and responds.","The nurse can override the order when context requires it."],
+ questions:["Can staff see why the message was ranked where it was?","What happens if someone communicates differently because of language or disability?","Is the override easy enough to use in a busy workflow?"]
+ },
+ lab5:{
+ source:"A patient sent two non-urgent portal messages asking when a follow-up appointment would be scheduled. Four business days had passed. No new symptoms were reported.",
+ summaries:[
+ {label:"A",text:"The patient is repeatedly contacting the clinic and appears increasingly anxious about follow-up.",faithful:false,feedback:"This changes the meaning. The source documents two scheduling messages, but it does not establish increasing anxiety."},
+ {label:"B",text:"The patient sent two portal messages about follow-up scheduling after four business days without a response. No new symptoms were reported.",faithful:true,feedback:"This stays faithful to the available information. It reports the contact pattern, the delay, and the absence of new symptoms without adding an emotional interpretation."},
+ {label:"C",text:"Frequent messaging may indicate escalating concern and should be monitored closely.",faithful:false,feedback:"This changes the meaning. It turns two scheduling messages into 'escalating concern' and adds a monitoring recommendation that the source does not support."}
+ ]
+ },
+ lab6:{
+ title:"Automated workflow prioritization",
+ scenario:"The clinic proposes using a message-prioritization score as the default order for non-urgent patient messages.",
+ safety:"Could an important message wait because it does not match the pattern the score rewards?",
+ trust:"Do staff understand why messages are reordered and what the score cannot measure?",
+ peer:"How could patient or family advisory voices identify communication barriers the workflow misses?",
+ collab:"Were nurses and other frontline staff involved in designing the process and override rules?",
+ choice:"Can staff override the queue easily when context says something needs attention?",
+ culture:"Could language, disability, digital access, communication style, or caregiving roles change how the data look?"
+ },
+ lab7:{
+ title:"Overloaded message queue",
+ scenario:"Nursing staff report that non-urgent portal messages are backing up and response times are uneven.",
+ options:[
+ ["AI-supported","Use an AI system to summarize and prioritize messages.","Would it save time after review and correction are included? What might it miss?"],
+ ["Simpler technology","Improve routing rules, message categories, and automated acknowledgments.","Would clearer routing solve the workflow problem without interpreting patient meaning?"],
+ ["Staffing/workflow","Change staffing coverage, response standards, and role assignment.","Is the problem fundamentally capacity and workflow?"]
+ ],
+ larger:"Which option changes the actual workload? Which option shifts work somewhere else? What would patients notice?"
+ }
+ },
+
+ psychiatrist:{
+ name:"Psychiatrist",
+ summary:"Examples focus on clinical uncertainty, documentation, informed consent, record integrity, and AI-supported language.",
+ lab1:{
+ title:"One visit's documented facts",
+ context:"Facts a clinician entered after a fictional visit. This is what the record holds.",
+ record:[
+ ["Reported","Poor sleep and increased work stress over the past week"],
+ ["Risk screening","Denied current intent to harm self or others"],
+ ["Medication","No changes discussed this visit"],
+ ["Plan","Continue assessment at next appointment"],
+ ["Context noted","Patient described stress as tied to a temporary project deadline ending next week"]
+ ],
+ rules:[
+ {rule:"IF risk screening incomplete THEN block note signing",fired:false},
+ {rule:"IF required fields missing THEN flag for completion",fired:false},
+ {rule:"IF \"sleep\" mentioned THEN suggest sleep-hygiene handout",fired:true},
+ {rule:"IF medication change entered THEN require reconciliation step",fired:false}
+ ],
+ rulesResult:"Output: note passes structural checks; sleep-hygiene handout suggested.",
+ rulesLesson:"Structurally, this note is perfect - every required field is filled. The rules can verify completeness, not meaning. A complete note and a clinically accurate note are different things, and only one of them is checkable by a rule.",
+ pred:{fields:[["Missing fields","0","\u00d7 2 points","= 0"],["Conflicting entries","0","\u00d7 3 points","= 0"],["Base score","","","= 16"]],total:16,cutoff:22,above:"16 < 22 \u2192 note follows the STANDARD signing process, no extra review",lesson:"The documentation-quality score sees a clean note and waves it through. If the note contained a subtle clinical mischaracterization in perfect prose, this model would never know - it measures structure, not truth."},
+ gen:{sentences:[
+ "Patient reported poor sleep and increased work stress over the past week.",
+ "Patient presents with worsening psychiatric instability related to occupational stress.",
+ "Patient denied current intent to harm self or others.",
+ "Further assessment is planned for the next appointment."
+ ],badIndex:1,
+ why:"\"Worsening psychiatric instability\" is a clinical conclusion the visit facts do not establish - the record describes a week of poor sleep tied to a deadline that ends next week. Once that phrase is in the chart, it can follow the patient into every future record that quotes it.",
+ missPraise:"That sentence tracks the documented facts - compare each against the record. One of the others escalated the facts into a diagnosis-flavored conclusion."},
+ humanPrompt:"Before revealing anything: which sentence in a draft like this would you read most carefully before signing?",
+ humanNote:"A psychiatrist reading the context line - a temporary deadline ending next week - might frame this as situational stress worth monitoring, not instability. That context matched no rule, carried no weight in the quality score, and was the exact thing the generative draft overwrote."
+ },
+ lab2:{
+ intro:"A fictional service scores draft notes to flag which get a second human review before signing. You set the weights and the cutoff. Four notes are waiting on your line.",
+ aLabel:"Weight: missing fields",
+ bLabel:"Weight: conflicting entries",
+ flagVerb:"Extra review",
+ skipVerb:"Standard signing",
+ people:[
+ {name:"Note A",a:3,b:0,needs:false,context:"Three fields left blank on purpose - topics deferred to next visit. The note is accurate."},
+ {name:"Note B",a:0,b:0,needs:true,context:"Perfectly complete, no conflicts - but contains a subtle clinical mischaracterization in fluent prose."},
+ {name:"Note C",a:1,b:2,needs:true,context:"A real contradiction between two sections that should be reconciled before signing."},
+ {name:"Note D",a:2,b:0,needs:false,context:"Two blanks because the visit was brief and uneventful. Nothing to catch."}
+ ]
+ },
+ lab3:{
+ intro:"A documentation-quality score flags notes for extra review by counting missing fields and conflicting entries. Note A and Note B scored the same, so both are flagged identically.",
+ cases:[
+ ["Note A","2 blank fields, 1 conflict.","Extra review"],
+ ["Note B","2 blank fields, 1 conflict.","Extra review"]
+ ],
+ contexts:[
+ {text:"Note A's conflict is a real contradiction between the history and the assessment that must be reconciled.",changes:true,canSee:false,
+ verdict:"Changes the meaning - and the score can't tell. It counts that a conflict exists; it can't judge whether the conflict is clinically serious or trivial."},
+ {text:"Note B's blank fields were left empty on purpose because those topics were deferred to the next visit.",changes:true,canSee:false,
+ verdict:"Changes the meaning - and the score can't tell. \u201CMissing\u201D and \u201Cintentionally deferred\u201D look identical to a field-counter. Only a clinician knows which it is."},
+ {text:"Both notes are longer than the clinic's average note.",changes:false,canSee:true,
+ verdict:"The system can see this - and it's beside the point. Length is measurable and meaningless here; the meaningful facts are the ones about intent, which no count captures."}
+ ],
+ close:"A structural score can count blanks and conflicts, but it can't tell a real contradiction from a deferred topic. The facts that decide whether review is warranted are exactly the ones it can't see."
+ },
+ lab4:{
+ intro:"A generative note assistant creates draft assessment language.",
+ steps:["Visit information is entered or captured.","The system generates a draft assessment.","The draft appears in the documentation workspace.","The psychiatrist reviews, edits, and signs.","Errors can be corrected before the note becomes final."],
+ questions:["Does the workflow make unsupported language easy to notice?","What happens when the draft sounds more polished than the source information?","How much review time is actually available?"]
+ },
+ lab5:{
+ source:"The patient described poor sleep and increased work stress over the past week. The patient denied current intent to harm self or others. The clinician planned to continue assessment.",
+ summaries:[
+ {label:"A",text:"The patient presents with worsening psychiatric instability related to occupational stress.",faithful:false,feedback:"This changes the meaning. 'Worsening psychiatric instability' is a stronger clinical conclusion than the source supports, and the causal link to work stress is also inferred."},
+ {label:"B",text:"The patient reported poor sleep and increased work stress over the past week. The patient denied current intent to harm self or others. Further assessment is planned.",faithful:true,feedback:"This stays faithful to the source. It reports what was said, preserves the documented safety statement, and keeps the plan for further assessment."},
+ {label:"C",text:"Symptoms appear to be escalating, although acute risk remains low.",faithful:false,feedback:"This changes the meaning. 'Escalating' and 'acute risk remains low' introduce clinical judgments that were not established in the source."}
+ ]
+ },
+ lab6:{
+ title:"Generative documentation support",
+ scenario:"A behavioral health service proposes offering a generative note assistant for clinicians who want to use it.",
+ safety:"What unsupported interpretations could enter the record and affect later care?",
+ trust:"What should patients know about how information is processed and how drafts are reviewed?",
+ peer:"How might people with lived experience identify stigmatizing or harmful language in records?",
+ collab:"Who should help set acceptable uses, review requirements, and limits?",
+ choice:"Can clinicians decline the tool, and can patients raise concerns about its use?",
+ culture:"Could the system flatten cultural meaning, communication style, disability, family context, or culturally grounded expressions of distress?"
+ },
+ lab7:{
+ title:"Documentation burden",
+ scenario:"Clinicians report spending substantial time completing documentation after visits.",
+ options:[
+ ["AI-supported","Use a generative note assistant to produce first drafts.","How much correction is needed? What happens to consent, privacy, accuracy, and record integrity?"],
+ ["Simpler technology","Improve templates, smart phrases, and structured workflows.","Could a simpler tool reduce burden without generating clinical interpretation?"],
+ ["Staffing/workflow","Change documentation expectations, workload, visit structure, or support staffing.","Is the burden being caused by policy and workload rather than a lack of AI?"]
+ ],
+ larger:"Which option reduces burden without creating a new burden of checking, correcting, explaining, or defending the output?"
+ }
+ },
+
+ publichealth:{
+ name:"Public Health",
+ summary:"Examples focus on population data, outreach, resource allocation, surveillance, historical inequity, and community voice.",
+ lab1:{
+ title:"One neighborhood's data profile",
+ context:"What a fictional health department's dataset holds about one neighborhood being considered for mobile outreach.",
+ record:[
+ ["Recorded preventive service use","Low relative to nearby areas"],
+ ["Transit access","Limited; no direct route to the clinic"],
+ ["Prior outreach events","Fewer than surrounding neighborhoods"],
+ ["Not in the dataset","A community health worker reports strong attendance at church-based health fairs and a years-old request for evening mobile hours"]
+ ],
+ rules:[
+ {rule:"IF service use below regional median THEN add to outreach candidate list",fired:true},
+ {rule:"IF transit access = limited THEN apply access multiplier",fired:true},
+ {rule:"IF active outreach contract exists THEN exclude from new list",fired:false},
+ {rule:"IF community advisory input filed THEN attach to record",fired:false}
+ ],
+ rulesResult:"Output: added to outreach candidate list with access multiplier applied. No advisory input attached - none was ever filed in this system.",
+ rulesLesson:"The last rule is the quiet one: community input can only attach if someone entered it into this database. The church health fairs and the evening-hours request live in a community worker's knowledge, not in a filing system - so to the rules, they don't exist.",
+ pred:{fields:[["Low service use","yes","\u00d7 2 points","= 2"],["Travel distance","high","\u00d7 3 points","= 3"],["Base score","","","= 15"]],total:20,cutoff:18,above:"20 \u2265 18 \u2192 neighborhood ranked into the FIRST outreach phase",lesson:"The ranking looks responsive - the neighborhood \"wins\" first-phase outreach. But low recorded use drove the score, and recorded use is a proxy (a stand-in measure): here it may reflect people using church-based services the dataset never counted."},
+ gen:{sentences:[
+ "The neighborhood shows low recorded use of preventive services relative to nearby areas.",
+ "Transit access is limited, with no direct route to the clinic.",
+ "Residents in this area appear less engaged with prevention efforts.",
+ "The area has had fewer outreach events than surrounding neighborhoods."
+ ],badIndex:2,
+ why:"\"Less engaged\" turns a data gap into a judgment about residents. The unrecorded reality - strong church health-fair attendance - says the opposite. A briefing memo with that sentence in it shapes how every planner reads this neighborhood.",
+ missPraise:"That sentence restates recorded data - check it against the profile. One of the others converted missing data into a claim about the residents themselves."},
+ humanPrompt:"Before revealing anything: what would you want to know about this neighborhood that a service database probably can't tell you?",
+ humanNote:"A public health worker who calls the community health worker learns attendance is strong at church-based events and that residents asked for evening mobile hours years ago. That knowledge existed the whole time - outside every dataset. All three systems ran on what was recorded; the person could go find what wasn't."
+ },
+ lab2:{
+ intro:"A fictional health department scores neighborhoods to decide where a limited mobile program starts. You set the weights and the cutoff. Four neighborhoods are waiting on your line.",
+ aLabel:"Weight: travel distance to clinic",
+ bLabel:"Weight: low recorded service use",
+ flagVerb:"First outreach phase",
+ skipVerb:"Later phase",
+ people:[
+ {name:"Elmwood",a:1,b:4,needs:false,context:"Low recorded use - because residents already get strong care at church-based health fairs the dataset never counted."},
+ {name:"Bayside",a:2,b:1,needs:true,context:"Middling numbers, but a recent clinic closure left residents with real unmet need that hasn't shown up yet."},
+ {name:"Northgate",a:5,b:2,needs:true,context:"Far from care and genuinely underserved; asked for mobile hours years ago and never got them."},
+ {name:"Cedar Park",a:1,b:3,needs:false,context:"Low recorded use because it's a small, well-resourced area - most residents use a nearby private clinic."}
+ ]
+ },
+ lab3:{
+ intro:"An outreach-priority score ranks neighborhoods by recorded service use and travel distance. Northside and Weston scored the same, so both land at high priority.",
+ cases:[
+ ["Northside","Low recorded use, long travel distance.","High priority"],
+ ["Weston","Low recorded use, long travel distance.","High priority"]
+ ],
+ contexts:[
+ {text:"Northside has asked the department for mobile services for years with no response.",changes:true,canSee:false,
+ verdict:"Changes the meaning - and the score missed it. Here low recorded use reflects genuine unmet need. The years of requests live in emails and meeting notes, not the dataset."},
+ {text:"Weston's residents get strong care at community clinics the department's dataset doesn't track.",changes:true,canSee:false,
+ verdict:"Changes the meaning - and the score missed it. Same low number, opposite reality: care is happening, just not where the data can count it."},
+ {text:"Both neighborhoods are within the same county.",changes:false,canSee:true,
+ verdict:"The system can see this - and it decides nothing. A visible administrative fact with no bearing on need; the deciding facts are outside the data entirely."}
+ ],
+ close:"Low recorded use is a proxy - a stand-in. In one place it means real unmet need; in another it means care the dataset can't see. The score treats both the same, because the truth was never in the data."
+ },
+ lab4:{
+ intro:"A health department uses neighborhood-level data to plan outreach.",
+ steps:["Administrative and geographic data are collected.","The system creates a neighborhood priority score.","A ranked list is produced.","Staff choose where mobile outreach begins.","Communities can add local context and challenge the ranking."],
+ questions:["Are community-defined priorities part of the process?","Can the model distinguish low access from low need?","What happens to neighborhoods ranked lower?"]
+ },
+ lab5:{
+ source:"A neighborhood has low recorded use of one preventive service, limited transit access, and fewer prior outreach events than nearby areas. Community-engagement data were not included.",
+ summaries:[
+ {label:"A",text:"The neighborhood shows low prevention engagement and limited responsiveness to existing services.",faithful:false,feedback:"This changes the meaning. Administrative service-use data are being turned into claims about community engagement and responsiveness."},
+ {label:"B",text:"The neighborhood has low recorded use of one preventive service, limited transit access, and fewer prior outreach events. Community-engagement data were not included.",faithful:true,feedback:"This stays faithful to the source. It distinguishes recorded service use from community engagement and names an important data gap."},
+ {label:"C",text:"Residents in this area appear less likely to participate in prevention efforts.",faithful:false,feedback:"This changes the meaning. It makes a claim about residents' likely behavior that the available data do not establish."}
+ ]
+ },
+ lab6:{
+ title:"Data-informed community outreach",
+ scenario:"A health department proposes using neighborhood scoring to prioritize the first phase of mobile outreach.",
+ safety:"Could the system increase surveillance, stigma, or concentrated intervention in communities already over-scrutinized?",
+ trust:"Do communities know what data are being used and how the ranking affects resources?",
+ peer:"How are community members and people with lived experience involved before and after the model is used?",
+ collab:"Who gets to define need, success, and the purpose of outreach?",
+ choice:"Can communities question the ranking, add context, or redirect the strategy?",
+ culture:"How could historical disinvestment, racism, language access, disability, migration, or local knowledge change interpretation?"
+ },
+ lab7:{
+ title:"Limited mobile outreach capacity",
+ scenario:"A health department can only begin a new mobile service in a few locations at first.",
+ options:[
+ ["Predictive/ranking","Use a data model to rank neighborhoods.","Will the available data reproduce historical underinvestment or miss community-defined need?"],
+ ["Simpler allocation","Use transparent criteria such as travel distance, wait times, and service gaps.","Would simpler criteria be easier to explain and challenge?"],
+ ["Community-led","Use community advisory processes and rotating access rather than a ranking model.","Would shared decision-making produce a more legitimate allocation process?"]
+ ],
+ larger:"What does fairness mean here: equal distribution, greatest measured need, historical repair, community-defined priority, or something else?"
+ }
+ },
+
+ peer:{
+ name:"Peer Mentor / Worker",
+ summary:"Examples focus on trust, mutuality, voluntary participation, lived experience, boundaries, and the difference between supporting relationship and simulating it.",
+ lab1:{
+ title:"One participant's check-in history",
+ context:"A fictional peer-support program's record for one participant who opted into automated check-ins.",
+ record:[
+ ["Automated check-ins sent","2, both unanswered"],
+ ["Callback request","Yes - requested a peer callback directly"],
+ ["Preferred contact time","Late afternoon"],
+ ["Reason given for callback","None provided"],
+ ["Opt-in note","Chose check-ins \"to try it out\"; said they'd rather talk to a person for anything real"]
+ ],
+ rules:[
+ {rule:"IF check-in unanswered THEN send one reminder",fired:true},
+ {rule:"IF callback requested THEN add to peer callback list",fired:true},
+ {rule:"IF unanswered check-ins \u2265 2 THEN mark \"low responsiveness\"",fired:true},
+ {rule:"IF crisis keyword detected THEN alert on-call peer",fired:false}
+ ],
+ rulesResult:"Output: reminder sent, added to callback list, and marked LOW RESPONSIVENESS.",
+ rulesLesson:"Look at what the rules did together: the person asked for exactly what the program exists to provide - a peer - and the same system that queued the callback also labeled them \"low responsiveness\" for ignoring the robot. The opt-in note explains the whole pattern, and no rule can read it.",
+ pred:{fields:[["Callback requested","yes","\u00d7 3 points","= 3"],["Unanswered check-ins","2","\u00d7 2 points","= 4"],["Base score","","","= 18"]],total:25,cutoff:24,above:"25 \u2265 24 \u2192 request moved EARLIER in the callback list",lesson:"Notice what pushed them up the list: partly the callback request, partly the unanswered check-ins - the model rewards the very behavior the rules just flagged as a problem. Two systems, same data, opposite meanings, and neither knows the person just prefers humans."},
+ gen:{sentences:[
+ "Participant requested a peer callback and prefers late-afternoon contact.",
+ "Two automated check-ins were sent and went unanswered.",
+ "Participant appears disengaged but may be receptive to peer intervention.",
+ "No reason for the callback request was provided."
+ ],badIndex:2,
+ why:"\"Disengaged\" and \"intervention\" recast a person exercising a preference as a person with a problem. The record shows someone using the program exactly as designed - skipping the automation and asking for a human. In peer work, that framing shift is the whole ballgame.",
+ missPraise:"That sentence sticks to the record - verify it field by field. One of the others turned a preference into a clinical-sounding concern."},
+ humanPrompt:"Before revealing anything: what does requesting a person, while ignoring the robot, most likely mean here?",
+ humanNote:"A peer worker who reads the opt-in note sees this instantly: the participant told the program at the start that automation wasn't for them and a person was. They then behaved exactly as they said they would. Every system read that consistency as a warning sign; a person can read it as someone keeping their word."
+ },
+ lab2:{
+ intro:"A fictional peer program scores callback requests to decide who a peer worker reaches first. You set the weights and the cutoff. Four participants are waiting on your line.",
+ aLabel:"Weight: requested a callback",
+ bLabel:"Weight: unanswered check-ins",
+ flagVerb:"Earlier callback",
+ skipVerb:"Standard order",
+ people:[
+ {name:"Jordan",a:0,b:4,needs:false,context:"Ignored four automated check-ins - because they're doing well and told the program they'd reach out if needed."},
+ {name:"Alex",a:1,b:0,needs:true,context:"Answered check-ins but asked for a callback for the first time; something has shifted and they want a person."},
+ {name:"Sky",a:1,b:3,needs:true,context:"Requested a callback and stopped answering the robot - they said at intake automation isn't for them, a person is."},
+ {name:"Rae",a:0,b:2,needs:false,context:"A couple of missed check-ins while traveling; checked in later to say all is well, no callback wanted."}
+ ]
+ },
+ lab3:{
+ intro:"A callback score orders the queue by unanswered check-ins and callback requests. Mara and Theo scored the same, so both get an earlier callback.",
+ cases:[
+ ["Mara","2 unanswered check-ins, 1 callback request.","Earlier callback"],
+ ["Theo","2 unanswered check-ins, 1 callback request.","Earlier callback"]
+ ],
+ contexts:[
+ {text:"Mara's phone service was cut off for a week, so she never saw the check-ins.",changes:true,canSee:false,
+ verdict:"Changes the meaning - and the system couldn't know. \u201CUnanswered\u201D looks like avoidance; it was a dead phone. The reason isn't a field the program tracks."},
+ {text:"Theo ignores automated messages on principle but asked for a person directly - exactly as he said he would at intake.",changes:true,canSee:false,
+ verdict:"Changes the meaning - and the system couldn't know. Same numbers, but this is a person using the program as intended, not a warning sign. His stated preference never became data."},
+ {text:"Both joined the program in the same month.",changes:false,canSee:true,
+ verdict:"The system can see this - and it tells you nothing about either person's needs. A visible fact that doesn't change the meaning; the facts that do are the ones it can't see."}
+ ],
+ close:"Peer support runs on relationship and preference - exactly the things a check-in count can't hold. Same numbers, two very different people, and the reasons that distinguish them were never in the data."
+ },
+ lab4:{
+ intro:"A peer program uses optional automated check-ins.",
+ steps:["A participant opts in and selects contact preferences.","The system sends a preset check-in.","A response or callback request is recorded.","A peer worker receives the request.","The participant can change preferences, opt out, or ask for a person directly."],
+ questions:["Is it always clear when communication is automated?","Can a participant bypass the automation?","Does the tool protect the voluntary nature of peer support?"]
+ },
+ lab5:{
+ source:"A participant requested a peer callback after two automated check-ins went unanswered and selected late afternoon as the preferred contact time. No reason for the callback was provided.",
+ summaries:[
+ {label:"A",text:"The participant has been unresponsive and may need additional engagement from staff.",faithful:false,feedback:"This changes the meaning. 'Unresponsive' turns unanswered automation into a judgment about the person, and 'additional engagement' introduces an action the participant did not request."},
+ {label:"B",text:"The participant requested a peer callback after two unanswered automated check-ins and selected late afternoon as the preferred contact time. No reason for the callback was provided.",faithful:true,feedback:"This stays faithful to the source. It reports the request and preference without interpreting the unanswered automated messages."},
+ {label:"C",text:"The participant appears disengaged but may be receptive to peer intervention.",faithful:false,feedback:"This changes the meaning. 'Disengaged' is an unsupported label, and 'peer intervention' reframes a requested peer callback as a problem requiring intervention."}
+ ]
+ },
+ lab6:{
+ title:"Optional automated peer check-ins",
+ scenario:"A peer program proposes automated check-ins as one optional way for participants to request contact.",
+ safety:"Could the messages feel intrusive, coercive, or confusing about whether a person is talking with a peer or a system?",
+ trust:"Is it unmistakably clear when communication is automated and when a real peer worker becomes involved?",
+ peer:"Are peer workers and participants shaping the language, timing, and opt-out process?",
+ collab:"Do peers have real authority over how the tool is used?",
+ choice:"Can participants opt in, opt out, change preferences, and request a person directly?",
+ culture:"Could language, disability, digital access, community norms, or different understandings of peer support affect how the tool lands?"
+ },
+ lab7:{
+ title:"Difficulty reaching peer support",
+ scenario:"Participants report that it can take too long to connect with a peer worker.",
+ options:[
+ ["Automated support","Use automated check-ins and routing to help organize requests.","Does automation increase access without pretending to be peer relationship?"],
+ ["Simpler technology","Use text-based callback requests, clearer hours, and easier scheduling.","Would a simpler access tool solve the problem?"],
+ ["Peer capacity","Increase peer staffing, drop-in hours, or community-based options.","Is the core issue simply not enough peer availability?"]
+ ],
+ larger:"Does the proposed solution strengthen peer connection, or does it mainly make the system look more responsive?"
+ }
+ }
+ };
+
+ let currentRole = "socialwork";
+
+ const tooltip = document.getElementById("tooltip");
+ function showTooltip(el){
+ const key = el.dataset.term;
+ const item = glossary[key];
+ if(!item) return;
+ tooltip.textContent = item.meaning;
+ tooltip.classList.add("show");
+ const r = el.getBoundingClientRect();
+ const width = Math.min(320, window.innerWidth - 24);
+ tooltip.style.maxWidth = width+"px";
+ let left = Math.min(r.left, window.innerWidth - width - 12);
+ left = Math.max(12,left);
+ let top = r.bottom + 8;
+ if(top + 120 > window.innerHeight) top = Math.max(12, r.top - 100);
+ tooltip.style.left = left+"px";
+ tooltip.style.top = top+"px";
+ }
+ function hideTooltip(){ tooltip.classList.remove("show"); }
+ document.addEventListener("mouseover", e => { if(e.target.classList.contains("term")) showTooltip(e.target); });
+ document.addEventListener("mouseout", e => { if(e.target.classList.contains("term")) hideTooltip(); });
+ document.addEventListener("focusin", e => { if(e.target.classList.contains("term")) showTooltip(e.target); });
+ document.addEventListener("focusout", e => { if(e.target.classList.contains("term")) hideTooltip(); });
+ document.addEventListener("click", e => {
+ if(e.target.classList.contains("term")){
+ e.preventDefault();
+ showTooltip(e.target);
+ } else if(!tooltip.contains(e.target)) hideTooltip();
+ });
+
+ const roleButtons = Array.from(document.querySelectorAll(".role-btn"));
+ roleButtons.forEach(btn => btn.addEventListener("click", () => {
+ currentRole = btn.dataset.role;
+ roleButtons.forEach(b => b.classList.toggle("active", b===btn));
+ renderRole();
+ }));
+
+ const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+ const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+ function activateTab(tab){
+ tabs.forEach(t => t.setAttribute("aria-selected", String(t===tab)));
+ panels.forEach(p => p.classList.toggle("active", p.id===tab.getAttribute("aria-controls")));
+ tab.focus();
+ hideTooltip();
+ }
+ tabs.forEach((tab,index)=>{
+ tab.addEventListener("click",()=>activateTab(tab));
+ tab.addEventListener("keydown",e=>{
+ if(e.key==="ArrowRight"||e.key==="ArrowLeft"){
+ e.preventDefault();
+ const d=e.key==="ArrowRight"?1:-1;
+ activateTab(tabs[(index+d+tabs.length)%tabs.length]);
+ }
+ });
+ });
+
+ function esc(s){
+ return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
+ }
+
+ function renderRole(){
+ const r=roles[currentRole];
+ document.body.setAttribute("data-lens",currentRole);
+ for(let i=1;i<=7;i++){
+ const el=document.getElementById("lens-label-"+i);
+ if(el) el.textContent=r.name;
+ }
+ document.getElementById("role-summary").innerHTML="<strong>"+esc(r.name)+" lens:</strong> "+esc(r.summary);
+
+ // Lab 1 - technology test bench
+ document.getElementById("l1-title").textContent=r.lab1.title;
+ document.getElementById("l1-context").textContent=r.lab1.context;
+ document.getElementById("l1-record").innerHTML=r.lab1.record.map(row=>
+ "<tr><td>"+esc(row[0])+"</td><td>"+esc(row[1])+"</td></tr>"
+ ).join("");
+ resetLab1();
+
+ // Lab 2 - set the weights, meet the caseload
+ document.getElementById("l2-intro").textContent=r.lab2.intro;
+ document.getElementById("l2a-label").textContent=r.lab2.aLabel;
+ document.getElementById("l2b-label").textContent=r.lab2.bLabel;
+ document.getElementById("l2a").value=2;
+ document.getElementById("l2b").value=2;
+ document.getElementById("l2cut").value=10;
+ document.getElementById("l2-reveal-box").hidden=true;
+ updateLab2();
+
+ // Lab 3 - which context changes the meaning?
+ document.getElementById("l3-intro").textContent=r.lab3.intro;
+ document.getElementById("l3-cases").innerHTML=r.lab3.cases.map(c=>
+ '<div class="case-card"><h3>'+esc(c[0])+'</h3><p>'+esc(c[1])+'</p><div class="result">'+esc(c[2])+'</div></div>'
+ ).join("");
+ document.getElementById("l3-options").innerHTML=r.lab3.contexts.map((c,i)=>
+ '<button type="button" class="l3-context-btn" data-i="'+i+'">'+esc(c.text)+'<span class="verdict" id="l3-verdict-'+i+'" hidden></span></button>'
+ ).join("");
+ document.getElementById("l3-feedback").textContent="Pick a piece of context to see whether it changes the meaning - and whether any system could have known it.";
+ document.getElementById("l3-close").hidden=true;
+ const l3picked=new Set();
+ document.querySelectorAll(".l3-context-btn").forEach(btn=>btn.addEventListener("click",()=>{
+ const i=Number(btn.dataset.i);
+ const c=r.lab3.contexts[i];
+ const v=document.getElementById("l3-verdict-"+i);
+ v.textContent=c.verdict;
+ v.hidden=false;
+ btn.classList.remove("picked-yes","picked-no");
+ btn.classList.add(c.changes?"picked-yes":"picked-no");
+ l3picked.add(i);
+ if(l3picked.size===r.lab3.contexts.length){
+ document.getElementById("l3-close-text").textContent=r.lab3.close;
+ document.getElementById("l3-close").hidden=false;
+ }
+ }));
+
+ // Lab 4
+ document.getElementById("l4-intro").textContent=r.lab4.intro;
+ r.lab4.steps.forEach((s,i)=>document.getElementById("l4-"+(i+1)).textContent=s);
+ document.getElementById("l4-questions").innerHTML=r.lab4.questions.map(q=>"<li>"+esc(q)+"</li>").join("");
+ resetLab4();
+
+ // Lab 5
+ document.getElementById("l5-source").textContent=r.lab5.source;
+ document.getElementById("l5-summaries").innerHTML=r.lab5.summaries.map((s,i)=>
+ '<div class="summary-box" id="l5-summary-'+i+'"><h3>Summary '+esc(s.label)+'</h3><p>'+esc(s.text)+'</p>'+
+ '<div class="summary-actions" role="group" aria-label="Evaluate Summary '+esc(s.label)+'">'+
+ '<button type="button" class="action secondary l5-choice" data-i="'+i+'" data-choice="faithful">Stays faithful to the source</button>'+
+ '<button type="button" class="action secondary l5-choice" data-i="'+i+'" data-choice="changed">Changes the meaning</button></div>'+
+ '<div class="summary-feedback" id="l5-summary-feedback-'+i+'" aria-live="polite">Choose one response for this summary.</div></div>'
+ ).join("");
+ document.getElementById("l5-feedback").textContent="Work through all three summaries. The goal is to notice where polished language adds interpretation, certainty, or action that the source does not support.";
+ document.querySelectorAll(".l5-choice").forEach(btn=>btn.addEventListener("click",()=>{
+ const i=Number(btn.dataset.i);
+ const s=r.lab5.summaries[i];
+ const choseFaithful=btn.dataset.choice==="faithful";
+ const correct=choseFaithful===s.faithful;
+ const card=document.getElementById("l5-summary-"+i);
+ card.classList.remove("correct","incorrect");
+ card.classList.add(correct?"correct":"incorrect");
+ document.getElementById("l5-summary-feedback-"+i).innerHTML=
+ (correct?"<strong>Yes.</strong> ":"<strong>Look again.</strong> ")+esc(s.feedback);
+ }));
+
+ // Lab 6
+ document.getElementById("l6-title").textContent=r.lab6.title;
+ document.getElementById("l6-scenario").textContent=r.lab6.scenario;
+ ["safety","trust","peer","collab","choice","culture"].forEach(k=>document.getElementById("l6-"+k).textContent=r.lab6[k]);
+ document.querySelectorAll(".l6-toggle").forEach(btn=>{
+ btn.setAttribute("aria-expanded","false");
+ document.getElementById(btn.getAttribute("aria-controls")).hidden = true;
+ });
+ const expandAllBtn = document.getElementById("l6-expand-all");
+ if(expandAllBtn) expandAllBtn.textContent = "Open all six";
+
+ // Lab 7
+ document.getElementById("l7-title").textContent=r.lab7.title;
+ document.getElementById("l7-scenario").textContent=r.lab7.scenario;
+ document.getElementById("l7-options").innerHTML=r.lab7.options.map((o,i)=>
+ '<div class="option-card"><h3>'+esc(o[0])+'</h3><p>'+esc(o[1])+'</p><button type="button" class="action secondary l7-option" data-i="'+i+'">What should I question?</button></div>'
+ ).join("");
+ document.getElementById("l7-feedback").textContent="Choose any option to see what questions it raises. There is no single correct answer.";
+ document.getElementById("l7-larger").textContent=r.lab7.larger;
+ document.querySelectorAll(".l7-option").forEach(btn=>btn.addEventListener("click",()=>{
+ const item=r.lab7.options[Number(btn.dataset.i)];
+ document.getElementById("l7-feedback").innerHTML="<strong>"+esc(item[0])+":</strong> "+esc(item[2]);
+ }));
+ }
+
+ function updateLab2(){
+ const r=roles[currentRole];
+ const wa=Number(document.getElementById("l2a").value);
+ const wb=Number(document.getElementById("l2b").value);
+ const cut=Number(document.getElementById("l2cut").value);
+ document.getElementById("l2a-value").textContent=wa;
+ document.getElementById("l2b-value").textContent=wb;
+ document.getElementById("l2cut-value").textContent=cut;
+ const ppl=r.lab2.people;
+ // max possible score with current weights, for bar scaling
+ let maxScore=1;
+ ppl.forEach(p=>{ const s=p.a*wa+p.b*wb; if(s>maxScore) maxScore=s; });
+ let flaggedWhoNeed=0, flaggedTotal=0, missed=0, needTotal=0;
+ const rows=ppl.map(p=>{
+ const score=p.a*wa+p.b*wb;
+ const flagged=score>=cut;
+ if(p.needs) needTotal++;
+ if(flagged) flaggedTotal++;
+ if(flagged && p.needs) flaggedWhoNeed++;
+ if(!flagged && p.needs) missed++;
+ const mismatch=(flagged && !p.needs) || (!flagged && p.needs);
+ const pct=Math.round((score/maxScore)*100);
+ const cls="roster-row "+(flagged?"flagged":"skipped")+(mismatch?" mismatch":"");
+ return '<div class="'+cls+'">'+
+ '<span class="who">'+esc(p.name)+'</span>'+
+ '<span class="bar"><span style="width:'+pct+'%"></span></span>'+
+ '<span class="score-num">'+score+'</span>'+
+ '<span class="status">'+(flagged?esc(r.lab2.flagVerb):esc(r.lab2.skipVerb))+'</span>'+
+ '</div>';
+ }).join("");
+ document.getElementById("l2-roster").innerHTML=rows;
+ const wrongFlags=flaggedTotal-flaggedWhoNeed;
+ let tally;
+ if(missed===0 && wrongFlags===0){
+ tally="<strong>With this setting, your line matches who actually needs help.</strong> Try to break it - most weightings can't hold all four.";
+ } else {
+ const parts=[];
+ if(missed>0) parts.push(missed+" who need"+(missed===1?"s":"")+" help "+(missed===1?"is":"are")+" below your line");
+ if(wrongFlags>0) parts.push(wrongFlags+" who "+(wrongFlags===1?"doesn't":"don't")+" need it "+(wrongFlags===1?"is":"are")+" flagged");
+ tally="<strong>Your cutoff right now: "+parts.join(", and ")+".</strong> Reveal below to see who.";
+ }
+ document.getElementById("l2-tally").innerHTML=tally;
+ }
+ ["l2a","l2b","l2cut"].forEach(id=>document.getElementById(id).addEventListener("input",updateLab2));
+ document.getElementById("l2-reveal").addEventListener("click",()=>{
+ const r=roles[currentRole];
+ const wa=Number(document.getElementById("l2a").value);
+ const wb=Number(document.getElementById("l2b").value);
+ const cut=Number(document.getElementById("l2cut").value);
+ const html=r.lab2.people.map(p=>{
+ const score=p.a*wa+p.b*wb;
+ const flagged=score>=cut;
+ const right=(flagged===p.needs);
+ const tag=right?'<span class="tag ok">'+(flagged?"flagged - and needed it":"skipped - and was fine")+'</span>'
+ :'<span class="tag wrong">'+(flagged?"flagged - but was fine":"missed - but needed help")+'</span>';
+ return '<div class="reveal-person">'+tag+'<strong>'+esc(p.name)+'</strong>'+esc(p.context)+'</div>';
+ }).join("");
+ const box=document.getElementById("l2-reveal-box");
+ box.innerHTML="<strong>What the two numbers could not see:</strong><br>"+html+
+ '<p style="margin-top:8px">No weighting of these two factors flags everyone who needs help and no one who doesn\u2019t - because the reason each person is on the list never became a number. Someone still has to decide what counts, and what that costs.</p>';
+ box.hidden=false;
+ });
+
+ // ---- Lab 1 test bench ----
+ const l1Ran = {rules:false,pred:false,gen:false,human:false};
+
+ function resetLab1(){
+ Object.keys(l1Ran).forEach(k=>l1Ran[k]=false);
+ ["rules","pred","gen","human"].forEach(k=>{
+ document.getElementById("l1-"+k+"-out").hidden=true;
+ });
+ document.getElementById("l1-run-rules").setAttribute("aria-pressed","false");
+ document.getElementById("l1-run-pred").setAttribute("aria-pressed","false");
+ document.getElementById("l1-run-gen").setAttribute("aria-pressed","false");
+ document.getElementById("l1-run-human").setAttribute("aria-pressed","false");
+ document.getElementById("l1-compare").hidden=true;
+ document.getElementById("l1-human-note").hidden=true;
+ document.getElementById("l1-gen-feedback").textContent="Read each sentence against the record above, then click the one that added something the record does not say.";
+ }
+
+ function l1CheckAllRan(){
+ if(l1Ran.rules && l1Ran.pred && l1Ran.gen && l1Ran.human){
+ document.getElementById("l1-compare").hidden=false;
+ }
+ }
+
+ document.getElementById("l1-run-rules").addEventListener("click",()=>{
+ const d=roles[currentRole].lab1;
+ document.getElementById("l1-rules-trace").innerHTML=
+ d.rules.map(x=>
+ '<span class="trace-line '+(x.fired?"fired":"skipped")+'">'+
+ (x.fired?"\u2713 FIRED &nbsp;":"\u2013 skipped ")+esc(x.rule)+"</span>"
+ ).join("")+
+ '<span class="trace-line trace-result">'+esc(d.rulesResult)+"</span>";
+ document.getElementById("l1-rules-lesson").textContent=d.rulesLesson;
+ document.getElementById("l1-rules-out").hidden=false;
+ document.getElementById("l1-run-rules").setAttribute("aria-pressed","true");
+ l1Ran.rules=true; l1CheckAllRan();
+ });
+
+ document.getElementById("l1-run-pred").addEventListener("click",()=>{
+ const d=roles[currentRole].lab1;
+ document.getElementById("l1-pred-trace").innerHTML=
+ d.pred.fields.map(f=>
+ '<span class="trace-line">'+esc(f[0])+": "+esc(f[1])+" "+esc(f[2])+" <strong>"+esc(f[3])+"</strong></span>"
+ ).join("")+
+ '<span class="trace-line trace-result">Total: '+d.pred.total+" &nbsp;|&nbsp; Cutoff: "+d.pred.cutoff+"<br>"+esc(d.pred.above)+"</span>";
+ document.getElementById("l1-pred-lesson").textContent=d.pred.lesson;
+ document.getElementById("l1-pred-out").hidden=false;
+ document.getElementById("l1-run-pred").setAttribute("aria-pressed","true");
+ l1Ran.pred=true; l1CheckAllRan();
+ });
+
+ document.getElementById("l1-run-gen").addEventListener("click",()=>{
+ const d=roles[currentRole].lab1;
+ document.getElementById("l1-gen-sentences").innerHTML=d.gen.sentences.map((s,i)=>
+ '<button type="button" class="gen-sentence" data-i="'+i+'">'+esc(s)+"</button>"
+ ).join("");
+ document.getElementById("l1-gen-feedback").textContent="Read each sentence against the record above, then click the one that added something the record does not say.";
+ document.getElementById("l1-gen-out").hidden=false;
+ document.getElementById("l1-run-gen").setAttribute("aria-pressed","true");
+ document.querySelectorAll(".gen-sentence").forEach(btn=>btn.addEventListener("click",()=>{
+ const i=Number(btn.dataset.i);
+ document.querySelectorAll(".gen-sentence").forEach(b=>b.classList.remove("flag-right","flag-wrong"));
+ if(i===d.gen.badIndex){
+ btn.classList.add("flag-right");
+ document.getElementById("l1-gen-feedback").innerHTML="<strong>Caught it.</strong> "+esc(d.gen.why);
+ l1Ran.gen=true; l1CheckAllRan();
+ } else {
+ btn.classList.add("flag-wrong");
+ document.getElementById("l1-gen-feedback").innerHTML="<strong>Not that one.</strong> "+esc(d.gen.missPraise);
+ }
+ }));
+ });
+
+ document.getElementById("l1-run-human").addEventListener("click",()=>{
+ const d=roles[currentRole].lab1;
+ document.getElementById("l1-human-prompt").textContent=d.humanPrompt;
+ document.getElementById("l1-human-note").hidden=true;
+ document.getElementById("l1-human-out").hidden=false;
+ document.getElementById("l1-run-human").setAttribute("aria-pressed","true");
+ });
+ document.getElementById("l1-human-reveal").addEventListener("click",()=>{
+ const d=roles[currentRole].lab1;
+ const note=document.getElementById("l1-human-note");
+ note.textContent=d.humanNote;
+ note.hidden=false;
+ l1Ran.human=true; l1CheckAllRan();
+ });
+
+ let l4Step = 1;
+ function resetLab4(){
+ l4Step = 1;
+ for(let i=1;i<=5;i++){
+ document.getElementById("l4-step-"+i).hidden = (i>1);
+ }
+ document.getElementById("l4-reflection").hidden = true;
+ const btn = document.getElementById("l4-next");
+ btn.hidden = false;
+ btn.textContent = "Reveal what happens next";
+ }
+ document.getElementById("l4-next").addEventListener("click",()=>{
+ l4Step++;
+ if(l4Step<=5){
+ document.getElementById("l4-step-"+l4Step).hidden = false;
+ }
+ if(l4Step>=5){
+ document.getElementById("l4-reflection").hidden = false;
+ document.getElementById("l4-next").hidden = true;
+ } else {
+ document.getElementById("l4-next").textContent = "Reveal step "+(l4Step+1);
+ }
+ });
+
+ document.querySelectorAll(".l6-toggle").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+ const expanded = btn.getAttribute("aria-expanded")==="true";
+ btn.setAttribute("aria-expanded", String(!expanded));
+ document.getElementById(btn.getAttribute("aria-controls")).hidden = expanded;
+ });
+ });
+ document.getElementById("l6-expand-all").addEventListener("click",()=>{
+ const toggles = document.querySelectorAll(".l6-toggle");
+ const anyCollapsed = Array.from(toggles).some(b=>b.getAttribute("aria-expanded")!=="true");
+ toggles.forEach(btn=>{
+ btn.setAttribute("aria-expanded", String(anyCollapsed));
+ document.getElementById(btn.getAttribute("aria-controls")).hidden = !anyCollapsed;
+ });
+ document.getElementById("l6-expand-all").textContent = anyCollapsed ? "Close all six" : "Open all six";
+ });
+
+ document.getElementById("pocket-print").addEventListener("click",()=>{
+ document.body.classList.add("print-pocket");
+ window.print();
+ });
+ window.addEventListener("afterprint",()=>{
+ document.body.classList.remove("print-pocket");
+ document.body.classList.remove("print-notes");
+ });
+
+ // ---- My Practice Notes (in-memory only, cleared on refresh) ----
+ const myAnswers = {};
+ function renderNotes(){
+ const entries = Object.keys(myAnswers).filter(k=>myAnswers[k].text.trim());
+ const box = document.getElementById("notes-collected");
+ const actions = document.getElementById("notes-actions");
+ if(!entries.length){
+ box.innerHTML = '<div class="sheet-empty">You haven\'t written any answers yet. Open any lab, scroll to its optional reflection, and type a response - it will appear here.</div>';
+ actions.hidden = true;
+ return;
+ }
+ // keep lab order
+ const order = ["lab1","lab2","lab3","lab4","lab5","lab6","lab7"];
+ box.innerHTML = order.filter(k=>myAnswers[k] && myAnswers[k].text.trim()).map(k=>{
+ const a = myAnswers[k];
+ return '<div class="sheet-entry"><h3>'+esc(a.title)+'</h3><p class="prompt">'+esc(a.prompt)+'</p><div class="response">'+esc(a.text)+'</div></div>';
+ }).join("");
+ actions.hidden = false;
+ }
+ document.querySelectorAll(".my-answer textarea").forEach(ta=>{
+ // capture the prompt text from the sibling bring-to-class content
+ const box = ta.closest(".bring-to-class");
+ const promptText = box ? box.querySelector("strong").nextSibling.textContent.trim() : "";
+ const labid = ta.dataset.lab;
+ myAnswers[labid] = {title:ta.dataset.title, prompt:promptText, text:""};
+ let hintTimer;
+ ta.addEventListener("input",()=>{
+ myAnswers[labid].text = ta.value;
+ const hint = document.getElementById("hint-"+labid);
+ if(ta.value.trim()){
+ hint.textContent = "Added to My Practice Notes \u2713";
+ } else {
+ hint.textContent = "";
+ }
+ clearTimeout(hintTimer);
+ hintTimer = setTimeout(()=>{ if(hint.textContent) hint.textContent=""; }, 2500);
+ renderNotes();
+ });
+ });
+ document.getElementById("notes-print").addEventListener("click",()=>{
+ document.body.classList.add("print-notes");
+ window.print();
+ });
+ document.getElementById("notes-copy").addEventListener("click",async ()=>{
+ const order = ["lab1","lab2","lab3","lab4","lab5","lab6","lab7"];
+ const text = order.filter(k=>myAnswers[k] && myAnswers[k].text.trim()).map(k=>{
+ const a = myAnswers[k];
+ return a.title+"\n"+a.prompt+"\n"+a.text+"\n";
+ }).join("\n");
+ const hint = document.getElementById("notes-copy-hint");
+ try{
+ await navigator.clipboard.writeText(text);
+ hint.textContent = "Copied. Paste it into a document to keep it.";
+ }catch(e){
+ hint.textContent = "Couldn't copy automatically - select the text above and copy it manually.";
+ }
+ setTimeout(()=>{hint.textContent="";}, 4000);
+ });
+ renderNotes();
+
+ function renderGlossary(filter=""){
+ const q=filter.trim().toLowerCase();
+ const items=Object.values(glossary).filter(g=>
+ !q || [g.term,g.meaning,g.example,g.why].join(" ").toLowerCase().includes(q)
+ );
+ document.getElementById("glossary-list").innerHTML=items.map(g=>
+ '<article class="glossary-item"><h3>'+esc(g.term)+'</h3><p><strong>What it means:</strong> '+esc(g.meaning)+'</p><p><strong>Example:</strong> '+esc(g.example)+'</p><p class="why"><strong>Why it matters:</strong> '+esc(g.why)+'</p></article>'
+ ).join("") || "<p>No glossary terms match that search.</p>";
+ }
+ document.getElementById("glossary-search").addEventListener("input",e=>renderGlossary(e.target.value));
+ renderGlossary();
+ renderRole();
+ })();
+ </script>
+</body>
+</html>
