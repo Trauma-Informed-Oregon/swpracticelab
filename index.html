@@ -917,6 +917,86 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 .tscroll{overflow-x:auto}.tscroll table{min-width:560px}
 @media print{.pg,.progress,.start{display:none!important}}
+
+/* ===== Layout: sidebar + content ===== */
+.banner{display:flex;gap:10px;align-items:flex-start;background:#fbf6e9;border:1px solid #e2d3a6;border-radius:12px;padding:10px 14px;margin:0 0 14px;font-size:.93rem}
+.banner strong{color:#6b4700}
+.lensbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin:0 0 16px}
+.lensbar .lb-t{font-weight:700;margin-right:4px}
+.lensbar .role-grid{display:flex;flex-wrap:wrap;gap:6px;margin:0}
+.lensbar .role-btn{min-height:0;padding:7px 13px;border-radius:999px;font-size:.93rem}
+.lensbar .role-summary{flex-basis:100%;font-size:.9rem;color:var(--muted)}
+.layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:20px;align-items:start}
+.layout>.side{grid-column:1;grid-row:1 / span 30;position:sticky;top:10px;max-height:calc(100vh - 20px);overflow:auto}
+.layout>.panel{grid-column:2}
+.side .tabs{display:flex;flex-direction:column;flex-wrap:nowrap;gap:2px;border-radius:14px;position:static;box-shadow:none;margin:0 0 10px;padding:8px}
+.side .tab{display:flex;gap:10px;align-items:center;text-align:left;border-radius:10px;padding:8px 10px;line-height:1.25;font-weight:600}
+.side .tab .wn{flex:0 0 26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);font-size:.8rem;font-weight:800}
+.side .tab[aria-selected="true"] .wn{background:#fff;color:var(--accent)}
+.side .tab .done{margin-left:auto;flex:0 0 8px}
+.navgroup{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--muted);padding:10px 10px 4px}
+.side .progress{margin:0 0 10px;padding:0 4px}
+.pn{display:flex;justify-content:space-between;gap:10px;margin-top:22px;padding-top:16px;border-top:1px solid var(--line);flex-wrap:wrap}
+@media(max-width:900px){.layout{grid-template-columns:minmax(0,1fr)}.layout>.side{position:static;grid-row:auto;max-height:none;overflow:visible}.layout>.panel{grid-column:1}
+ .side .tabs{flex-direction:row;overflow-x:auto;border-radius:14px}.side .tab{flex:0 0 auto}.navgroup{display:none}}
+/* ===== Home: The Life and the Record ===== */
+.hx h2::before{display:none}
+.hx-hero{background:var(--psu);color:#fff;border-radius:16px;padding:26px 26px 22px;margin:0 0 18px}
+.hx-hero h2{color:#fff;font-size:1.75rem;margin:0 0 8px}
+.hx-hero p{max-width:66ch;margin:0 0 10px}
+.hx-paths{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 20px}
+.hx-paths button{text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:14px 16px;cursor:pointer;color:var(--ink)}
+.hx-paths button:hover{border-color:var(--accent);background:var(--accent-soft)}
+.hx-paths b{display:block;font-size:1.02rem;margin-bottom:3px}
+.hx-paths span{line-height:1.4;display:block;font-size:.92rem;color:var(--muted)}
+.sim{border:1.5px solid var(--line);border-radius:16px;padding:18px;background:#fff;margin:0 0 20px}
+.sim h3{font-size:1.25rem}
+.stages{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}
+.stages button{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;font-weight:700;cursor:pointer;color:var(--ink)}
+.stages button[aria-pressed="true"]{background:var(--psu);border-color:var(--psu);color:#fff}
+.stage-say{background:var(--accent-soft);border-left:5px solid var(--psu);border-radius:8px;padding:10px 14px;margin:0 0 12px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;list-style:none;padding:0;margin:0}
+.tcard{border:2px solid var(--line);border-radius:12px;padding:9px 10px;background:#fff;font-size:.88rem;line-height:1.35;transition:background .3s,border-color .3s,transform .3s;min-height:110px}
+.tcard b{display:block;font-size:.9rem}
+.tcard .st{display:inline-block;margin-top:6px;font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;padding:2px 7px;border-radius:99px}
+.tcard.kept{border-color:#1b6b3a;background:#eaf5ee}.tcard.kept .st{background:#1b6b3a;color:#fff}
+.tcard.reduced{border-color:#8a5a00;background:#fdf1dc}.tcard.reduced .st{background:#7a4b00;color:#fff}
+.tcard.lost{border-style:dashed;border-color:#7b857f;background:#f1f3f1;color:#3f4843}.tcard.lost .st{background:#3f4843;color:#fff}
+.tcard.harm{border-color:#9b1c1c;background:#fbe9e9}.tcard.harm .st{background:#9b1c1c;color:#fff}
+.tcard.life{border-color:var(--line)}.tcard.life .st{background:var(--accent-soft);color:var(--accent)}
+.tcard.keep-out{border-color:#4a6fa5;background:#eaf0f8}.tcard.keep-out .st{background:#2f5388;color:#fff}
+.scorebar{position:relative;height:26px;border-radius:99px;background:var(--line);margin:10px 0 4px;overflow:visible}
+.scorebar i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:var(--psu);transition:width .5s}
+.scorebar u{position:absolute;top:-6px;bottom:-6px;width:3px;background:#9b1c1c;text-decoration:none}
+.scorebar em{position:absolute;top:-24px;transform:translateX(-50%);font-size:.78rem;font-style:normal;font-weight:800;color:#9b1c1c;white-space:nowrap}
+.scorebar s{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(45deg,#e8c67a,#e8c67a 4px,#f6e7c1 4px,#f6e7c1 8px);text-decoration:none}
+.sim-cols{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-top:16px}
+.levers{list-style:none;padding:0;margin:0}
+.lever{border:1.5px solid var(--line);border-radius:12px;padding:9px 12px;margin-bottom:8px;background:#fff}
+.lever label{display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-weight:700}
+.lever input{width:20px;height:20px;margin-top:2px;accent-color:var(--psu);flex:0 0 auto}
+.lever p{margin:4px 0 0 30px;font-size:.88rem;color:var(--muted)}
+.lever .tags{margin:4px 0 0 30px;font-size:.78rem;font-weight:700;color:var(--muted)}
+.lever.on{border-color:var(--psu);background:var(--accent-soft)}
+.outcome{border-radius:14px;padding:14px 16px;border:2px solid var(--line);background:#fff}
+.outcome.good{border-color:#1b6b3a;background:#eaf5ee}.outcome.mid{border-color:#8a5a00;background:#fdf1dc}.outcome.bad{border-color:#9b1c1c;background:#fbe9e9}
+.outcome h4{margin:0 0 6px;font-size:1.05rem}
+.outcome ul{margin:6px 0 0;padding-left:18px}
+.gauges{margin-top:12px}
+.gauge{display:grid;grid-template-columns:120px 1fr 64px;gap:8px;align-items:center;font-size:.85rem;margin:4px 0}
+.gauge .t{height:10px;background:var(--line);border-radius:99px;overflow:hidden}.gauge .t i{display:block;height:100%;background:var(--psu);transition:width .4s}
+.gauge.risk .t i{background:#9b1c1c}
+.author textarea{width:100%;min-height:220px;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace;border:1.5px solid #8a948d;border-radius:8px;padding:10px}
+.scan-q{border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 10px;background:#fff}
+.scan-q legend{font-weight:800;padding:0 4px}
+.scan-q .seg{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}
+.scan-q .seg label{border:1.5px solid var(--line);border-radius:999px;padding:5px 12px;cursor:pointer;font-size:.9rem;font-weight:600}
+.scan-q .seg input{position:absolute;opacity:0;width:1px;height:1px}
+.scan-q .seg label:has(input:checked){background:var(--psu);border-color:var(--psu);color:#fff}
+.scan-q .seg label:has(input:focus-visible){outline:3px solid var(--focus);outline-offset:2px}
+.scan-q textarea{width:100%;min-height:58px;border:1.5px solid #8a948d;border-radius:8px;padding:8px;font:inherit}
+@media(max-width:900px){.hx-paths{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.sim-cols{grid-template-columns:1fr}.gauge{grid-template-columns:1fr}}
+@media print{.side,.hx-paths{display:none!important}.layout{display:block}}
 </style>
 </head>
  <body data-lens="socialwork">
@@ -936,47 +1016,11 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  </header>
 
  <main class="wrap" id="main-content">
- <div class="start">
- <div><span class="n" aria-hidden="true">1</span><h2>Choose a lens</h2><p>Pick the professional role closest to yours. Every lab reshapes itself around it.</p></div>
- <div><span class="n" aria-hidden="true">2</span><h2>Open a lab</h2><p>Labs follow the weekly topics. Take them in any order, or only the ones you want.</p></div>
- <div><span class="n" aria-hidden="true">3</span><h2>Keep your notes</h2><p>Reflections gather in My Practice Notes. Copy or print them. Nothing is saved.</p></div>
- </div>
-  <section class="notice">
- <p><strong>Teaching practice only.</strong> The examples, scores, and outputs in this lab are invented for learning. They are not clinical tools, risk assessments, eligibility systems, public-health models, or professional recommendations.</p>
- </section>
 
- <section class="privacy">
- <p><strong>Privacy:</strong> Do not enter real client, patient, student, coworker, agency, practicum, or workplace information. This page has no account, analytics, cookies, database, AI connection, or submission form.</p>
- </section>
-
- <section class="course-map" aria-labelledby="map-heading">
- <h2 id="map-heading">How this connects to the course</h2>
- <div class="plain-callout">
- <strong>New to AI?</strong> A good place to start is Lab 1 and the Plain-Language Glossary. Explore the other labs when a course topic makes them useful.
- </div>
- <p>You do not need to complete the labs in order. Each one corresponds with a course topic and can be opened only when it would help.</p>
- <div class="tscroll" tabindex="0" role="region" aria-label="Course map table, scrolls sideways on small screens"><table>
- <thead><tr><th>Course week</th><th>Course topic</th><th>Optional visual practice</th></tr></thead>
- <tbody>
- <tr><td>Week 1</td><td>AI and Automated Systems in the Helping Professions</td><td>Lab 1: What kind of technology is this?</td></tr>
- <tr><td>Week 2</td><td>Automated Decision-Making, Prediction, and Error</td><td>Lab 2: What information counts?</td></tr>
- <tr><td>Week 3</td><td>Data, Design, and Algorithmic Bias</td><td>Lab 3: Same system, different consequences</td></tr>
- <tr><td>Week 4</td><td>Automation in Public and Social Service Systems</td><td>Lab 4: Follow the decision</td></tr>
- <tr><td>Week 5</td><td>AI in Clinical and Helping Relationships</td><td>Lab 5: Did the meaning change?</td></tr>
- <tr><td>Week 6</td><td>Trauma-Informed Practice, Consent, and Accountability</td><td>Lab 6: Look through a trauma-informed lens</td></tr>
- <tr><td>Week 7</td><td>Power, Cost, and Alternatives</td><td>Lab 7: Does this problem need technology?</td></tr>
- <tr><td>Week 8</td><td>Technology Practice Analysis</td><td>Pocket Questions (the Practice Scan questions in one place)</td></tr>
- <tr><td>Week 9</td><td>Data Governance, Authority, and Community Knowledge</td><td>Lab 8: Whose data is this?</td></tr>
- <tr><td>Week 10</td><td>Making an Evidence-Based Practice Decision</td><td>Lab 9: Compare three responses (a practice run for the Decision Brief)</td></tr>
- </tbody>
- </table></div>
- <p class="small">The <strong>Watch &amp; Explore</strong> tab has optional outside videos and an interactive simulation tied to Weeks 2 through 5, if you want to see these ideas in a real documentary, talk, or news report instead of a fictional example.</p>
- </section>
-
- <section class="role-picker" aria-labelledby="role-heading">
- <h2 id="role-heading">Choose a professional lens</h2>
- <p class="small">The concept stays the same. The examples change. You can switch at any time.</p>
- <div class="role-grid">
+ <div class="banner"><p style="margin:0"><strong>Teaching practice only.</strong> Every example here is invented. Nothing is a clinical, risk, eligibility, or public-health tool. Do not enter real client, patient, student, coworker, or agency information. This page has no account, analytics, cookies, database, AI connection, or submission form.</p></div>
+ <section class="lensbar role-picker" aria-labelledby="role-heading">
+ <span class="lb-t" id="role-heading">Your lens:</span>
+  <div class="role-grid">
  <button type="button" class="role-btn active" data-role="socialwork"><span class="role-swatch" aria-hidden="true"></span>Social Worker</button>
  <button type="button" class="role-btn" data-role="nurse"><span class="role-swatch" aria-hidden="true"></span>Nurse</button>
  <button type="button" class="role-btn" data-role="psychiatrist"><span class="role-swatch" aria-hidden="true"></span>Psychiatrist</button>
@@ -985,25 +1029,74 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  </div>
  <div class="role-summary" id="role-summary" aria-live="polite"></div>
  </section>
-
+ <div class="layout">
+ <div class="side">
  <div class="progress" id="progress" aria-live="polite"><span id="progress-text">0 of 9 labs opened</span><span class="bar"><i id="progress-bar"></i></span></div>
- <div class="tabs" role="tablist" aria-label="Practice labs">
- <button class="tab" role="tab" id="tab1" aria-controls="panel1" aria-selected="true">Lab 1</button>
- <button class="tab" role="tab" id="tab2" aria-controls="panel2" aria-selected="false">Lab 2</button>
- <button class="tab" role="tab" id="tab3" aria-controls="panel3" aria-selected="false">Lab 3</button>
- <button class="tab" role="tab" id="tab4" aria-controls="panel4" aria-selected="false">Lab 4</button>
- <button class="tab" role="tab" id="tab5" aria-controls="panel5" aria-selected="false">Lab 5</button>
- <button class="tab" role="tab" id="tab6" aria-controls="panel6" aria-selected="false">Lab 6</button>
- <button class="tab" role="tab" id="tab7" aria-controls="panel7" aria-selected="false">Lab 7</button>
- <button class="tab" role="tab" id="tab8" aria-controls="panel8" aria-selected="false">Lab 8</button>
- <button class="tab" role="tab" id="tab9" aria-controls="panel9" aria-selected="false">Lab 9</button>
- <button class="tab" role="tab" id="tabv" aria-controls="panelv" aria-selected="false">Watch &amp; Explore</button>
- <button class="tab" role="tab" id="tabp" aria-controls="panelp" aria-selected="false">Pocket Questions</button>
- <button class="tab" role="tab" id="tabn" aria-controls="paneln" aria-selected="false">My Practice Notes</button>
- <button class="tab" role="tab" id="tabg" aria-controls="panelg" aria-selected="false">Plain-Language Glossary</button>
+ <div class="tabs" role="tablist" aria-label="Practice Lab sections" aria-orientation="vertical">
+ <span class="navgroup" role="presentation">Begin</span>
+ <button class="tab" role="tab" id="tabhome" aria-controls="panelhome" aria-selected="true"><span class="wn" aria-hidden="true">0</span><span>Start here</span></button>
+ <span class="navgroup" role="presentation">Labs</span>
+ <button class="tab" role="tab" id="tab1" aria-controls="panel1" aria-selected="false"><span class="wn" aria-hidden="true">1</span><span>What kind of technology is this?</span></button>
+ <button class="tab" role="tab" id="tab2" aria-controls="panel2" aria-selected="false"><span class="wn" aria-hidden="true">2</span><span>What information counts?</span></button>
+ <button class="tab" role="tab" id="tab3" aria-controls="panel3" aria-selected="false"><span class="wn" aria-hidden="true">3</span><span>Same system, different consequences</span></button>
+ <button class="tab" role="tab" id="tab4" aria-controls="panel4" aria-selected="false"><span class="wn" aria-hidden="true">4</span><span>Follow the decision</span></button>
+ <button class="tab" role="tab" id="tab5" aria-controls="panel5" aria-selected="false"><span class="wn" aria-hidden="true">5</span><span>Did the meaning change?</span></button>
+ <button class="tab" role="tab" id="tab6" aria-controls="panel6" aria-selected="false"><span class="wn" aria-hidden="true">6</span><span>A trauma-informed lens</span></button>
+ <button class="tab" role="tab" id="tab7" aria-controls="panel7" aria-selected="false"><span class="wn" aria-hidden="true">7</span><span>Does it need technology?</span></button>
+ <button class="tab" role="tab" id="tab8" aria-controls="panel8" aria-selected="false"><span class="wn" aria-hidden="true">8</span><span>Whose data is this?</span></button>
+ <button class="tab" role="tab" id="tab9" aria-controls="panel9" aria-selected="false"><span class="wn" aria-hidden="true">9</span><span>Compare three responses</span></button>
+ <span class="navgroup" role="presentation">Tools</span>
+ <button class="tab" role="tab" id="tabp" aria-controls="panelp" aria-selected="false"><span class="wn" aria-hidden="true">S</span><span>Practice Scan Starter</span></button>
+ <button class="tab" role="tab" id="tabv" aria-controls="panelv" aria-selected="false"><span class="wn" aria-hidden="true">+</span><span>Watch and explore</span></button>
+ <button class="tab" role="tab" id="tabn" aria-controls="paneln" aria-selected="false"><span class="wn" aria-hidden="true">✎</span><span>My practice notes</span></button>
+ <button class="tab" role="tab" id="tabg" aria-controls="panelg" aria-selected="false"><span class="wn" aria-hidden="true">Aa</span><span>Glossary</span></button>
+ </div>
  </div>
 
- <section id="panel1" class="panel active" role="tabpanel" aria-labelledby="tab1">
+ <section id="panelhome" class="panel active hx" role="tabpanel" aria-labelledby="tabhome">
+ <div class="hx-hero">
+ <h2>The Life and the Record</h2>
+ <p>Every automated system works from a record. A record is a translation of a life, and translations lose things. This lab lets you watch one person's life pass through a scoring system, see what falls away at each step, and then change the design to find out what it takes to keep it.</p>
+ <p>No background needed. Terms are explained where they appear. Ungraded, private, and fictional throughout.</p>
+ </div>
+ <div class="hx-paths">
+ <button type="button" data-go="#sim"><b>Watch it happen</b><span>Start with Marisol below. No background needed.</span></button>
+ <button type="button" data-go="tab1"><b>I want a specific topic</b><span>Pick a lab from the list on the left. Each one takes about ten minutes.</span></button>
+ <button type="button" data-go="tabp"><b>I am analyzing a system myself</b><span>The Practice Scan Starter walks through eight questions you can ask of any system.</span></button>
+ </div>
+ <div class="sim" id="sim">
+ <h3 id="sim-title"></h3>
+ <p id="sim-line"></p>
+ <div class="stages" id="sim-stages" role="group" aria-label="Steps a life passes through"></div>
+ <p class="stage-say" id="sim-say" aria-live="polite"></p>
+ <div id="sim-score"></div>
+ <ul class="cards" id="sim-cards" aria-label="What is true about her life"></ul>
+ <div class="sim-cols">
+ <div>
+ <h4 style="margin:0 0 4px">Change the design</h4>
+ <p class="small" style="margin:0 0 8px">Turn choices on and watch the cards and the outcome change. Each choice has a cost and a risk.</p>
+ <div class="button-row" id="sim-presets"></div>
+ <ul class="levers" id="sim-levers"></ul>
+ </div>
+ <div>
+ <div class="outcome" id="sim-out" aria-live="polite"></div>
+ <div class="gauges" id="sim-gauges"></div>
+ </div>
+ </div>
+ <div class="bring-to-class" style="margin-top:16px">
+ <strong>Optional reflection:</strong> Which single choice mattered most for Marisol, and which one would be hardest for a real agency to adopt? Why?
+ <div class="my-answer"><label for="ans-lab0">Your answer (optional; stays on this page, nothing is saved or sent):</label><textarea id="ans-lab0" data-lab="lab0" data-title="Start here · The Life and the Record"></textarea><p class="saved-hint" id="hint-lab0" aria-live="polite"></p></div>
+ </div>
+ <details class="author" style="margin-top:14px"><summary><strong>Build your own person</strong> (for instructors and students)</summary>
+ <p class="small">This simulation runs from the data below. Change the person, the things that are true about their life, and the design choices, then load it. Keep the same field names. The README in the repository explains each field. Use invented people only.</p>
+ <label for="sim-json" class="visually-hidden">Scenario data</label>
+ <textarea id="sim-json" spellcheck="false"></textarea>
+ <div class="button-row"><button type="button" class="action" id="sim-load">Load this scenario</button><button type="button" class="action secondary" id="sim-dl">Download it</button><button type="button" class="action secondary" id="sim-reset">Back to Marisol</button></div>
+ <p class="small" id="sim-msg" aria-live="polite"></p>
+ </details>
+ </div>
+ </section>
+ <section id="panel1" class="panel" role="tabpanel" aria-labelledby="tab1">
  <span class="week-tag">Week 1 companion</span>
  <div class="lens-band"><span class="lens-dot" aria-hidden="true"></span><span>Viewing through the <span id="lens-label-1">Social Worker</span> lens</span><span class="lens-switch">Switch lenses above</span></div>
  <div class="week-due"><span class="due-icon" aria-hidden="true">&#9679;</span><span><span class="due-label">Course connection</span> <strong>Week 1: CSWE Technology Report (pp. 12-26)</strong> connects with this lab's work on identifying where AI and automated systems already appear in helping professions.</span></div>
@@ -1397,22 +1490,23 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  </section>
 
  <section id="panelp" class="panel" role="tabpanel" aria-labelledby="tabp">
- <h2>Pocket Questions: Eight Things to Ask About Any System</h2>
- <p>These are the questions this whole lab practices, in one place. You do not need any technical background to ask them, and you are allowed to ask them about any system that affects your work or the people you serve. Print this page and take it with you.</p>
- <ol class="pocket-list">
- <li><strong>What is this system actually doing?</strong><p class="small">Is it following preset rules, turning data into a score, generating new text, or is a person doing this step? "AI" is not one thing.</p></li>
- <li><strong>What information does it use?</strong><p class="small">And just as important: what information about people never becomes an input at all?</p></li>
- <li><strong>Who decided what counts, and how much it counts?</strong><p class="small">Someone chose the inputs, the influence each one has, and the cutoff. Those were human decisions.</p></li>
- <li><strong>Could the same data point mean different things for different people?</strong><p class="small">A missed appointment can mean disengagement, a lost bus route, a double shift, or a caregiving emergency. The system sees one number.</p></li>
- <li><strong>Do people know the system is being used?</strong><p class="small">Can they decline it, ask questions about it, or ask for a person instead?</p></li>
- <li><strong>Who can question, correct, or override the result?</strong><p class="small">On paper, and in practice, with the time and authority they actually have.</p></li>
- <li><strong>Whose circumstances could the system misread?</strong><p class="small">Language, disability, culture, family structure, work schedules, digital access, history with services.</p></li>
- <li><strong>Does this problem actually need technology?</strong><p class="small">Or would staffing, policy change, a simpler tool, or no tool address it better?</p></li>
- </ol>
- <div class="button-row">
- <button type="button" class="action" id="pocket-print">Print this page</button>
- </div>
- <p class="small">These questions align with the areas your Trauma-Informed Technology Practice Scan asks you to examine.</p>
+ <span class="week-tag">Week 8 companion</span>
+ <h2>Practice Scan Starter</h2>
+ <p>Use this before you write your Trauma-Informed Technology Practice Scan. Name the system in general terms, then mark where you stand on each of the eight questions. The page builds an outline that sorts what you know from what you still need to find out. Use a workflow, a public document, or a case. Leave out names of people and agencies.</p>
+ <label for="scan-sys"><strong>The system I am looking at (general terms only)</strong></label>
+ <input id="scan-sys" type="text" style="width:100%;padding:9px;border:1.5px solid #8a948d;border-radius:8px;margin:4px 0 14px" placeholder="For example: an automated screening form at a community clinic">
+ <fieldset class="scan-q"><legend>1. Setting and purpose</legend><p class="small" style="margin:2px 0 4px">Who uses the system, who is affected by it, and what problem is it meant to address?</p><div class="seg" role="radiogroup" aria-label="Where you stand on Setting and purpose"><label><input type="radio" name="sq0" value="Know">I know this</label><label><input type="radio" name="sq0" value="Find out">I need to find out</label><label><input type="radio" name="sq0" value="Concern">This worries me</label></div><textarea id="sqt0" aria-label="Notes for Setting and purpose" placeholder="A sentence or two. Where would the evidence come from?"></textarea></fieldset>
+<fieldset class="scan-q"><legend>2. What the system does</legend><p class="small" style="margin:2px 0 4px">Is it rules-based, predictive, generative, or mostly administrative? Where does a person's judgment come in?</p><div class="seg" role="radiogroup" aria-label="Where you stand on What the system does"><label><input type="radio" name="sq1" value="Know">I know this</label><label><input type="radio" name="sq1" value="Find out">I need to find out</label><label><input type="radio" name="sq1" value="Concern">This worries me</label></div><textarea id="sqt1" aria-label="Notes for What the system does" placeholder="A sentence or two. Where would the evidence come from?"></textarea></fieldset>
+<fieldset class="scan-q"><legend>3. Who benefits and who carries risk</legend><p class="small" style="margin:2px 0 4px">What gets easier or faster? Who may face new errors, burden, surveillance, or exclusion?</p><div class="seg" role="radiogroup" aria-label="Where you stand on Who benefits and who carries risk"><label><input type="radio" name="sq2" value="Know">I know this</label><label><input type="radio" name="sq2" value="Find out">I need to find out</label><label><input type="radio" name="sq2" value="Concern">This worries me</label></div><textarea id="sqt2" aria-label="Notes for Who benefits and who carries risk" placeholder="A sentence or two. Where would the evidence come from?"></textarea></fieldset>
+<fieldset class="scan-q"><legend>4. Choice, privacy, and data</legend><p class="small" style="margin:2px 0 4px">What information does it use? Do people know it is involved? Can they decline or choose another route?</p><div class="seg" role="radiogroup" aria-label="Where you stand on Choice, privacy, and data"><label><input type="radio" name="sq3" value="Know">I know this</label><label><input type="radio" name="sq3" value="Find out">I need to find out</label><label><input type="radio" name="sq3" value="Concern">This worries me</label></div><textarea id="sqt3" aria-label="Notes for Choice, privacy, and data" placeholder="A sentence or two. Where would the evidence come from?"></textarea></fieldset>
+<fieldset class="scan-q"><legend>5. Relationship, access, and culture</legend><p class="small" style="margin:2px 0 4px">What changes between people? Whose language, disability, family structure, or culture could it miss?</p><div class="seg" role="radiogroup" aria-label="Where you stand on Relationship, access, and culture"><label><input type="radio" name="sq4" value="Know">I know this</label><label><input type="radio" name="sq4" value="Find out">I need to find out</label><label><input type="radio" name="sq4" value="Concern">This worries me</label></div><textarea id="sqt4" aria-label="Notes for Relationship, access, and culture" placeholder="A sentence or two. Where would the evidence come from?"></textarea></fieldset>
+<fieldset class="scan-q"><legend>6. Human review and correction</legend><p class="small" style="margin:2px 0 4px">Who can question, correct, or override the result? What happens when it is wrong?</p><div class="seg" role="radiogroup" aria-label="Where you stand on Human review and correction"><label><input type="radio" name="sq5" value="Know">I know this</label><label><input type="radio" name="sq5" value="Find out">I need to find out</label><label><input type="radio" name="sq5" value="Concern">This worries me</label></div><textarea id="sqt5" aria-label="Notes for Human review and correction" placeholder="A sentence or two. Where would the evidence come from?"></textarea></fieldset>
+<fieldset class="scan-q"><legend>7. Workforce and cost</legend><p class="small" style="margin:2px 0 4px">Does it save time, move work elsewhere, add monitoring, or create new costs?</p><div class="seg" role="radiogroup" aria-label="Where you stand on Workforce and cost"><label><input type="radio" name="sq6" value="Know">I know this</label><label><input type="radio" name="sq6" value="Find out">I need to find out</label><label><input type="radio" name="sq6" value="Concern">This worries me</label></div><textarea id="sqt6" aria-label="Notes for Workforce and cost" placeholder="A sentence or two. Where would the evidence come from?"></textarea></fieldset>
+<fieldset class="scan-q"><legend>8. Recommendation and alternatives</legend><p class="small" style="margin:2px 0 4px">What should continue, change, pause, or end? What else could address the same problem?</p><div class="seg" role="radiogroup" aria-label="Where you stand on Recommendation and alternatives"><label><input type="radio" name="sq7" value="Know">I know this</label><label><input type="radio" name="sq7" value="Find out">I need to find out</label><label><input type="radio" name="sq7" value="Concern">This worries me</label></div><textarea id="sqt7" aria-label="Notes for Recommendation and alternatives" placeholder="A sentence or two. Where would the evidence come from?"></textarea></fieldset>
+
+ <div class="button-row"><button type="button" class="action" id="scan-build">Build my outline</button><button type="button" class="action secondary" id="scan-copy">Copy outline</button><button type="button" class="action secondary" id="pocket-print">Print this page</button></div>
+ <div class="brief-out" id="scan-out" aria-live="polite" hidden></div>
+ <p class="small">Nothing is saved or sent. The outline is a planning aid and the assignment is graded on your own analysis.</p>
  </section>
 
  <section id="paneln" class="panel" role="tabpanel" aria-labelledby="tabn">
@@ -1432,9 +1526,234 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  <input id="glossary-search" class="glossary-search" type="search" placeholder="Search terms, for example: threshold, bias, hallucination" aria-label="Search glossary">
  <div class="glossary-list" id="glossary-list"></div>
  </section>
+ </div>
  </main>
 
- <div class="pg" id="pg" aria-hidden="true">1</div>
+ <div class="pg" id="pg" aria-hidden="true">0</div>
+ <script type="application/json" id="scenario-data">
+{
+ "schema": 1,
+ "title": "The Life and the Record",
+ "person": {
+  "name": "Marisol",
+  "line": "Marisol is 34, a mother of two, and a client of a fictional county health outreach program. The program uses a score to decide who gets a priority call. Her score puts her in the standard queue."
+ },
+ "system": {
+  "name": "Outreach priority score",
+  "base": 5,
+  "cutoff": 8,
+  "perPoint": 1,
+  "cap": 4,
+  "countIds": [
+   1,
+   2,
+   3,
+   9,
+   12
+  ],
+  "scoreFields": "age band, missed visits, unanswered calls",
+  "baseReshape": {
+   "2": "2 missed visits",
+   "9": "3 unanswered calls"
+  },
+  "accommodationIds": [
+   4,
+   9
+  ]
+ },
+ "truths": [
+  {
+   "id": 1,
+   "label": "Her shifts",
+   "text": "Works a day shift and a night shift. Tuesday clinic hours fall inside the day shift.",
+   "relevant": true
+  },
+  {
+   "id": 2,
+   "label": "The bus",
+   "text": "The bus route she used was cut in the fall. Two visits took three hours each way, so she did not go.",
+   "relevant": true
+  },
+  {
+   "id": 3,
+   "label": "Caring for her father",
+   "text": "Cares for her father, who has dementia, with no other adult in the house.",
+   "relevant": true
+  },
+  {
+   "id": 4,
+   "label": "Spanish first",
+   "text": "Speaks Spanish first. Forms and reminder calls arrive in English.",
+   "relevant": true
+  },
+  {
+   "id": 5,
+   "label": "A past closure",
+   "text": "A past case was closed without a call. She does not answer numbers she does not know.",
+   "relevant": true
+  },
+  {
+   "id": 6,
+   "label": "Church health fair",
+   "text": "Gets her blood pressure checked at the church health fair every month.",
+   "relevant": true
+  },
+  {
+   "id": 7,
+   "label": "Her sister",
+   "text": "Her sister checks in daily and takes the children after school.",
+   "relevant": true
+  },
+  {
+   "id": 8,
+   "label": "Managing well",
+   "text": "Keeps her diabetes in check with help from her cousin.",
+   "relevant": true
+  },
+  {
+   "id": 9,
+   "label": "Her phone plan",
+   "text": "Her phone data runs out mid-month. Calls and texts reach her between the 1st and the 15th.",
+   "relevant": true
+  },
+  {
+   "id": 10,
+   "label": "Immigration paperwork",
+   "text": "Has immigration paperwork pending.",
+   "relevant": false,
+   "sensitive": true
+  },
+  {
+   "id": 11,
+   "label": "Sunday cooking",
+   "text": "Cooks for her family every Sunday and sings in the choir.",
+   "relevant": false
+  },
+  {
+   "id": 12,
+   "label": "The rent increase",
+   "text": "Her landlord raised the rent and she may have to move.",
+   "relevant": true
+  }
+ ],
+ "levers": [
+  {
+   "id": "A",
+   "stage": 2,
+   "label": "Staff ask what got in the way after a missed visit, and write it down",
+   "detail": "Restores the reason behind the missed visits. It is written in staff's words, which can carry their assumptions.",
+   "cost": 1,
+   "risk": 1,
+   "adds": [
+    1,
+    2,
+    9
+   ]
+  },
+  {
+   "id": "B",
+   "stage": 2,
+   "label": "Calls and forms go out in the person's first language",
+   "detail": "Marisol can read and answer what the program sends.",
+   "cost": 2,
+   "risk": 0,
+   "adds": [
+    4
+   ]
+  },
+  {
+   "id": "C",
+   "stage": 2,
+   "label": "Marisol reads her own record, adds to it, and chooses what stays",
+   "detail": "Brings in what she wants known. Anything she does not want recorded stays out, even if another source has it.",
+   "cost": 2,
+   "risk": 0,
+   "adds": [
+    3,
+    5,
+    6,
+    7,
+    8,
+    12
+   ],
+   "personChooses": true
+  },
+  {
+   "id": "D",
+   "stage": 2,
+   "label": "Pull in data from other agencies and public records",
+   "detail": "More data arrives without asking her. It also brings in things she never chose to share.",
+   "cost": 1,
+   "risk": 3,
+   "adds": [
+    3,
+    10,
+    12
+   ]
+  },
+  {
+   "id": "E",
+   "stage": 3,
+   "label": "People who use the service help decide what the score counts",
+   "detail": "Circumstances that raise need earn points, so the score reads them.",
+   "cost": 2,
+   "risk": 0,
+   "community": true
+  },
+  {
+   "id": "F",
+   "stage": 4,
+   "label": "Add a 'second look' band just under the line",
+   "detail": "Anyone within two points of the line goes to a person before the queue is set.",
+   "cost": 1,
+   "risk": 0,
+   "band": 2
+  },
+  {
+   "id": "G",
+   "stage": 5,
+   "label": "The reviewer gets 15 minutes, the full record, and can override without penalty",
+   "detail": "A reviewer with time, information, and authority can change the result.",
+   "cost": 3,
+   "risk": 0,
+   "reviewOverride": 3
+  },
+  {
+   "id": "H",
+   "stage": 6,
+   "label": "Marisol is told a tool is used, can ask for a person, and can say no",
+   "detail": "She knows the process exists and has a way out of it.",
+   "cost": 1,
+   "risk": 0,
+   "informs": true
+  }
+ ],
+ "presets": [
+  {
+   "label": "As built",
+   "on": []
+  },
+  {
+   "label": "The tempting fix: more data",
+   "on": [
+    "D"
+   ]
+  },
+  {
+   "label": "Share the power",
+   "on": [
+    "A",
+    "B",
+    "C",
+    "E",
+    "F",
+    "G",
+    "H"
+   ]
+  }
+ ]
+}
+ </script>
  <footer>
  <div class="wrap">
  <p><strong>Optional teaching practice tool.</strong> This page is not a clinical, diagnostic, eligibility, risk, or public-health decision system.</p>
@@ -2128,9 +2447,9 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  tabs.forEach((tab,index)=>{
  tab.addEventListener("click",()=>activateTab(tab));
  tab.addEventListener("keydown",e=>{
- if(e.key==="ArrowRight"||e.key==="ArrowLeft"){
+ if(["ArrowRight","ArrowLeft","ArrowDown","ArrowUp"].includes(e.key)){
  e.preventDefault();
- const d=e.key==="ArrowRight"?1:-1;
+ const d=(e.key==="ArrowRight"||e.key==="ArrowDown")?1:-1;
  activateTab(tabs[(index+d+tabs.length)%tabs.length]);
  }
  });
@@ -2458,7 +2777,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  return;
  }
  // keep lab order
- const order = ["lab1","lab2","lab3","lab4","lab5","lab6","lab7","lab8","lab9"];
+ const order = ["lab0","lab1","lab2","lab3","lab4","lab5","lab6","lab7","lab8","lab9"];
  box.innerHTML = order.filter(k=>myAnswers[k] && myAnswers[k].text.trim()).map(k=>{
  const a = myAnswers[k];
  return '<div class="sheet-entry"><h3>'+esc(a.title)+'</h3><p class="prompt">'+esc(a.prompt)+'</p><div class="response">'+esc(a.text)+'</div></div>';
@@ -2490,7 +2809,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  window.print();
  });
  document.getElementById("notes-copy").addEventListener("click",async ()=>{
- const order = ["lab1","lab2","lab3","lab4","lab5","lab6","lab7","lab8","lab9"];
+ const order = ["lab0","lab1","lab2","lab3","lab4","lab5","lab6","lab7","lab8","lab9"];
  const text = order.filter(k=>myAnswers[k] && myAnswers[k].text.trim()).map(k=>{
  const a = myAnswers[k];
  return a.title+"\n"+a.prompt+"\n"+a.text+"\n";
@@ -2522,7 +2841,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  
  /* ===== Added: progress, page marker, Lab 8, Lab 9 ===== */
  (function(){
- const visited=new Set(["tab1"]);
+ const visited=new Set();
  const order=Array.from(document.querySelectorAll('.tab[id^="tab"]'));
  function mark(t){
  visited.add(t.id);
@@ -2531,11 +2850,11 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  labs.forEach(x=>{ if(visited.has(x.id)&&!x.querySelector(".done")&&x.id!==t.id){ const d=document.createElement("span"); d.className="done"; d.setAttribute("aria-hidden","true"); x.appendChild(d);} });
  document.getElementById("progress-text").textContent=n+" of "+labs.length+" labs opened";
  document.getElementById("progress-bar").style.width=(100*n/labs.length)+"%";
- const pg=document.getElementById("pg"); pg.textContent=/^tab\d$/.test(t.id)?t.id.slice(3):(t.id==="tabv"?"W":t.id==="tabp"?"Q":t.id==="tabn"?"N":"G");
+ const pg=document.getElementById("pg"); pg.textContent=/^tab\d$/.test(t.id)?t.id.slice(3):(t.id==="tabhome"?"0":t.id==="tabv"?"+":t.id==="tabp"?"S":t.id==="tabn"?"N":"Aa");
  }
  order.forEach(t=>t.addEventListener("click",()=>mark(t)));
  order.forEach(t=>t.addEventListener("keydown",e=>{ if(e.key==="ArrowRight"||e.key==="ArrowLeft") setTimeout(()=>{ const sel=document.querySelector('.tab[aria-selected="true"]'); if(sel) mark(sel); },0); }));
- mark(order[0]);
+ 
 
  const care=[
  {k:"Collective benefit",q:"What does the community get from this use of its data?",o:[
@@ -2603,6 +2922,154 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  const out=document.getElementById("brief-out"); if(out.hidden||!out.textContent) return;
  if(navigator.clipboard) navigator.clipboard.writeText(out.textContent).catch(()=>{});
  });
+ })();
+
+ /* ===== The Life and the Record: simulation engine ===== */
+ (function(){
+ const el=id=>document.getElementById(id);
+ const esc2=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+ const DEFAULT=JSON.parse(el("scenario-data").textContent);
+ let S=DEFAULT, on=new Set(), stage=0, timer=null;
+ const STAGES=["Her life","The record","The score","The line","The review","What happens to her"];
+ const DEEP=[["tab3","Lab 3: Same system, different consequences"],["tab8","Lab 8: Whose data is this?"],["tab2","Lab 2: What information counts?"],["tab2","Lab 2: What information counts?"],["tab4","Lab 4: Follow the decision"],["tab6","Lab 6: A trauma-informed lens"]];
+ const tById=()=>Object.fromEntries(S.truths.map(t=>[t.id,t]));
+ function fx(k){return S.levers.filter(l=>on.has(l.id)&&l[k]!==undefined&&l[k]!==false)}
+ function compute(){
+  const T=tById(), sys=S.system;
+  const full=new Set(), reduced={};
+  Object.keys(sys.baseReshape||{}).forEach(k=>reduced[k]=sys.baseReshape[k]);
+  S.levers.filter(l=>on.has(l.id)&&l.adds).forEach(l=>l.adds.forEach(id=>{full.add(id);delete reduced[id];}));
+  if(fx("personChooses").length) [...full].forEach(id=>{const t=T[id]; if(t&&t.sensitive&&!t.relevant) full.delete(id);});
+  const counted=fx("community").length?[...full].filter(id=>sys.countIds.includes(id)).length:0;
+  const points=Math.min(sys.cap,counted*sys.perPoint);
+  const score=sys.base+points, line=sys.cutoff;
+  const bandW=fx("band").reduce((m,l)=>Math.max(m,l.band),0);
+  const inBand=bandW>0&&score<line&&score>=line-bandW;
+  const relFull=[...full].filter(id=>T[id]&&T[id].relevant).length;
+  const ro=fx("reviewOverride")[0];
+  const overridden=inBand&&ro&&relFull>=ro.reviewOverride;
+  const priority=score>=line||overridden;
+  const acc=sys.accommodationIds.every(id=>full.has(id));
+  const harm=[...full].filter(id=>T[id]&&T[id].sensitive&&!T[id].relevant);
+  const informed=fx("informs").length>0;
+  const enlarged=[...full].some(id=>!(sys.baseReshape&&sys.baseReshape[id]));
+  const rel=S.truths.filter(t=>t.relevant);
+  const whole=rel.filter(t=>full.has(t.id)).length, part=rel.filter(t=>!full.has(t.id)&&reduced[t.id]).length;
+  const cost=S.levers.filter(l=>on.has(l.id)).reduce((a,l)=>a+l.cost,0);
+  const risk=S.levers.filter(l=>on.has(l.id)).reduce((a,l)=>a+l.risk,0);
+  const costMax=S.levers.reduce((a,l)=>a+l.cost,0);
+  const trust=(fx("personChooses").length?1:0)+(informed?1:0)+(acc?1:0)-(harm.length?2:0)-((enlarged&&!informed)?1:0);
+  return {full,reduced,counted,points,score,line,inBand,overridden,priority,acc,harm,informed,enlarged,whole,part,relTotal:rel.length,cost,costMax,risk,trust,relFull,bandW};
+ }
+ function status(t,c,st){
+  const inFull=c.full.has(t.id), red=c.reduced[t.id];
+  const bad=t.sensitive&&!t.relevant;
+  if(st===0){ if(bad) return ["keep-out","Hers to share"]; if(!t.relevant) return ["life","Hers"]; return ["life","True"]; }
+  if(st===1){ if(bad&&inFull) return ["harm","Recorded without her say"]; if(inFull) return ["kept","In the record"]; if(red) return ["reduced","Reduced to: "+red]; if(bad||!t.relevant) return ["keep-out","Stays out"]; return ["lost","Not in the record"]; }
+  if(st===2){ if(bad&&inFull) return ["harm","Recorded without her say"]; const cn=inFull&&S.system.countIds.includes(t.id)&&fx("community").length; if(cn) return ["kept","Earns a point"]; if(inFull||red) return ["reduced","In the record, no points"]; if(bad||!t.relevant) return ["keep-out","Stays out"]; return ["lost","Never reaches the score"]; }
+  if(st===3){ return status(t,c,2); }
+  if(st===4){ const sees=fx("reviewOverride").length&&c.inBand; if(bad&&inFull) return ["harm","Recorded without her say"]; if(sees&&inFull) return ["kept","The reviewer sees it"]; if(!c.inBand||!fx("reviewOverride").length) return [(inFull||red)?"reduced":(bad||!t.relevant?"keep-out":"lost"),(inFull||red)?"Nobody looks at it":(bad||!t.relevant?"Stays out":"Nobody knows it")]; return [(bad||!t.relevant)?"keep-out":"lost",(bad||!t.relevant)?"Stays out":"Not in front of the reviewer"]; }
+  const shaped=inFull&&(S.system.accommodationIds.includes(t.id)||(c.overridden&&t.relevant)||(c.score>=c.line&&S.system.countIds.includes(t.id)));
+  if(bad&&inFull) return ["harm","Recorded without her say"]; if(shaped) return ["kept","Shaped what happens"]; if(bad||!t.relevant) return ["keep-out","Stays out"]; return [(inFull||red)?"reduced":"lost",(inFull||red)?"Sat unused":"Never counted"];
+ }
+ function say(c){
+  const P=S.person.name;
+  return [
+  "Twelve things are true about "+P+"'s life. Most of them matter to whether she gets help. Watch what happens to them.",
+  "A record can hold only what someone thought to ask and had a field for. "+c.whole+" of the "+c.relTotal+" things that matter are in it whole, "+c.part+" are reduced to a number, and "+(c.relTotal-c.whole-c.part)+" are gone.",
+  "The score uses "+S.system.scoreFields+(fx("community").length?", plus points for circumstances people who use the service said matter":"")+". Score: "+c.score+" of a possible "+(S.system.base+S.system.cap)+".",
+  "The line sits at "+c.line+". "+P+" scores "+c.score+". "+(c.score>=c.line?"She is over it.":c.inBand?"She is just under it, inside the second-look band.":"She is under it, and nothing else is checked.")+" A person one point either side gets a very different week.",
+  c.inBand?(fx("reviewOverride").length?(c.overridden?"A reviewer looks at "+P+" with time and the full story, and moves her up.":"A reviewer looks, but the record holds too little to justify a change."):"She is flagged for a second look, but the reviewer has no time, no record beyond the score, and no authority to change it."):(fx("band").length?"She is outside the band, so no person ever looks at her file.":"No person looks at her file. Review only happens for people the score already flagged, so a wrong 'no' stays a 'no'."),
+  "This is what "+P+" lives with after the system has finished."
+  ][stage];
+ }
+ function render(){
+  const c=compute(), T=S.truths;
+  el("sim-title").textContent=S.title+": "+S.person.name;
+  el("sim-line").textContent=S.person.line;
+  el("sim-stages").innerHTML=STAGES.map((n,i)=>'<button type="button" aria-pressed="'+(i===stage)+'" data-st="'+i+'">'+(i+1)+'. '+n+'</button>').join("")+'<button type="button" id="sim-play" style="border-style:dashed">Play through</button>';
+  el("sim-say").textContent=say(c);
+  // score bar
+  let sb="";
+  if(stage===2||stage===3||stage===4){
+   const max=S.system.base+S.system.cap+1, w=v=>(100*v/max)+"%";
+   sb='<div class="scorebar" role="img" aria-label="Score '+c.score+', line at '+c.line+(c.bandW?', second-look band '+(c.line-c.bandW)+' to '+c.line:'')+'"><i style="width:'+w(c.score)+'"></i>'+(c.bandW?'<s style="left:'+w(c.line-c.bandW)+';width:'+(100*c.bandW/max)+'%"></s>':'')+'<u style="left:'+w(c.line)+'"><em>line: '+c.line+'</em></u></div><p class="small">Score '+c.score+(c.points?' ('+S.system.base+' from the record fields, +'+c.points+' from circumstances the record now holds)':' (from '+S.system.scoreFields+')')+(c.bandW?'. Hatched area is the second-look band.':'.')+'</p>';
+  }
+  el("sim-score").innerHTML=sb;
+  el("sim-cards").innerHTML=T.map(t=>{const [k,l]=status(t,c,stage); return '<li class="tcard '+k+'"><b>'+esc2(t.label)+'</b>'+esc2(t.text)+'<br><span class="st">'+esc2(l)+'</span></li>';}).join("");
+  el("sim-levers").innerHTML=S.levers.map(l=>'<li class="lever'+(on.has(l.id)?' on':'')+'"><label><input type="checkbox" data-lv="'+l.id+'"'+(on.has(l.id)?' checked':'')+'><span>'+esc2(l.label)+'</span></label><p>'+esc2(l.detail)+'</p><div class="tags">Step '+l.stage+' &middot; Cost '+"$".repeat(l.cost||0).padEnd(0)+(l.cost?'':'none')+' &middot; Risk '+(l.risk?"!".repeat(l.risk):'low')+'</div></li>').join("");
+  el("sim-presets").innerHTML=S.presets.map((p,i)=>'<button type="button" class="action secondary" data-pre="'+i+'">'+esc2(p.label)+'</button>').join("");
+  // outcome
+  const P=S.person.name; let cls,h,items=[];
+  if(c.priority&&c.acc&&!c.harm.length){cls="good";h=P+" is reached, in a way that works.";items.push("She gets a priority call in her language on days her phone works.");}
+  else if(c.priority){cls="mid";h=P+" is flagged, but the contact fails.";items.push("The call comes in English at 2 p.m., during her day shift. She misses it, and the file reads 'unreachable'.");}
+  else {cls="bad";h=P+" is not flagged.";items.push("She stays in the standard queue with no call. The file reads 'disengaged'. The reasons she missed visits appear nowhere.");}
+  if(c.harm.length){cls="bad";c.harm.forEach(id=>items.push("'"+tById()[id].label+"' is now in a database she never chose. Some people stop using services when this happens."));}
+  if(c.enlarged&&!c.informed) items.push(P+" does not know the tool exists, so she cannot correct it or refuse it.");
+  if(c.overridden) items.push("A reviewer moved her over the line after reading her full story.");
+  el("sim-out").className="outcome "+cls;
+  el("sim-out").innerHTML='<h4>'+esc2(h)+'</h4><ul>'+items.map(i=>'<li>'+esc2(i)+'</li>').join("")+'</ul>';
+  const tl=["Low","Some","Growing","High"][Math.max(0,Math.min(3,c.trust+1))];
+  el("sim-gauges").innerHTML=
+   '<div class="gauge"><span>Reaches the decision</span><span class="t"><i style="width:'+(100*c.whole/c.relTotal)+'%"></i></span><span>'+c.whole+' of '+c.relTotal+'</span></div>'+
+   '<div class="gauge"><span>Cost and staff time</span><span class="t"><i style="width:'+(100*c.cost/c.costMax)+'%"></i></span><span>'+c.cost+' of '+c.costMax+'</span></div>'+
+   '<div class="gauge risk"><span>Privacy risk</span><span class="t"><i style="width:'+Math.min(100,100*(c.risk+c.harm.length)/5)+'%"></i></span><span>'+(c.risk+c.harm.length>=4?"High":c.risk+c.harm.length>=2?"Some":"Low")+'</span></div>'+
+   '<div class="gauge"><span>Trust she can place</span><span class="t"><i style="width:'+(100*(c.trust+1)/4)+'%"></i></span><span>'+tl+'</span></div>'+
+   '<p class="small" style="margin-top:8px">Go deeper on this step: <a href="#" data-deep="'+stage+'">'+DEEP[stage][1]+'</a></p>';
+ }
+ el("sim").addEventListener("click",e=>{
+  const b=e.target.closest("[data-st]"); if(b){stage=Number(b.dataset.st);stop();render();return;}
+  const pre=e.target.closest("[data-pre]"); if(pre){on=new Set(S.presets[Number(pre.dataset.pre)].on);render();return;}
+  if(e.target.id==="sim-play"){play();return;}
+  const d=e.target.closest("[data-deep]"); if(d){e.preventDefault();document.getElementById(DEEP[Number(d.dataset.deep)][0]).click();window.scrollTo({top:0});}
+ });
+ el("sim").addEventListener("change",e=>{const lv=e.target.dataset&&e.target.dataset.lv; if(!lv)return; e.target.checked?on.add(lv):on.delete(lv); render(); const n=document.querySelector('[data-lv="'+lv+'"]'); if(n) n.focus();});
+ function stop(){if(timer){clearInterval(timer);timer=null;}}
+ function play(){stop();stage=0;render();const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;timer=setInterval(()=>{if(stage>=5){stop();return;}stage++;render();const pb=el("sim-play");if(pb&&reduce)pb.focus();},2600);}
+ function loadJSON(txt){
+  let o; try{o=JSON.parse(txt);}catch(e){return "That is not valid JSON: "+e.message;}
+  const need=["person","system","truths","levers"]; for(const k of need) if(!o[k]) return "Missing section: "+k;
+  if(!Array.isArray(o.truths)||o.truths.length<3) return "truths needs at least 3 entries.";
+  if(!o.system||typeof o.system.base!=="number"||typeof o.system.cutoff!=="number") return "system needs numeric base and cutoff.";
+  o.title=o.title||"Scenario"; o.presets=o.presets||[{label:"As built",on:[]}];
+  o.system.countIds=o.system.countIds||[]; o.system.accommodationIds=o.system.accommodationIds||[]; o.system.perPoint=o.system.perPoint||1; o.system.cap=o.system.cap||0; o.system.baseReshape=o.system.baseReshape||{}; o.system.scoreFields=o.system.scoreFields||"a few recorded fields";
+  S=o; on=new Set(); stage=0; render(); return "Loaded.";
+ }
+ el("sim-json").value=JSON.stringify(DEFAULT,null,1);
+ el("sim-load").addEventListener("click",()=>{el("sim-msg").textContent=loadJSON(el("sim-json").value);});
+ el("sim-reset").addEventListener("click",()=>{el("sim-json").value=JSON.stringify(DEFAULT,null,1);el("sim-msg").textContent=loadJSON(el("sim-json").value);});
+ el("sim-dl").addEventListener("click",()=>{const b=new Blob([el("sim-json").value],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="life-and-record-scenario.json";document.body.appendChild(a);a.click();a.remove();});
+ document.querySelectorAll(".hx-paths [data-go]").forEach(b=>b.addEventListener("click",()=>{const g=b.dataset.go; if(g==="#sim"){el("sim").scrollIntoView({behavior:"smooth"});el("sim-title").setAttribute("tabindex","-1");el("sim-title").focus({preventScroll:true});} else {el(g).click();window.scrollTo({top:0});}}));
+ render();
+
+ /* ===== Previous / next ===== */
+ const seq=Array.from(document.querySelectorAll(".side .tab"));
+ document.querySelectorAll(".layout>.panel").forEach(pn=>{
+  const tab=document.getElementById(pn.getAttribute("aria-labelledby")); const i=seq.indexOf(tab); if(i<0)return;
+  const nm=t=>t.querySelector("span:last-child").textContent;
+  const d=document.createElement("div"); d.className="pn";
+  d.innerHTML=(i>0?'<button type="button" class="action secondary" data-to="'+seq[i-1].id+'">&larr; '+esc2(nm(seq[i-1]))+'</button>':'<span></span>')+(i<seq.length-1?'<button type="button" class="action" data-to="'+seq[i+1].id+'">'+esc2(nm(seq[i+1]))+' &rarr;</button>':'');
+  d.addEventListener("click",e=>{const b=e.target.closest("[data-to]"); if(b){document.getElementById(b.dataset.to).click();window.scrollTo({top:0});}});
+  pn.appendChild(d);
+ });
+
+ /* ===== Practice Scan Starter ===== */
+ const SQ=Array.from(document.querySelectorAll("#panelp .scan-q"));
+ function scanText(){
+  const sys=el("scan-sys").value.trim()||"(system not named)";
+  const know=[],find=[],worry=[],un=[];
+  let out="PRACTICE SCAN OUTLINE\nSystem: "+sys+"\n";
+  SQ.forEach((q,i)=>{
+   const title=q.querySelector("legend").textContent.replace(/^\d+\.\s*/,""); const v=(q.querySelector("input:checked")||{}).value; const note=q.querySelector("textarea").value.trim();
+   const tag=v==="Know"?"Know":v==="Find out"?"Find out":v==="Concern"?"Concern":"Not yet marked";
+   out+="\n"+(i+1)+". "+title+" ["+tag+"]\n"+(note?note+"\n":"");
+   (v==="Find out"?find:v==="Concern"?worry:v==="Know"?know:un).push(title);
+  });
+  out+="\nSTILL TO FIND OUT: "+(find.length?find.join("; "):"nothing marked")+"\nCONCERNS TO TEST WITH EVIDENCE: "+(worry.length?worry.join("; "):"nothing marked")+"\nALREADY CLEAR: "+(know.length?know.join("; "):"nothing marked")+(un.length?"\nNOT YET MARKED: "+un.join("; "):"")+"\n";
+  return out;
+ }
+ el("scan-build").addEventListener("click",()=>{const o=el("scan-out");o.hidden=false;o.textContent=scanText();});
+ el("scan-copy").addEventListener("click",()=>{const o=el("scan-out");o.hidden=false;o.textContent=scanText();if(navigator.clipboard)navigator.clipboard.writeText(o.textContent).catch(()=>{});});
  })();
 </script>
 </body>
