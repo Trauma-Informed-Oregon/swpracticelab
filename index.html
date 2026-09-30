@@ -925,7 +925,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
 .lensbar .lb-t{font-weight:700;margin-right:4px}
 .lensbar .role-grid{display:flex;flex-wrap:wrap;gap:6px;margin:0}
 .lensbar .role-btn{min-height:0;padding:7px 13px;border-radius:999px;font-size:.93rem}
-.lensbar .role-summary{flex-basis:100%;font-size:.9rem;color:var(--muted)}
+.lensbar .role-summary{display:none}
 .layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:20px;align-items:start}
 .layout>.side{grid-column:1;grid-row:1 / span 30;position:sticky;top:10px;max-height:calc(100vh - 20px);overflow:auto}
 .layout>.panel{grid-column:2}
@@ -997,9 +997,40 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
 .scan-q textarea{width:100%;min-height:58px;border:1.5px solid #8a948d;border-radius:8px;padding:8px;font:inherit}
 @media(max-width:900px){.hx-paths{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.sim-cols{grid-template-columns:1fr}.gauge{grid-template-columns:1fr}}
 @media print{.side,.hx-paths{display:none!important}.layout{display:block}}
+
+/* ===== Artwork ===== */
+.ico{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;color:var(--accent)}
+.hx-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;align-items:center;position:relative;overflow:hidden}
+.hx-hero .art{width:100%;height:auto}
+.hx-hero .action{background:#fff;color:var(--psu);border:0;font-size:1.05rem;margin-top:4px}
+.hx-hero .action:hover{background:#eaf1ed}
+.hx-hero .action:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@keyframes fadeout{0%,25%{opacity:1}65%,100%{opacity:.16}}
+@keyframes glide{0%,25%{transform:translate(0,0)}70%,100%{transform:translate(var(--dx),var(--dy))}}
+@media(prefers-reduced-motion:no-preference){.art .lose{animation:fadeout 6s ease-in-out infinite alternate}.art .keep{animation:glide 6s ease-in-out infinite alternate}}
+.trythis{display:flex;gap:14px;align-items:center;background:linear-gradient(90deg,var(--accent-soft),#fff);border:1.5px solid var(--lens-band,var(--line));border-radius:14px;padding:12px 16px;margin:6px 0 14px}
+.trythis .spot{flex:0 0 52px;height:52px;border-radius:14px;background:var(--accent);display:grid;place-items:center}
+.trythis .spot .ico{color:#fff;width:28px;height:28px}
+.trythis p{margin:0}.trythis b{display:block;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.stages{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.stages .col{border:1.5px solid var(--line);border-radius:12px;background:#fff;padding:8px 6px 8px;cursor:pointer;color:var(--ink);text-align:center;font-weight:700;font-size:.82rem;line-height:1.2}
+.stages button.col[aria-pressed="true"]{color:var(--ink);border-color:var(--psu);box-shadow:0 0 0 3px rgba(21,71,52,.25);background:var(--accent-soft)}
+.stages .col small{display:block;font-weight:600;color:var(--muted);margin-top:4px;font-size:.74rem}
+.dots{display:grid;grid-template-columns:repeat(4,16px);gap:3px;justify-content:center;margin:6px 0}
+.dot{width:16px;height:16px;display:block;box-sizing:border-box}
+.dot.life{background:#154734;border-radius:50%}.dot.kept{background:#1b6b3a;border-radius:50%}
+.dot.reduced{background:#fff;border:5px solid #8a5a00;border-radius:50%}.dot.lost{border:2px dashed #6c766f;border-radius:50%}
+.dot.harm{background:#9b1c1c;border-radius:3px}.dot.keep-out{background:#2f5388;transform:rotate(45deg) scale(.7)}
+.stages .play{grid-column:1/-1;justify-self:start}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.82rem;color:var(--muted);margin:4px 0 12px;align-items:center}
+.legend span{display:inline-flex;gap:6px;align-items:center}.legend .dot{width:14px;height:14px}
+.tcard .hd{display:flex;gap:7px;align-items:center;margin-bottom:3px}
+.tcard .hd .ico{width:20px;height:20px}
+@media(max-width:900px){.hx-hero{grid-template-columns:1fr}.stages{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
  <body data-lens="socialwork">
+ <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="ic-1" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></symbol><symbol id="ic-2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2" fill="#fff"/><circle cx="16" cy="12" r="2" fill="#fff"/><circle cx="10" cy="18" r="2" fill="#fff"/></symbol><symbol id="ic-3" viewBox="0 0 24 24"><circle cx="9" cy="12" r="5.5"/><circle cx="15" cy="12" r="5.5"/></symbol><symbol id="ic-4" viewBox="0 0 24 24"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 12h3M14 12h3M12 10V5M10.5 6.5L12 5l1.5 1.5"/></symbol><symbol id="ic-5" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></symbol><symbol id="ic-6" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></symbol><symbol id="ic-7" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 015 0c0 1.5-2.5 2-2.5 4"/><circle cx="12" cy="17" r=".6"/></symbol><symbol id="ic-8" viewBox="0 0 24 24"><path d="M5 6c0-1.7 3.1-3 7-3s7 1.3 7 3-3.1 3-7 3-7-1.3-7-3zM5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></symbol><symbol id="ic-9" viewBox="0 0 24 24"><path d="M12 4v16M6 20h12M5 8h14M5 8l-3 7a3 3 0 006 0zM19 8l-3 7a3 3 0 006 0z"/></symbol><symbol id="ic-s" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></symbol><symbol id="ic-t1" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="ic-t2" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="12" rx="2"/><path d="M4 10h16"/><circle cx="8" cy="19" r="1.5"/><circle cx="16" cy="19" r="1.5"/></symbol><symbol id="ic-t3" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 017-2.5A4 4 0 0119 10c0 5.500-7 10-7 10z"/></symbol><symbol id="ic-t4" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></symbol><symbol id="ic-t5" viewBox="0 0 24 24"><rect x="6" y="11" width="12" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></symbol><symbol id="ic-t6" viewBox="0 0 24 24"><path d="M12 3v4M10 5h4M6 21V12l6-4 6 4v9zM10 21v-5h4v5"/></symbol><symbol id="ic-t7" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.500"/><path d="M3 20c0-3.500 2.700-6 6-6s6 2.500 6 6M15 14.500c3 0 6 1.700 6 5"/></symbol><symbol id="ic-t8" viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></symbol><symbol id="ic-t9" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></symbol><symbol id="ic-t10" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7zM14 3v4h4M9 12h6M9 16h6"/></symbol><symbol id="ic-t11" viewBox="0 0 24 24"><path d="M5 11h14v3a6 6 0 01-6 6h-2a6 6 0 01-6-6zM4 11h16M9 4c-1 1 1 2 0 3M13 4c-1 1 1 2 0 3"/></symbol><symbol id="ic-t12" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M6 10v10h12V10M10 20v-6h4v6"/></symbol><symbol id="ic-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/></symbol></svg>
  <a href="#main-content" class="skip-link">Skip to main content</a>
  <div id="tooltip" class="tooltip" role="tooltip"></div>
 
@@ -1017,7 +1048,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
 
  <main class="wrap" id="main-content">
 
- <div class="banner"><p style="margin:0"><strong>Teaching practice only.</strong> Every example here is invented. Nothing is a clinical, risk, eligibility, or public-health tool. Do not enter real client, patient, student, coworker, or agency information. This page has no account, analytics, cookies, database, AI connection, or submission form.</p></div>
+ <div class="banner"><p style="margin:0"><strong>Teaching practice only.</strong> Every example is invented. Do not enter real client, patient, student, or agency information. Nothing on this page is stored or sent.</p></div>
  <section class="lensbar role-picker" aria-labelledby="role-heading">
  <span class="lb-t" id="role-heading">Your lens:</span>
   <div class="role-grid">
@@ -1055,9 +1086,30 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
 
  <section id="panelhome" class="panel active hx" role="tabpanel" aria-labelledby="tabhome">
  <div class="hx-hero">
+ <div>
  <h2>The Life and the Record</h2>
- <p>Every automated system works from a record. A record is a translation of a life, and translations lose things. This lab lets you watch one person's life pass through a scoring system, see what falls away at each step, and then change the design to find out what it takes to keep it.</p>
+ <p>Every automated system works from a record. A record is a translation of a life, and translations lose things. Watch one person's life pass through a scoring system, see what falls away at each step, then change the design and see what it takes to keep it.</p>
  <p>No background needed. Terms are explained where they appear. Ungraded, private, and fictional throughout.</p>
+ <button type="button" class="action" id="hero-play">Play Marisol's story</button>
+ </div>
+ <svg class="art" viewBox="0 0 420 230" aria-hidden="true" focusable="false">
+ <g>
+  <circle class="lose" cx="30" cy="50" r="12" fill="#f2c14e"/><circle class="lose" cx="68" cy="34" r="10" fill="#e07a5f"/><circle class="lose" cx="104" cy="58" r="13" fill="#81b29a"/>
+  <circle class="lose" cx="40" cy="98" r="11" fill="#a8dadc"/><circle class="lose" cx="84" cy="96" r="12" fill="#f4a261"/><circle class="lose" cx="124" cy="104" r="9" fill="#cdb4db"/>
+  <circle class="lose" cx="28" cy="148" r="12" fill="#ffafcc"/><circle class="lose" cx="70" cy="150" r="10" fill="#bde0fe"/><circle class="lose" cx="112" cy="152" r="13" fill="#b7e4c7"/>
+  <circle class="keep" style="--dx:118px;--dy:-24px" cx="52" cy="192" r="10" fill="#f2c14e"/><circle class="keep" style="--dx:76px;--dy:-52px" cx="92" cy="196" r="10" fill="#e07a5f"/><circle class="keep" style="--dx:38px;--dy:-84px" cx="132" cy="190" r="10" fill="#81b29a"/>
+ </g>
+ <path d="M150 115h30" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M172 107l10 8-10 8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+ <rect x="190" y="40" width="112" height="140" rx="10" fill="#fff"/><rect x="190" y="40" width="112" height="24" rx="10" fill="#e6efe9"/>
+ <text x="246" y="57" text-anchor="middle" font-size="13" font-weight="700" fill="#154734" font-family="Arial,sans-serif">RECORD</text>
+ <rect x="204" y="76" width="70" height="7" rx="3" fill="#c9d3cc"/><rect x="204" y="92" width="52" height="7" rx="3" fill="#c9d3cc"/><rect x="204" y="108" width="62" height="7" rx="3" fill="#c9d3cc"/>
+ <text x="246" y="160" text-anchor="middle" font-size="40" font-weight="800" fill="#154734" font-family="Arial,sans-serif">5</text>
+ <rect x="190" y="196" width="112" height="12" rx="6" fill="#ffffff55"/><rect x="190" y="196" width="56" height="12" rx="6" fill="#fff"/><rect x="278" y="188" width="3" height="28" fill="#f2c14e"/>
+ <text x="279" y="228" text-anchor="middle" font-size="12" font-weight="700" fill="#fff" font-family="Arial,sans-serif">line: 8</text>
+ <path d="M310 110h24" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+ <rect x="344" y="66" width="58" height="104" rx="8" fill="none" stroke="#fff" stroke-width="3"/><circle cx="392" cy="120" r="3.500" fill="#fff"/>
+ <text x="373" y="194" text-anchor="middle" font-size="12" font-weight="700" fill="#fff" font-family="Arial,sans-serif">standard queue</text>
+</svg>
  </div>
  <div class="hx-paths">
  <button type="button" data-go="#sim"><b>Watch it happen</b><span>Start with Marisol below. No background needed.</span></button>
@@ -1067,7 +1119,8 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  <div class="sim" id="sim">
  <h3 id="sim-title"></h3>
  <p id="sim-line"></p>
- <div class="stages" id="sim-stages" role="group" aria-label="Steps a life passes through"></div>
+ <div class="stages" id="sim-stages" role="group" aria-label="Steps a life passes through. Each column shows what is left of her life at that step."></div>
+ <div class="legend" id="sim-legend"></div>
  <p class="stage-say" id="sim-say" aria-live="polite"></p>
  <div id="sim-score"></div>
  <ul class="cards" id="sim-cards" aria-label="What is true about her life"></ul>
@@ -1100,6 +1153,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  <span class="week-tag">Week 1 companion</span>
  <div class="lens-band"><span class="lens-dot" aria-hidden="true"></span><span>Viewing through the <span id="lens-label-1">Social Worker</span> lens</span><span class="lens-switch">Switch lenses above</span></div>
  <div class="week-due"><span class="due-icon" aria-hidden="true">&#9679;</span><span><span class="due-label">Course connection</span> <strong>Week 1: CSWE Technology Report (pp. 12-26)</strong> connects with this lab's work on identifying where AI and automated systems already appear in helping professions.</span></div>
+ <div class="trythis"><span class="spot"><svg class="ico" aria-hidden="true"><use href="#ic-1"/></svg></span><p><b>Try this</b>Press each of the four boxes below. It is one record run through four different systems.</p></div>
  <h2>Run the same case through four different systems</h2>
  <p>People argue about "AI" as if it were one thing. It isn't. Below is one fictional record. Run it through each system type and watch what each one actually does with the same information, and what each one ignores.</p>
 
@@ -1175,6 +1229,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  <span class="week-tag">Week 2 companion</span>
  <div class="lens-band"><span class="lens-dot" aria-hidden="true"></span><span>Viewing through the <span id="lens-label-2">Social Worker</span> lens</span><span class="lens-switch">Switch lenses above</span></div>
  <div class="week-due"><span class="due-icon" aria-hidden="true">&#9679;</span><span><span class="due-label">Course connection</span> <strong>Week 2: Obermeyer et al., "Dissecting Racial Bias..."</strong> connects with this lab's work on prediction, false positives, false negatives, and the wrong-proxy problem.</span></div>
+ <div class="trythis"><span class="spot"><svg class="ico" aria-hidden="true"><use href="#ic-2"/></svg></span><p><b>Try this</b>Move the three sliders. Watch who crosses the line and who does not.</p></div>
  <h2>What information counts?</h2>
  <p>Automated systems do not simply “look at everything.” People decide what information enters the system and how much influence different information has.</p>
 
@@ -1222,6 +1277,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  <span class="week-tag">Week 3 companion</span>
  <div class="lens-band"><span class="lens-dot" aria-hidden="true"></span><span>Viewing through the <span id="lens-label-3">Social Worker</span> lens</span><span class="lens-switch">Switch lenses above</span></div>
  <div class="week-due"><span class="due-icon" aria-hidden="true">&#9679;</span><span><span class="due-label">Course connection</span> <strong>Week 3: Benjamin, <em>Race After Technology</em>, Chapter 1</strong> connects with this lab's work on how bias can enter through data, design, categories, testing, and implementation.</span></div>
+ <div class="trythis"><span class="spot"><svg class="ico" aria-hidden="true"><use href="#ic-3"/></svg></span><p><b>Try this</b>Read the three what-ifs and decide which one should change how the score is read.</p></div>
  <h2>Same system, different consequences</h2>
  <p>Bias does not require a system to use race, gender, or another identity directly. Historical patterns, missing information, and <span class="term" tabindex="0" data-term="proxy">proxy variables</span> can still shape who is advantaged or disadvantaged.</p>
  <div class="scenario"><p id="l3-intro"></p></div>
@@ -1244,6 +1300,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  <span class="week-tag">Week 4 companion</span>
  <div class="lens-band"><span class="lens-dot" aria-hidden="true"></span><span>Viewing through the <span id="lens-label-4">Social Worker</span> lens</span><span class="lens-switch">Switch lenses above</span></div>
  <div class="week-due"><span class="due-icon" aria-hidden="true">&#9679;</span><span><span class="due-label">Course connection</span> <strong>Week 4: Eubanks, <em>Automating Inequality</em>, Chapter 4</strong> connects with this lab's work on automation in benefits, housing, child welfare, healthcare, and other public-service systems.</span></div>
+ <div class="trythis"><span class="spot"><svg class="ico" aria-hidden="true"><use href="#ic-4"/></svg></span><p><b>Try this</b>Press Reveal to walk through one decision a step at a time, and pause at each step.</p></div>
  <h2>Follow the decision</h2>
  <p>An automated result is rarely the end of the story. Trace how information becomes an <span class="term" tabindex="0" data-term="output">output</span>, how a person acts on it, and whether anyone can question or correct the result.</p>
  <div class="scenario"><p id="l4-intro"></p></div>
@@ -1269,6 +1326,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  <span class="week-tag">Week 5 companion</span>
  <div class="lens-band"><span class="lens-dot" aria-hidden="true"></span><span>Viewing through the <span id="lens-label-5">Social Worker</span> lens</span><span class="lens-switch">Switch lenses above</span></div>
  <div class="week-due"><span class="due-icon" aria-hidden="true">&#9679;</span><span><span class="due-label">Course connection</span> <strong>Week 5: Lawrence et al. on large language models in mental health</strong> connects with this lab's work on documentation, client-facing tools, professional judgment, and generated language.</span></div>
+ <div class="trythis"><span class="spot"><svg class="ico" aria-hidden="true"><use href="#ic-5"/></svg></span><p><b>Try this</b>Read each summary, then choose whether it stays faithful to the source or changes the meaning.</p></div>
  <h2>Did the meaning change?</h2>
  <p><span class="term" tabindex="0" data-term="generative-ai">Generative AI</span> can produce polished language that sounds plausible. The question is whether the output stays faithful to the source.</p>
  <div class="scenario"><h3>Source information</h3><p id="l5-source"></p></div>
@@ -1287,6 +1345,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  <span class="week-tag">Week 6 companion</span>
  <div class="lens-band"><span class="lens-dot" aria-hidden="true"></span><span>Viewing through the <span id="lens-label-6">Social Worker</span> lens</span><span class="lens-switch">Switch lenses above</span></div>
  <div class="week-due"><span class="due-icon" aria-hidden="true">&#9679;</span><span><span class="due-label">Course connection</span> <strong>Week 6: SAMHSA trauma-informed guidance</strong> connects with this lab's work on applying the six trauma-informed principles to technology use, consent, and accountability.</span></div>
+ <div class="trythis"><span class="spot"><svg class="ico" aria-hidden="true"><use href="#ic-6"/></svg></span><p><b>Try this</b>Open each principle and try answering its question before you read the answer.</p></div>
  <h2>Look through a trauma-informed lens</h2>
  <p>SAMHSA identifies six guiding principles of a trauma-informed approach. The questions below are course applications of those principles to technology use. They are not a SAMHSA technology checklist.</p>
  <div class="scenario"><h3 id="l6-title"></h3><p id="l6-scenario"></p></div>
@@ -1344,6 +1403,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  <span class="week-tag">Week 7 companion</span>
  <div class="lens-band"><span class="lens-dot" aria-hidden="true"></span><span>Viewing through the <span id="lens-label-7">Social Worker</span> lens</span><span class="lens-switch">Switch lenses above</span></div>
  <div class="week-due"><span class="due-icon" aria-hidden="true">&#9679;</span><span><span class="due-label">Course connection</span> <strong>Week 7: Garrett, "Magic Moments..."</strong> connects with this lab's work on comparing AI-supported responses with simpler tools, staffing, policy, and other alternatives.</span></div>
+ <div class="trythis"><span class="spot"><svg class="ico" aria-hidden="true"><use href="#ic-7"/></svg></span><p><b>Try this</b>Press the button on each option to see what it raises.</p></div>
  <h2>Does this problem need technology?</h2>
  <p>Technology is one possible response to a practice problem. It is not automatically the best response.</p>
  <div class="scenario"><h3 id="l7-title"></h3><p id="l7-scenario"></p></div>
@@ -1365,6 +1425,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  <section id="panel8" class="panel" role="tabpanel" aria-labelledby="tab8">
  <span class="week-tag">Week 9 companion</span>
  <div class="week-due"><span class="due-icon" aria-hidden="true">&#9679;</span><span><span class="due-label">Course connection</span> <strong>Week 9: Carroll et al., the CARE principles for Indigenous data governance</strong> connects with this lab's work on who holds authority over community data.</span></div>
+ <div class="trythis"><span class="spot"><svg class="ico" aria-hidden="true"><use href="#ic-8"/></svg></span><p><b>Try this</b>Pick one set of terms under each principle, then read the picture that builds.</p></div>
  <h2>Whose data is this?</h2>
  <p>The CARE principles (Collective benefit, Authority to control, Responsibility, Ethics) were written for Indigenous data governance. Where data come from a Tribal or Indigenous community, that community's authority over its data is the starting point. This lab borrows the four questions to look at a fictional request.</p>
  <div class="scenario"><h3>The request</h3><p>A county behavioral health office asks Cedar Bridge Wellness Circle, a fictional community-run peer program, for three years of attendance and check-in records. The county wants to train a tool that flags members "likely to disengage." The program's staff are deciding what to say. For each principle, choose the county's proposed terms, then see what each one leaves open.</p></div>
@@ -1381,6 +1442,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  <section id="panel9" class="panel" role="tabpanel" aria-labelledby="tab9">
  <span class="week-tag">Week 10 companion</span>
  <div class="week-due"><span class="due-icon" aria-hidden="true">&#9679;</span><span><span class="due-label">Course connection</span> <strong>Week 10: Decision Brief practice</strong> connects with the comparison you make in the AI Use, Limits, and Alternatives Decision Brief.</span></div>
+ <div class="trythis"><span class="spot"><svg class="ico" aria-hidden="true"><use href="#ic-9"/></svg></span><p><b>Try this</b>Rate the evidence for each option, choose a recommendation, then press Draft my paragraph.</p></div>
  <h2>Compare three responses</h2>
  <p>The Decision Brief asks you to compare the current approach, an AI-supported option, and a non-AI response. Here is a fictional problem with all three already described. Rate the evidence behind each, make a recommendation, and the page drafts a short paragraph for you to copy and rewrite.</p>
  <div class="scenario"><h3>Harbor Street Family Services</h3><p>About four in ten referred families miss their first appointment. Staff want that number down.</p></div>
@@ -2987,7 +3049,13 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
   const c=compute(), T=S.truths;
   el("sim-title").textContent=S.title+": "+S.person.name;
   el("sim-line").textContent=S.person.line;
-  el("sim-stages").innerHTML=STAGES.map((n,i)=>'<button type="button" aria-pressed="'+(i===stage)+'" data-st="'+i+'">'+(i+1)+'. '+n+'</button>').join("")+'<button type="button" id="sim-play" style="border-style:dashed">Play through</button>';
+  const NM={kept:"kept",reduced:"reduced",lost:"lost",harm:"recorded without her say","keep-out":"kept out of the record",life:"true"};
+  el("sim-stages").innerHTML=STAGES.map((n,i)=>{
+   const ks=T.map(t=>status(t,c,i)[0]); const cnt={}; ks.forEach(k=>cnt[k]=(cnt[k]||0)+1);
+   const sum=Object.keys(cnt).map(k=>cnt[k]+" "+((i===0&&k==="keep-out")?"hers to share":NM[k])).join(", ");
+   return '<button type="button" class="col" aria-pressed="'+(i===stage)+'" data-st="'+i+'"><span>'+(i+1)+'. '+n+'</span><span class="dots" aria-hidden="true">'+ks.map(k=>'<i class="dot '+k+'"></i>').join("")+'</span><small>'+sum+'</small></button>';
+  }).join("")+'<button type="button" id="sim-play" class="action secondary play">&#9654; Play through</button>';
+  el("sim-legend").innerHTML='<span><i class="dot kept"></i>Kept whole</span><span><i class="dot reduced"></i>Reduced to a number</span><span><i class="dot lost"></i>Lost</span><span><i class="dot harm"></i>Recorded without her say</span><span><i class="dot keep-out"></i>Hers to keep out</span>';
   el("sim-say").textContent=say(c);
   // score bar
   let sb="";
@@ -2996,7 +3064,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
    sb='<div class="scorebar" role="img" aria-label="Score '+c.score+', line at '+c.line+(c.bandW?', second-look band '+(c.line-c.bandW)+' to '+c.line:'')+'"><i style="width:'+w(c.score)+'"></i>'+(c.bandW?'<s style="left:'+w(c.line-c.bandW)+';width:'+(100*c.bandW/max)+'%"></s>':'')+'<u style="left:'+w(c.line)+'"><em>line: '+c.line+'</em></u></div><p class="small">Score '+c.score+(c.points?' ('+S.system.base+' from the record fields, +'+c.points+' from circumstances the record now holds)':' (from '+S.system.scoreFields+')')+(c.bandW?'. Hatched area is the second-look band.':'.')+'</p>';
   }
   el("sim-score").innerHTML=sb;
-  el("sim-cards").innerHTML=T.map(t=>{const [k,l]=status(t,c,stage); return '<li class="tcard '+k+'"><b>'+esc2(t.label)+'</b>'+esc2(t.text)+'<br><span class="st">'+esc2(l)+'</span></li>';}).join("");
+  el("sim-cards").innerHTML=T.map(t=>{const [k,l]=status(t,c,stage); const icn=document.getElementById("ic-t"+t.id)?"ic-t"+t.id:"ic-dot"; return '<li class="tcard '+k+'"><span class="hd"><svg class="ico" aria-hidden="true"><use href="#'+icn+'"/></svg><b>'+esc2(t.label)+'</b></span>'+esc2(t.text)+'<br><span class="st">'+esc2(l)+'</span></li>';}).join("");
   el("sim-levers").innerHTML=S.levers.map(l=>'<li class="lever'+(on.has(l.id)?' on':'')+'"><label><input type="checkbox" data-lv="'+l.id+'"'+(on.has(l.id)?' checked':'')+'><span>'+esc2(l.label)+'</span></label><p>'+esc2(l.detail)+'</p><div class="tags">Step '+l.stage+' &middot; Cost '+"$".repeat(l.cost||0).padEnd(0)+(l.cost?'':'none')+' &middot; Risk '+(l.risk?"!".repeat(l.risk):'low')+'</div></li>').join("");
   el("sim-presets").innerHTML=S.presets.map((p,i)=>'<button type="button" class="action secondary" data-pre="'+i+'">'+esc2(p.label)+'</button>').join("");
   // outcome
@@ -3040,6 +3108,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  el("sim-reset").addEventListener("click",()=>{el("sim-json").value=JSON.stringify(DEFAULT,null,1);el("sim-msg").textContent=loadJSON(el("sim-json").value);});
  el("sim-dl").addEventListener("click",()=>{const b=new Blob([el("sim-json").value],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="life-and-record-scenario.json";document.body.appendChild(a);a.click();a.remove();});
  document.querySelectorAll(".hx-paths [data-go]").forEach(b=>b.addEventListener("click",()=>{const g=b.dataset.go; if(g==="#sim"){el("sim").scrollIntoView({behavior:"smooth"});el("sim-title").setAttribute("tabindex","-1");el("sim-title").focus({preventScroll:true});} else {el(g).click();window.scrollTo({top:0});}}));
+ el("hero-play").addEventListener("click",()=>{el("sim").scrollIntoView({behavior:"smooth"});setTimeout(()=>{const b=el("sim-play");if(b)b.click();},350);});
  render();
 
  /* ===== Previous / next ===== */
