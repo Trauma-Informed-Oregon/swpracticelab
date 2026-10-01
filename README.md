@@ -27,3 +27,20 @@ Keyboard operable, labelled controls, no color-only meaning (every card carries 
 ## License
 
 Add a license before sharing outside the course.
+
+## Tool Bench
+
+Six working tools, each with fictional data and a real model running in the browser. Nothing is sent anywhere.
+
+| Tool | Engine | What the student does |
+|---|---|---|
+| Outreach priority list | Logistic regression trained on 800 synthetic people, audited on 600 held out | Choose facts and labels, set capacity, read false-alarm rates by group, compare with a simple rule and a random draw |
+| Session note scribe | Extractive scorer with a visible vocabulary | Audit what a draft kept and dropped, repair it, count review time |
+| Benefits case reader | Rules over 300 synthetic applications with document-dependent reading error | Set cutoffs, see who waits, meet a challenge |
+| Message assistant | Naive Bayes message sorter trained on 56 examples, tested on 29 held-out messages | Test crisis detection by writing style, add training examples, check policy practices |
+| Paste check | Pattern filter plus a 2,400-person synthetic town | See what a filter misses and how many residents a note still describes |
+| Vendor desk | Accuracy calculator and a 14-clause contract review | Test a headline claim with real arithmetic, rate clauses, get a vendor profile |
+
+Every tool follows the same path: predict, operate, open the hood, compare with a simpler option, then write a recommendation (use, limit, redesign, pause, or reject) that the page drafts from the student's own numbers and sends to My practice notes. Tools are tagged to the course objectives they practice. The anchors on each tool cite current sources (ONC 2024, Nextgov 2026, Fierce Healthcare, News From The States, Morgan Lewis, NASW Illinois, Holland & Knight).
+
+These are teaching models, not vendor products. Their numbers describe the simulations only.

@@ -1027,6 +1027,118 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
 .tcard .hd{display:flex;gap:7px;align-items:center;margin-bottom:3px}
 .tcard .hd .ico{width:20px;height:20px}
 @media(max-width:900px){.hx-hero{grid-template-columns:1fr}.stages{grid-template-columns:repeat(3,1fr)}}
+/* ===== Tool Bench ===== */
+.bench .lead{font-size:1.05rem;max-width:70ch}
+.bx-tags{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px;padding:0;list-style:none}
+.bx-tags li{font-size:.8rem;border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--accent-soft);color:var(--ink)}
+.bx-anchor{border-left:4px solid var(--accent);background:var(--warm);padding:10px 14px;border-radius:0 10px 10px 0;margin:10px 0 6px;font-size:.95rem}
+.bx-anchor a{color:var(--accent)}
+.bx-honest{font-size:.9rem;color:var(--muted);margin:6px 0 4px}
+.bx-step{display:flex;gap:10px;align-items:center;margin:26px 0 6px}
+.bx-step .n{background:var(--accent);color:#fff;border-radius:999px;min-width:28px;height:28px;display:inline-grid;place-items:center;font-size:.9rem;font-weight:700}
+.bx-step h3{margin:0;font-size:1.15rem}
+.pred{border:2px dashed var(--accent);border-radius:12px;padding:12px 14px;background:var(--accent-soft);margin:8px 0}
+.pred legend{padding:0 6px}
+.reveal{background:var(--good-soft);border:1.5px solid var(--good);border-radius:10px;padding:12px 14px;margin-top:10px}
+.reveal h4{margin:0 0 6px}
+.reveal table{border-collapse:collapse;margin:6px 0;font-size:.92rem}
+.reveal td,.reveal th{border:1px solid var(--line);padding:4px 9px;text-align:left}
+.bx-hood{border:1.5px solid var(--line);border-radius:12px;padding:8px 14px;background:#fff;margin:8px 0}
+.bx-hood summary{cursor:pointer;font-weight:700;padding:4px 0}
+.bx-alt{border:1.5px solid var(--line);border-radius:12px;padding:10px 14px;background:#fff;margin:8px 0}
+.bx-ckpt{border:2px solid var(--accent);border-radius:12px;padding:12px 14px;background:#fff;margin:8px 0}
+.bx-ckpt fieldset{border:0;margin:0 0 8px;padding:0}
+.bx-ckpt legend{font-weight:700;margin-bottom:4px}
+.bx-ckpt .out{white-space:pre-wrap;background:var(--warm);border-radius:10px;padding:10px 12px;margin-top:8px}
+.bx-ckpt .gate{color:var(--warn);font-weight:600}
+.bx-hint{font-size:.9rem;color:var(--muted)}
+
+/* the dark "window" that holds each working tool */
+.win{background:#0e1a16;color:#e6f2ec;border-radius:12px;border:1px solid #1f3a30;overflow:hidden;margin:8px 0 14px;box-shadow:0 4px 18px rgba(8,19,14,.28)}
+.win-bar{display:flex;align-items:center;gap:8px;padding:8px 12px;background:#14271f;border-bottom:1px solid #1f3a30;flex-wrap:wrap}
+.win-bar .d{width:10px;height:10px;border-radius:50%;background:#3b5b4d;flex:0 0 auto}
+.win-title{font:600 .85rem ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#bfe3d2;margin-left:4px}
+.win-tag{margin-left:auto;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:#f2c14e;border:1px solid #6b5a22;border-radius:6px;padding:1px 7px}
+.win-body{padding:14px}
+.win p,.win li,.win label,.win legend,.win summary{color:#e6f2ec}
+.win .dim{color:#a9cdbb;font-size:.88rem}
+.win h4{margin:12px 0 6px;color:#bfe3d2;font-size:1rem}
+.win .mono,.win .kpi .v,.win .hb .val{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.win a{color:#9fe0c0}
+.win :focus-visible{outline:3px solid #ffd166;outline-offset:2px}
+.win button.wb{background:#7fd1a8;color:#08130e;border:0;border-radius:8px;padding:8px 14px;font-weight:700;cursor:pointer;font-size:.95rem}
+.win button.wb:hover{background:#9fe0c0}
+.win button.wb.ghost{background:transparent;color:#cfeadb;border:1px solid #4d7563}
+.win button.wb.ghost:hover{background:#17301f}
+.win button.wb:disabled{opacity:.55;cursor:not-allowed}
+.win select,.win input[type=text],.win textarea{background:#0a130f;color:#e6f2ec;border:1px solid #4d7563;border-radius:8px;padding:7px 9px;font:inherit;max-width:100%}
+.win textarea{width:100%;min-height:96px;box-sizing:border-box}
+.win input[type=range]{width:100%;accent-color:#7fd1a8}
+.win input[type=checkbox],.win input[type=radio]{accent-color:#7fd1a8;width:17px;height:17px}
+.win .row{display:flex;gap:8px;align-items:flex-start;margin:6px 0;flex-wrap:nowrap}
+.win .row:has(input[type=text]),.win .row:has(button){flex-wrap:wrap}
+.win .row input[type=text]{flex:1 1 180px;min-width:0}
+.win .grid2>div,.win .grid3>div{min-width:0}
+.win .row input{margin-top:3px;flex:0 0 auto}
+.win .grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:18px}
+.win .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.win fieldset{border:1px solid #2a4a3c;border-radius:10px;padding:8px 12px;margin:0 0 10px}
+.win legend{font-weight:700;color:#bfe3d2;padding:0 6px}
+.win table{width:100%;border-collapse:collapse;font-size:.9rem}
+.win th{color:#a9cdbb;text-align:left;font-weight:600}
+.win td,.win th{padding:6px 8px;border-bottom:1px solid #1f3a30;vertical-align:top}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:8px 0}
+.kpi{background:#102119;border:1px solid #1f3a30;border-radius:10px;padding:10px}
+.kpi .v{font-weight:700;font-size:1.45rem;color:#7fd1a8}
+.kpi .v.warn{color:#f2b36b}
+.kpi .v.bad{color:#ff9d92}
+.kpi .l{font-size:.8rem;color:#a9cdbb}
+.hb{display:grid;grid-template-columns:minmax(90px,170px) 1fr 62px;gap:8px;align-items:center;font-size:.88rem;margin:5px 0}
+.hb .tr{background:#0a130f;border:1px solid #1f3a30;border-radius:6px;height:14px;overflow:hidden}
+.hb .tr i{display:block;height:100%;background:#7fd1a8}
+.hb .tr i.b{background:#f2b36b}
+.hb .tr i.neg{background:#ff9d92}
+.hb .val{text-align:right}
+.chip{display:inline-block;background:#1b3328;color:#d6efe3;border:1px solid #2c5443;border-radius:6px;padding:0 7px;font-size:.76rem;margin:1px 2px 1px 0}
+.chip.r{background:#4a1f1f;color:#ffd9d4;border-color:#7b3a37}
+.chip.p{background:#1f3550;color:#d6e6ff;border-color:#3a5b86}
+.chip.x{background:#3d2f55;color:#eadfff;border-color:#62508a}
+.chip.s{background:#1f4a35;color:#d6ffe9;border-color:#3a8662}
+.chip.v{background:#4a3f1f;color:#fff0cc;border-color:#86733a}
+.chip.n{background:#4a2f1f;color:#ffe1cc;border-color:#865a3a}
+.chip.m{background:#2a3a3d;color:#d9eef2;border-color:#4d6e75}
+.note{background:#102119;border:1px solid #1f3a30;border-radius:10px;padding:10px 12px;margin:6px 0}
+.note .ln{display:flex;gap:8px;align-items:flex-start;padding:5px 0;border-bottom:1px dashed #1f3a30}
+.note .ln:last-child{border-bottom:0}
+.note .ln .t{flex:1}
+.note .ln.bad{background:#3a1f1f;border-radius:6px;padding:5px 6px}
+.note .ref{font-size:.75rem;color:#a9cdbb;white-space:nowrap}
+.tx{max-height:340px;overflow:auto;background:#0a130f;border:1px solid #1f3a30;border-radius:10px;padding:8px 10px}
+.tx .turn{padding:4px 0;border-bottom:1px dashed #1b3328}
+.tx .turn:last-child{border-bottom:0}
+.tx .who{font-weight:700;color:#9fcfba;margin-right:6px}
+.tx .turn.kept{background:#14301f;border-radius:6px}
+.tx .turn.drop{opacity:.9}
+.mini{font-size:.8rem}
+mark.m1{background:#6b3a00;color:#fff3e0;border-radius:3px;padding:0 2px}
+mark.m2{background:#4a1f4a;color:#ffe6ff;border-radius:3px;padding:0 2px}
+mark.m3{background:#1f3550;color:#e6f0ff;border-radius:3px;padding:0 2px}
+mark.m4{background:#4a1f1f;color:#ffe6e0;border-radius:3px;padding:0 2px}
+mark.m5{background:#1f4a35;color:#e0ffee;border-radius:3px;padding:0 2px}
+.dots10{display:grid;grid-template-columns:repeat(20,1fr);gap:3px;margin:6px 0}
+.dots10 i{display:block;aspect-ratio:1;border-radius:50%;background:#2a4a3c}
+.dots10 i.a{background:#7fd1a8}
+.dots10 i.b{background:#f2b36b}
+.dots10 i.c{background:#ff9d92}
+.chat{background:#0a130f;border:1px solid #1f3a30;border-radius:10px;padding:10px;min-height:120px;max-height:260px;overflow:auto}
+.chat .m{margin:6px 0;padding:7px 10px;border-radius:10px;max-width:88%}
+.chat .m.u{background:#1f3550;color:#e6f0ff;margin-left:auto}
+.chat .m.b{background:#17301f;color:#e6f2ec}
+.chat .m.alert{background:#4a1f1f;color:#ffe6e0}
+.chat .m .why{display:block;font-size:.76rem;color:#a9cdbb;margin-top:3px}
+@media(max-width:820px){.win .grid2,.win .grid3{grid-template-columns:minmax(0,1fr)}.hb{grid-template-columns:minmax(80px,120px) 1fr 52px}}
+@media print{.win{box-shadow:none}}
+
 </style>
 </head>
  <body data-lens="socialwork">
@@ -1076,6 +1188,13 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  <button class="tab" role="tab" id="tab7" aria-controls="panel7" aria-selected="false"><span class="wn" aria-hidden="true">7</span><span>Does it need technology?</span></button>
  <button class="tab" role="tab" id="tab8" aria-controls="panel8" aria-selected="false"><span class="wn" aria-hidden="true">8</span><span>Whose data is this?</span></button>
  <button class="tab" role="tab" id="tab9" aria-controls="panel9" aria-selected="false"><span class="wn" aria-hidden="true">9</span><span>Compare three responses</span></button>
+ <span class="navgroup" role="presentation">Tool Bench</span>
+ <button class="tab" role="tab" id="tabb1" aria-controls="panelb1" aria-selected="false"><span class="wn" aria-hidden="true">B1</span><span>Outreach priority list</span></button>
+ <button class="tab" role="tab" id="tabb2" aria-controls="panelb2" aria-selected="false"><span class="wn" aria-hidden="true">B2</span><span>Session note scribe</span></button>
+ <button class="tab" role="tab" id="tabb3" aria-controls="panelb3" aria-selected="false"><span class="wn" aria-hidden="true">B3</span><span>Benefits case reader</span></button>
+ <button class="tab" role="tab" id="tabb4" aria-controls="panelb4" aria-selected="false"><span class="wn" aria-hidden="true">B4</span><span>Message assistant</span></button>
+ <button class="tab" role="tab" id="tabb5" aria-controls="panelb5" aria-selected="false"><span class="wn" aria-hidden="true">B5</span><span>Paste check</span></button>
+ <button class="tab" role="tab" id="tabb6" aria-controls="panelb6" aria-selected="false"><span class="wn" aria-hidden="true">B6</span><span>Vendor desk</span></button>
  <span class="navgroup" role="presentation">Tools</span>
  <button class="tab" role="tab" id="tabp" aria-controls="panelp" aria-selected="false"><span class="wn" aria-hidden="true">S</span><span>Practice Scan Starter</span></button>
  <button class="tab" role="tab" id="tabv" aria-controls="panelv" aria-selected="false"><span class="wn" aria-hidden="true">+</span><span>Watch and explore</span></button>
@@ -1136,6 +1255,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  <div class="gauges" id="sim-gauges"></div>
  </div>
  </div>
+ <p class="bx-anchor" style="margin-top:16px"><b>Next: the Tool Bench.</b> Six working tools of the kinds agencies and hospitals use now. For each one you predict, operate, open the hood, compare with a simpler option, and write a recommendation. <button type="button" class="action secondary" id="goto-bench">Open the Tool Bench</button></p>
  <div class="bring-to-class" style="margin-top:16px">
  <strong>Optional reflection:</strong> Which single choice mattered most for Marisol, and which one would be hardest for a real agency to adopt? Why?
  <div class="my-answer"><label for="ans-lab0">Your answer (optional; stays on this page, nothing is saved or sent):</label><textarea id="ans-lab0" data-lab="lab0" data-title="Start here · The Life and the Record"></textarea><p class="saved-hint" id="hint-lab0" aria-live="polite"></p></div>
@@ -1454,6 +1574,85 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  <div class="bring-to-class">
  <strong>Optional reflection:</strong> Which option in your own Decision Brief has the thinnest evidence, and what would you need to see before relying on it?
  <div class="my-answer"><label for="ans-lab9">Your answer (optional; stays on this page, nothing is saved or sent):</label><textarea id="ans-lab9" data-lab="lab9" data-title="Lab 9 · Compare three responses"></textarea><p class="saved-hint" id="hint-lab9" aria-live="polite"></p></div>
+ </div>
+ </section>
+
+ <section id="panelb1" class="panel bench" role="tabpanel" aria-labelledby="tabb1">
+ <span class="week-tag">Tool Bench 1 of 6</span>
+ <h2>Outreach priority list</h2>
+ <p class="lead">You operate a prediction tool of the kind hospitals and child welfare agencies use to rank people for outreach. It is a real statistical model trained in your browser on fictional records, and you audit who it flags.</p>
+ <ul class="bx-tags" aria-label="Course objectives this tool practices"><li>Obj 1 · Predictive systems explained</li><li>Obj 3 · Where bias enters</li><li>Obj 5 · Effects on access</li><li>Obj 7 · Simpler options</li><li>Obj 8 · Recommendation</li></ul>
+ <div class="bx-anchor"><b>In use now.</b> 71% of US hospitals used predictive AI built into their health record in 2024. The most common uses were predicting inpatient risk (93%) and flagging high-risk outpatients (88%). About three quarters said they evaluate for bias. In child welfare, the federal Administration for Children and Families is offering $6 million for state pilots of predictive risk tools. <span class="small">Sources: <a href="https://healthit.gov/data/data-briefs/hospital-trends-use-evaluation-and-governance-predictive-ai-2023-2024/" rel="noopener">ONC data brief</a>, <a href="https://www.nextgov.com/artificial-intelligence/2026/06/hhs-wants-states-use-more-predictive-analytics-child-welfare/413957/" rel="noopener">Nextgov, June 2026</a>.</span></div>
+ <p class="bx-honest">This is a working model with fictional data, built to show how this kind of tool behaves. It is not any vendor's product, and its numbers say nothing about a specific vendor. Test the real product before relying on it.</p>
+ <div id="b1-app"></div>
+ <div class="bring-to-class">
+ <strong>Your finding:</strong> The page drafts a short finding from your own run. Rewrite it in your own words.
+ <div class="my-answer"><label for="ans-bench1">Your finding (optional; stays on this page, nothing is saved or sent):</label><textarea id="ans-bench1" data-lab="bench1" data-title="Tool Bench 1 · Outreach priority list"></textarea><p class="saved-hint" id="hint-bench1" aria-live="polite"></p></div>
+ </div>
+ </section>
+ <section id="panelb2" class="panel bench" role="tabpanel" aria-labelledby="tabb2">
+ <span class="week-tag">Tool Bench 2 of 6</span>
+ <h2>Session note scribe</h2>
+ <p class="lead">You run a scribe on a recorded conversation, audit what it kept and what it dropped, repair the draft, and count the time it actually saves.</p>
+ <ul class="bx-tags" aria-label="Course objectives this tool practices"><li>Obj 1 · Generative tools explained</li><li>Obj 2 · Reducing burden</li><li>Obj 3 · Error and omission</li><li>Obj 5 · Culture, relationship, judgment</li><li>Obj 6 · Evaluating claims</li></ul>
+ <div class="bx-anchor"><b>In use now.</b> Epic reports that 85% of its customers are live with generative AI, including AI Charting, which listens to a visit and drafts the note. County child welfare agencies use transcription tools on home visits, and one county reports saving about two hours of writing per interview. A large 2026 scribe study found about 89% agreement with clinician-validated notes and said its measure does not capture omissions. <span class="small">Sources: <a href="https://www.fiercehealthcare.com/ai-and-machine-learning/epic-rolls-out-ai-charting-and-more-built-automation-clinicians-and" rel="noopener">Fierce Healthcare</a>, <a href="https://binti.com/blog/ai-government-social-services/" rel="noopener">Binti</a>, <a href="https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2026.1874919/full" rel="noopener">Frontiers in Digital Health</a>.</span></div>
+ <p class="bx-honest">This is a working model with fictional data, built to show how this kind of tool behaves. It is not any vendor's product, and its numbers say nothing about a specific vendor. Test the real product before relying on it.</p>
+ <div id="b2-app"></div>
+ <div class="bring-to-class">
+ <strong>Your finding:</strong> The page drafts a short finding from your own run. Rewrite it in your own words.
+ <div class="my-answer"><label for="ans-bench2">Your finding (optional; stays on this page, nothing is saved or sent):</label><textarea id="ans-bench2" data-lab="bench2" data-title="Tool Bench 2 · Session note scribe"></textarea><p class="saved-hint" id="hint-bench2" aria-live="polite"></p></div>
+ </div>
+ </section>
+ <section id="panelb3" class="panel bench" role="tabpanel" aria-labelledby="tabb3">
+ <span class="week-tag">Tool Bench 3 of 6</span>
+ <h2>Benefits case reader</h2>
+ <p class="lead">You set the rules for a tool that reads application documents and flags possible errors, then measure the errors it catches, the people it wrongly flags, and who carries the delay.</p>
+ <ul class="bx-tags" aria-label="Course objectives this tool practices"><li>Obj 2 · Widening access</li><li>Obj 3 · Unequal burden</li><li>Obj 5 · Access and workload</li><li>Obj 7 · Simpler options</li><li>Obj 8 · Safeguards</li></ul>
+ <div class="bx-anchor"><b>In use now.</b> Michigan uses an AI case reader and document scanning on food assistance (SNAP) applications, with staff keeping the final decision. Its 2013 automated fraud system, MiDAS, produced fraud findings the state auditor judged wrong in 93% of the 22,000 cases reviewed. <span class="small">Source: <a href="https://www.newsfromthestates.com/article/michigans-use-ai-process-snap-applications-draws-concerns-about-past-automation-failures" rel="noopener">News From The States</a>.</span></div>
+ <p class="bx-honest">This is a working model with fictional data, built to show how this kind of tool behaves. It is not any vendor's product, and its numbers say nothing about a specific vendor. Test the real product before relying on it.</p>
+ <div id="b3-app"></div>
+ <div class="bring-to-class">
+ <strong>Your finding:</strong> The page drafts a short finding from your own run. Rewrite it in your own words.
+ <div class="my-answer"><label for="ans-bench3">Your finding (optional; stays on this page, nothing is saved or sent):</label><textarea id="ans-bench3" data-lab="bench3" data-title="Tool Bench 3 · Benefits case reader"></textarea><p class="saved-hint" id="hint-bench3" aria-live="polite"></p></div>
+ </div>
+ </section>
+ <section id="panelb4" class="panel bench" role="tabpanel" aria-labelledby="tabb4">
+ <span class="week-tag">Tool Bench 4 of 6</span>
+ <h2>Message assistant</h2>
+ <p class="lead">You train and test a small message assistant, find the messages it misses, and check it against the kind of disclosure and crisis rules states are now writing.</p>
+ <ul class="bx-tags" aria-label="Course objectives this tool practices"><li>Obj 1 · How the tool works</li><li>Obj 3 · Whose language it learned</li><li>Obj 4 · Standards and ethics</li><li>Obj 5 · Consent and access</li><li>Obj 8 · Safeguards</li></ul>
+ <div class="bx-anchor"><b>In use now.</b> Epic's patient assistant answers scheduling and billing questions by text and in the patient portal. Oregon SB 1546, effective January 1, 2027, sets disclosure and suicide-protocol rules for AI companion chatbots, with lawsuits of $1,000 per violation. Whether a given agency tool counts as a companion chatbot is a question for a compliance office. <span class="small">Sources: <a href="https://www.fiercehealthcare.com/ai-and-machine-learning/epic-rolls-out-ai-charting-and-more-built-automation-clinicians-and" rel="noopener">Fierce Healthcare</a>, <a href="https://www.morganlewis.com/pubs/2026/04/washington-and-oregon-regulate-ai-companions-key-compliance-changes" rel="noopener">Morgan Lewis</a>.</span></div>
+ <p class="bx-honest">This is a working model with fictional data, built to show how this kind of tool behaves. It is not any vendor's product, and its numbers say nothing about a specific vendor. Test the real product before relying on it.</p>
+ <div id="b4-app"></div>
+ <div class="bring-to-class">
+ <strong>Your finding:</strong> The page drafts a short finding from your own run. Rewrite it in your own words.
+ <div class="my-answer"><label for="ans-bench4">Your finding (optional; stays on this page, nothing is saved or sent):</label><textarea id="ans-bench4" data-lab="bench4" data-title="Tool Bench 4 · Message assistant"></textarea><p class="saved-hint" id="hint-bench4" aria-live="polite"></p></div>
+ </div>
+ </section>
+ <section id="panelb5" class="panel bench" role="tabpanel" aria-labelledby="tabb5">
+ <span class="week-tag">Tool Bench 5 of 6</span>
+ <h2>Paste check</h2>
+ <p class="lead">You paste text and see what a privacy filter catches, what it misses, and how many people in a small town a "de-identified" note could still describe.</p>
+ <ul class="bx-tags" aria-label="Course objectives this tool practices"><li>Obj 4 · Practice standards</li><li>Obj 5 · Privacy and consent</li><li>Obj 6 · Evaluating claims</li><li>Obj 8 · Safeguards</li></ul>
+ <div class="bx-anchor"><b>In use now.</b> A 2026 survey of 1,179 social workers (University of Texas at Austin with NASW) found most already use AI for emails, reports, and documentation. Two thirds named clear ethics guidelines as the most pressing need. <span class="small">Source: <a href="https://www.naswil.org/post/national-survey-finds-most-social-workers-already-using-artificial-intelligence-calling-for-ethical" rel="noopener">NASW Illinois summary of the survey</a>.</span></div>
+ <p class="bx-honest">This is a working model with fictional data, built to show how this kind of tool behaves. It is not any vendor's product, and its numbers say nothing about a specific vendor. Test the real product before relying on it.</p>
+ <div id="b5-app"></div>
+ <div class="bring-to-class">
+ <strong>Your finding:</strong> The page drafts a short finding from your own run. Rewrite it in your own words.
+ <div class="my-answer"><label for="ans-bench5">Your finding (optional; stays on this page, nothing is saved or sent):</label><textarea id="ans-bench5" data-lab="bench5" data-title="Tool Bench 5 · Paste check"></textarea><p class="saved-hint" id="hint-bench5" aria-live="polite"></p></div>
+ </div>
+ </section>
+ <section id="panelb6" class="panel bench" role="tabpanel" aria-labelledby="tabb6">
+ <span class="week-tag">Tool Bench 6 of 6</span>
+ <h2>Vendor desk</h2>
+ <p class="lead">You read a fictional sales sheet and contract, test its headline accuracy claim with real arithmetic, score the vendor, and write the decision.</p>
+ <ul class="bx-tags" aria-label="Course objectives this tool practices"><li>Obj 4 · Standards and ethics</li><li>Obj 6 · Evaluating claims</li><li>Obj 7 · Comparing with other options</li><li>Obj 8 · Recommendation</li></ul>
+ <div class="bx-anchor"><b>In use now.</b> States are writing rules fast. Washington, Georgia, and Utah require a licensed person to review AI-driven coverage denials. Arizona behavioral health board rules, effective January 1, 2027, require documented informed consent before AI is used in services. Maine restricts AI in therapeutic communications. <span class="small">Source: <a href="https://www.hklaw.com/en/insights/publications/2026/05/states-continue-efforts-to-regulate-ai-in-healthcare" rel="noopener">Holland &amp; Knight, 2026 state AI healthcare laws</a>.</span></div>
+ <p class="bx-honest">This is a working model with fictional data, built to show how this kind of tool behaves. It is not any vendor's product, and its numbers say nothing about a specific vendor. Test the real product before relying on it.</p>
+ <div id="b6-app"></div>
+ <div class="bring-to-class">
+ <strong>Your finding:</strong> The page drafts a short finding from your own run. Rewrite it in your own words.
+ <div class="my-answer"><label for="ans-bench6">Your finding (optional; stays on this page, nothing is saved or sent):</label><textarea id="ans-bench6" data-lab="bench6" data-title="Tool Bench 6 · Vendor desk"></textarea><p class="saved-hint" id="hint-bench6" aria-live="polite"></p></div>
  </div>
  </section>
 
@@ -2839,7 +3038,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  return;
  }
  // keep lab order
- const order = ["lab0","lab1","lab2","lab3","lab4","lab5","lab6","lab7","lab8","lab9"];
+ const order = ["lab0","lab1","lab2","lab3","lab4","lab5","lab6","lab7","lab8","lab9","bench1","bench2","bench3","bench4","bench5","bench6"];
  box.innerHTML = order.filter(k=>myAnswers[k] && myAnswers[k].text.trim()).map(k=>{
  const a = myAnswers[k];
  return '<div class="sheet-entry"><h3>'+esc(a.title)+'</h3><p class="prompt">'+esc(a.prompt)+'</p><div class="response">'+esc(a.text)+'</div></div>';
@@ -2871,7 +3070,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  window.print();
  });
  document.getElementById("notes-copy").addEventListener("click",async ()=>{
- const order = ["lab0","lab1","lab2","lab3","lab4","lab5","lab6","lab7","lab8","lab9"];
+ const order = ["lab0","lab1","lab2","lab3","lab4","lab5","lab6","lab7","lab8","lab9","bench1","bench2","bench3","bench4","bench5","bench6"];
  const text = order.filter(k=>myAnswers[k] && myAnswers[k].text.trim()).map(k=>{
  const a = myAnswers[k];
  return a.title+"\n"+a.prompt+"\n"+a.text+"\n";
@@ -2912,7 +3111,7 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  labs.forEach(x=>{ if(visited.has(x.id)&&!x.querySelector(".done")&&x.id!==t.id){ const d=document.createElement("span"); d.className="done"; d.setAttribute("aria-hidden","true"); x.appendChild(d);} });
  document.getElementById("progress-text").textContent=n+" of "+labs.length+" labs opened";
  document.getElementById("progress-bar").style.width=(100*n/labs.length)+"%";
- const pg=document.getElementById("pg"); pg.textContent=/^tab\d$/.test(t.id)?t.id.slice(3):(t.id==="tabhome"?"0":t.id==="tabv"?"+":t.id==="tabp"?"S":t.id==="tabn"?"N":"Aa");
+ const pg=document.getElementById("pg"); pg.textContent=/^tab\d$/.test(t.id)?t.id.slice(3):/^tabb\d$/.test(t.id)?"B"+t.id.slice(4):(t.id==="tabhome"?"0":t.id==="tabv"?"+":t.id==="tabp"?"S":t.id==="tabn"?"N":"Aa");
  }
  order.forEach(t=>t.addEventListener("click",()=>mark(t)));
  order.forEach(t=>t.addEventListener("keydown",e=>{ if(e.key==="ArrowRight"||e.key==="ArrowLeft") setTimeout(()=>{ const sel=document.querySelector('.tab[aria-selected="true"]'); if(sel) mark(sel); },0); }));
@@ -3141,5 +3340,879 @@ legend{font-weight:700;margin-bottom:6px;padding:0}
  el("scan-copy").addEventListener("click",()=>{const o=el("scan-out");o.hidden=false;o.textContent=scanText();if(navigator.clipboard)navigator.clipboard.writeText(o.textContent).catch(()=>{});});
  })();
 </script>
+<script>
+(function(){
+"use strict";
+/* ===== Tool Bench core ===== */
+const $=(s,r)=>(r||document).querySelector(s), $$=(s,r)=>Array.from((r||document).querySelectorAll(s));
+const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]));
+function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function gauss(r){let u=0,v=0;while(!u)u=r();while(!v)v=r();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v)}
+function pois(r,l){const L=Math.exp(-l);let k=0,p=1;do{k++;p*=r()}while(p>L);return k-1}
+const pc=(n,d)=>d?Math.round(1000*n/d)/10:0;
+const f1=x=>(Math.round(x*10)/10);
+const f2=x=>(Math.round(x*100)/100);
+function trainLogit(X,y,o){
+ const n=X.length,m=X[0].length,mu=Array(m).fill(0),sd=Array(m).fill(0);
+ for(let j=0;j<m;j++){for(let i=0;i<n;i++)mu[j]+=X[i][j];mu[j]/=n;for(let i=0;i<n;i++)sd[j]+=(X[i][j]-mu[j])**2;sd[j]=Math.sqrt(sd[j]/n)||1}
+ const Z=X.map(r=>r.map((v,j)=>(v-mu[j])/sd[j]));
+ let w=Array(m).fill(0),b=0;const lr=o.lr||0.3,l2=o.l2||0.01,it=o.iters||300;
+ for(let t=0;t<it;t++){const gw=Array(m).fill(0);let gb=0;
+  for(let i=0;i<n;i++){let z=b;for(let j=0;j<m;j++)z+=w[j]*Z[i][j];const p=1/(1+Math.exp(-z)),e=p-y[i];for(let j=0;j<m;j++)gw[j]+=e*Z[i][j];gb+=e}
+  for(let j=0;j<m;j++)w[j]-=lr*(gw[j]/n+l2*w[j]);b-=lr*gb/n}
+ return {w,b,mu,sd,score:row=>{let z=b;for(let j=0;j<m;j++)z+=w[j]*(row[j]-mu[j])/sd[j];return 1/(1+Math.exp(-z))}};
+}
+function stepHead(n,t){return '<div class="bx-step"><span class="n" aria-hidden="true">'+n+'</span><h3>'+t+'</h3></div>'}
+function winHTML(title,tag,body){return '<div class="win" role="group" aria-label="'+esc(title)+' (working model)"><div class="win-bar"><span class="d" aria-hidden="true"></span><span class="d" aria-hidden="true"></span><span class="d" aria-hidden="true"></span><span class="win-title">'+esc(title)+'</span><span class="win-tag">'+esc(tag||'Fictional tool, real math')+'</span></div><div class="win-body">'+body+'</div></div>'}
+function hbar(label,val,max,cls,txt){const w=Math.max(0,Math.min(100,max?100*val/max:0));return '<div class="hb"><span>'+label+'</span><span class="tr"><i class="'+(cls||'')+'" style="width:'+w+'%"></i></span><span class="val">'+txt+'</span></div>'}
+function kpi(v,l,cls){return '<div class="kpi"><div class="v '+(cls||'')+'">'+v+'</div><div class="l">'+l+'</div></div>'}
+
+function predictUI(host,id,q,opts,onCheck){
+ host.innerHTML='<fieldset class="pred"><legend><b>Make a prediction first</b></legend><p>'+q+'</p>'+opts.map(o=>'<label class="choice-row"><input type="radio" name="pr-'+id+'" value="'+o[0]+'"><span>'+o[1]+'</span></label>').join('')+'<button type="button" class="action secondary" id="pb-'+id+'">Check my prediction</button><p class="bx-hint">Run the tool below, then come back and check. Guessing wrong is part of how this works.</p></fieldset><div class="reveal" id="rv-'+id+'" hidden aria-live="polite"></div>';
+ host.addEventListener('change',e=>{if(e.target.name==='pr-'+id)$$('.choice-row',host).forEach(r=>r.classList.toggle('sel',r.querySelector('input').checked))});
+ $('#pb-'+id,host).addEventListener('click',()=>{
+  const rv=$('#rv-'+id,host),c=$('input[name="pr-'+id+'"]:checked',host);rv.hidden=false;
+  if(!c){rv.innerHTML='<p>Choose a prediction first. Then press the button again.</p>';return}
+  const label=c.parentNode.querySelector('span').textContent,res=onCheck(c.value);
+  rv.innerHTML='<h4>'+(res.correct===true?'Your prediction held up.':res.correct===false?'The numbers say something different.':'What the numbers show')+'</h4><p>You predicted: <b>'+esc(label)+'</b></p>'+res.html;
+ });
+}
+
+const RECS=[["use","Use it as designed"],["limit","Use it with limits"],["redesign","Redesign it first"],["pause","Pause until conditions are met"],["reject","Reject it"]];
+function recPhrase(rec){return {use:"I recommend the agency use it as designed.",limit:"I recommend the agency use it only with the limits below.",redesign:"I recommend the agency redesign it before any use.",pause:"I recommend the agency pause use until the conditions below are met.",reject:"I recommend the agency reject it."}[rec]}
+function checkpoint(host,cfg){
+ host.innerHTML='<div class="bx-ckpt"><fieldset><legend>Your recommendation</legend>'+RECS.map(r=>'<label class="choice-row"><input type="radio" name="rec-'+cfg.id+'" value="'+r[0]+'"><span>'+r[1]+'</span></label>').join('')+'</fieldset><fieldset><legend>Conditions you would attach (choose any)</legend>'+cfg.conds.map((c,i)=>'<label class="choice-row"><input type="checkbox" name="cd-'+cfg.id+'" value="'+i+'"><span>'+esc(c)+'</span></label>').join('')+'</fieldset><div class="button-row"><button type="button" class="action" id="ck-'+cfg.id+'">Write my finding</button></div><p class="gate" id="gate-'+cfg.id+'" aria-live="polite"></p><div class="out" id="out-'+cfg.id+'" hidden></div></div>';
+ host.addEventListener('change',e=>{if(e.target.name==='rec-'+cfg.id||e.target.name==='cd-'+cfg.id)$$('.choice-row',host).forEach(r=>r.classList.toggle('sel',r.querySelector('input').checked))});
+ $('#ck-'+cfg.id,host).addEventListener('click',()=>{
+  const gate=$('#gate-'+cfg.id,host),out=$('#out-'+cfg.id,host);gate.textContent='';
+  if(!cfg.ready()){gate.textContent=(typeof cfg.gateMsg==='function'?cfg.gateMsg():cfg.gateMsg);return}
+  const rc=$('input[name="rec-'+cfg.id+'"]:checked',host);
+  if(!rc){gate.textContent='Choose a recommendation first.';return}
+  const conds=$$('input[name="cd-'+cfg.id+'"]:checked',host).map(i=>cfg.conds[+i.value]);
+  const txt=cfg.compose(rc.value,conds);
+  out.hidden=false;out.textContent=txt;
+  const ta=document.getElementById(cfg.ta);if(ta){ta.value=txt;ta.dispatchEvent(new Event('input',{bubbles:true}))}
+  gate.textContent='Your finding is below and in My practice notes. Rewrite it in your own words before you use it.';
+ });
+}
+function condSentence(c){return c.length?(" Conditions I would attach: "+c.map(x=>x.charAt(0).toLowerCase()+x.slice(1).replace(/\.$/,"")).join("; ")+"."):" I would attach no conditions."}
+
+/* ===== Tool 1: Outreach priority list (predictive risk model) ===== */
+(function(){
+ const host=$("#b1-app");if(!host)return;
+ const r=mulberry(1207),N=1400,P=[];
+ for(let i=0;i<N;i++){
+  const g=r()<0.42?"B":"A",s=gauss(r),need=s>0.55?1:0,sp=Math.max(s,0);
+  const age=Math.round(Math.min(80,Math.max(18,42+13*gauss(r))));
+  const er=pois(r,(0.35+0.55*sp)*(g==="B"?0.85:1));
+  const contacts=pois(r,(0.5+0.9*sp)*(g==="B"?1.5:1));
+  const missed=pois(r,0.4+0.4*sp+(g==="B"?0.6:0));
+  const zip=g==="B"?(r()<0.7?1:0):(r()<0.2?1:0);
+  const rec=need?(r()<(g==="B"?0.85:0.65)?1:0):(r()<(g==="B"?0.07:0.04)?1:0);
+  P.push({g,need,age,er,contacts,missed,zip,rec});
+ }
+ const train=P.slice(0,800),aud=P.slice(800);
+ const F=[["age","Age"],["er","ER visits in the past year"],["contacts","Prior contacts with county systems (benefits, child welfare, police, courts)"],["missed","Missed appointments"],["zip","Lives in a high-enforcement ZIP code"]];
+ const S={on:{age:true,er:true,contacts:true,missed:true,zip:true},label:"rec",k:25,log:[],last:null};
+
+ function run(o){
+  const keys=F.map(f=>f[0]).filter(k=>o.on[k]);if(!keys.length)return null;
+  const m=trainLogit(train.map(p=>keys.map(k=>p[k])),train.map(p=>p[o.label]),{iters:300,lr:0.3,l2:0.01});
+  const sc=aud.map(p=>m.score(keys.map(k=>p[k])));
+  const K=Math.round(aud.length*o.k/100);
+  const flag=new Set(sc.map((s,i)=>i).sort((a,b)=>sc[b]-sc[a]||a-b).slice(0,K));
+  return {m,keys,K,out:tally(flag),flag};
+ }
+ function tally(flag){
+  const st={A:{n:0,f:0,need:0,hit:0,non:0,fa:0},B:{n:0,f:0,need:0,hit:0,non:0,fa:0}};
+  aud.forEach((p,i)=>{const s=st[p.g],fl=flag.has(i);s.n++;if(fl)s.f++;if(p.need){s.need++;if(fl)s.hit++}else{s.non++;if(fl)s.fa++}});
+  const needTot=st.A.need+st.B.need,hits=st.A.hit+st.B.hit;
+  const faA=st.A.fa/st.A.non,faB=st.B.fa/st.B.non;
+  return {st,needTot,hits,hitRate:hits/needTot,faA,faB,ratio:faB/(faA||1e-9),flagRatio:(st.B.f/st.B.n)/((st.A.f/st.A.n)||1e-9)};
+ }
+ function ruleList(K){const idx=aud.map((p,i)=>i).sort((a,b)=>aud[b].missed-aud[a].missed||a-b).slice(0,K);return tally(new Set(idx))}
+ function desc(o){const names=F.filter(f=>o.on[f[0]]).map(f=>f[0]);return (names.length===5?"all five facts":names.length+" of 5 facts"+(o.on.zip?"":", ZIP removed"))+", learning from "+(o.label==="rec"?"county records":"clinician review")+", "+o.k+"% flagged"}
+
+ host.innerHTML=
+ '<div id="b1-pred"></div>'+
+ stepHead(1,"Operate the tool")+
+ winHTML("Harbor County Outreach Priority List","Fictional tool, real math",
+  '<p class="dim">Fictional Harbor County. 1,400 adults who have touched county behavioral health services. Group B lives mostly in neighborhoods with more police, benefits, and child welfare presence and fewer buses. That pattern comes from policy history. In this simulation both groups have the <b>same</b> amount of real need. The simulation knows who truly needed outreach. A real agency never does, so it trains on records.</p>'+
+  '<div class="grid2"><div>'+
+  '<fieldset><legend>What the model may look at</legend>'+F.map(f=>'<label class="row"><input type="checkbox" data-f="'+f[0]+'" checked><span>'+f[1]+'</span></label>').join('')+'</fieldset>'+
+  '<fieldset><legend>What it learns from</legend><label class="row"><input type="radio" name="b1lab" value="rec" checked><span>County records: "a crisis event was recorded in the next 12 months"</span></label><label class="row"><input type="radio" name="b1lab" value="need"><span>Clinician review: a sample of people reviewed by a clinician to see who truly needed outreach (slow and costly in real life)</span></label></fieldset>'+
+  '<label for="b1k"><b>Staff capacity</b>: share of people flagged for outreach: <b id="b1kv">25%</b></label><input type="range" id="b1k" min="5" max="50" value="25" step="1">'+
+  '</div><div id="b1-res" aria-live="polite"></div></div>')+
+ '<div id="b1-log"></div>'+
+ stepHead(2,"Open the hood")+
+ '<details class="bx-hood"><summary>What the model learned (weights) and how it is built</summary><div id="b1-hood"></div></details>'+
+ stepHead(3,"Compare it with simpler options")+
+ '<div class="bx-alt" id="b1-alt"></div>'+
+ stepHead(4,"Decide")+
+ '<p>Your recommendation answers Objective 8. Use the numbers from your own runs. Run at least three different settings first.</p><div id="b1-ck"></div>';
+
+ function render(){
+  const o={on:S.on,label:S.label,k:S.k},R=run(o),res=$("#b1-res");
+  if(!R){res.innerHTML='<p>Choose at least one fact for the model to look at.</p>';return}
+  S.last={o:JSON.parse(JSON.stringify(o)),R};
+  const t=R.out,sA=t.st.A,sB=t.st.B;
+  res.innerHTML='<div class="kpis">'+kpi(R.K,"people flagged")+kpi(f1(100*t.hitRate)+"%","of people who truly needed outreach were flagged")+kpi(f2(t.ratio)+"x","false-alarm rate, Group B compared with Group A",t.ratio>1.5?"bad":t.ratio>1.15?"warn":"")+'</div>'+
+  '<table><thead><tr><th scope="col"></th><th scope="col">Group A</th><th scope="col">Group B</th></tr></thead><tbody>'+
+  '<tr><th scope="row">People audited</th><td>'+sA.n+'</td><td>'+sB.n+'</td></tr>'+
+  '<tr><th scope="row">Flagged</th><td>'+pc(sA.f,sA.n)+'%</td><td>'+pc(sB.f,sB.n)+'%</td></tr>'+
+  '<tr><th scope="row">Truly needed outreach</th><td>'+pc(sA.need,sA.n)+'%</td><td>'+pc(sB.need,sB.n)+'%</td></tr>'+
+  '<tr><th scope="row">Of those who needed it, flagged</th><td>'+pc(sA.hit,sA.need)+'%</td><td>'+pc(sB.hit,sB.need)+'%</td></tr>'+
+  '<tr><th scope="row">Of those who did not, flagged anyway</th><td>'+pc(sA.fa,sA.non)+'%</td><td>'+pc(sB.fa,sB.non)+'%</td></tr></tbody></table>'+
+  hbar("Group A false alarms",t.faA,0.5,"",pc(sA.fa,sA.non)+"%")+hbar("Group B false alarms",t.faB,0.5,"b",pc(sB.fa,sB.non)+"%")+
+  '<p class="dim">Among people who did <b>not</b> need outreach, '+pc(sB.fa,sB.non)+'% of Group B were flagged anyway, compared with '+pc(sA.fa,sA.non)+'% of Group A. A false alarm here means a knock on the door, a call, and possibly a report to another system.</p>';
+  // hood
+  const maxw=Math.max(...R.m.w.map(Math.abs),0.01);
+  $("#b1-hood").innerHTML='<p>The model is a logistic regression (it adds up weighted facts and turns the total into a probability from 0 to 1). It trained on 800 people. The table above audits a separate 600. Bars show how hard each fact pushes a person up the list. Facts are standardized, so bars compare fairly.</p>'+
+   R.keys.map((k,i)=>hbar(F.find(f=>f[0]===k)[1].split(" (")[0],Math.abs(R.m.w[i]),maxw,R.m.w[i]<0?"neg":"",(R.m.w[i]>=0?"+":"-")+f2(Math.abs(R.m.w[i])))).join("")+
+   '<p>Look at "prior contacts" and "ZIP code." Group B people were contacted by county systems more often at the same level of need, because more of those systems operate in their neighborhoods. The model cannot tell the difference between needing help and being watched more closely. It reads both as risk.</p>';
+  // alt
+  const rule=ruleList(R.K),rnd=R.K/aud.length;
+  $("#b1-alt").innerHTML='<p>The same capacity ('+R.K+' people), three ways to choose them. Objective 7 asks whether a simpler approach does the job.</p><div class="tscroll"><table><thead><tr><th scope="col">Way of choosing</th><th scope="col">Reaches people in need</th><th scope="col">False-alarm rate, A</th><th scope="col">False-alarm rate, B</th></tr></thead><tbody>'+
+  '<tr><th scope="row">The model (your settings)</th><td>'+f1(100*t.hitRate)+'%</td><td>'+f1(100*t.faA)+'%</td><td>'+f1(100*t.faB)+'%</td></tr>'+
+  '<tr><th scope="row">Rule: most missed appointments first</th><td>'+f1(100*rule.hitRate)+'%</td><td>'+f1(100*rule.faA)+'%</td><td>'+f1(100*rule.faB)+'%</td></tr>'+
+  '<tr><th scope="row">Random draw from the list</th><td>about '+f1(100*rnd)+'%</td><td colspan="2">about '+f1(100*rnd)+'% for both groups</td></tr></tbody></table></div>'+
+  '<p>A simple rule can carry the same bias as the model, because missed appointments also track transportation barriers. Dropping the algorithm does not remove the question. It moves it. Other options to weigh: open-door hours and peer outreach that reach people without any list, or contacting everyone in an area with high need and offering, not ordering, help.</p>';
+  // log
+  const key=JSON.stringify(S.last.o);
+  if(S._touched&&!S.log.some(l=>l.key===key)){S.log.push({key,desc:desc(S.last.o),ratio:t.ratio,hit:t.hitRate});if(S.log.length>8)S.log.shift()}
+  $("#b1-log").innerHTML=S.log.length?'<h4>Your runs so far ('+S.log.length+')</h4><div class="tscroll"><table><thead><tr><th scope="col">Settings</th><th scope="col">Reached in need</th><th scope="col">Group B vs A false alarms</th></tr></thead><tbody>'+S.log.map(l=>'<tr><td>'+esc(l.desc)+'</td><td>'+f1(100*l.hit)+'%</td><td>'+f2(l.ratio)+'x</td></tr>').join('')+'</tbody></table></div>':'<p class="bx-hint">Change any setting. Each different run is logged here.</p>';
+ }
+ host.addEventListener("input",e=>{
+  if(e.target.id==="b1k"){S.k=+e.target.value;$("#b1kv").textContent=S.k+"%"}
+  else if(e.target.dataset&&e.target.dataset.f){S.on[e.target.dataset.f]=e.target.checked}
+  else if(e.target.name==="b1lab"){S.label=e.target.value}
+  else return;
+  S._touched=true;render();
+ });
+
+ predictUI($("#b1-pred"),"b1","If you remove the ZIP code from what the model may look at, will it flag the two groups at similar rates?",
+  [["equal","Yes. ZIP code is the only fact tying the model to Group B, so the gap closes."],["closer","The gap shrinks but does not close."],["same","The gap barely moves."]],
+  ()=>{
+   const a=run({on:Object.assign({},S.on,{zip:true}),label:S.label,k:S.k}),b=run({on:Object.assign({},S.on,{zip:false}),label:S.label,k:S.k});
+   const g1=a.out.ratio,g2=b.out.ratio;let truth;
+   if(g2<=1.15)truth="equal";else if(g2<g1*0.9)truth="closer";else truth="same";
+   return {correct:null,html:'<div class="tscroll"><table><thead><tr><th scope="col">With your current labels and capacity</th><th scope="col">Group B vs A false alarms</th><th scope="col">Group B vs A flag rate</th></tr></thead><tbody><tr><th scope="row">ZIP code included</th><td>'+f2(g1)+'x</td><td>'+f2(a.out.flagRatio)+'x</td></tr><tr><th scope="row">ZIP code removed</th><td>'+f2(g2)+'x</td><td>'+f2(b.out.flagRatio)+'x</td></tr></tbody></table></div><p>'+(truth==="equal"?"Removing ZIP code closed the gap.":truth==="closer"?"Removing ZIP code narrowed the gap and left it open.":"Removing ZIP code barely changed the gap.")+' Prior contacts and missed appointments carry the same pattern in through the side door. A fact that stands in for a protected group is called a <b>proxy</b>. Taking out the obvious proxy does not remove the others. Try switching what the model learns from to clinician review and watch the numbers.</p>',correct:null};
+  });
+
+ checkpoint($("#b1-ck"),{id:"b1",ta:"ans-bench1",
+  ready:()=>S.log.length>=3,gateMsg:()=>"Run at least three different settings first so your finding rests on numbers. You have "+S.log.length+" so far.",
+  conds:["A person reviews every flag before outreach changes anyone's services.","The model is retested every six months for false-alarm rates by neighborhood and group, and the results go to the community.","It trains on clinician-reviewed need, not only on county records.","People can ask why they were flagged and can decline outreach.","A flag only prioritizes an offer of help. It never triggers a report or enforcement.","Staff capacity grows so outreach does not depend on the list alone."],
+  compose:(rec,c)=>{const L=S.last,t=L.R.out,rule=ruleList(L.R.K);
+   return "I tested an outreach priority list on 600 fictional residents of Harbor County, where both groups had the same level of real need. With my last settings ("+desc(L.o)+"), it reached "+f1(100*t.hitRate)+"% of the people who needed outreach, compared with "+f1(100*(L.R.K/aud.length))+"% for a random list and "+f1(100*rule.hitRate)+"% for a missed-appointments rule. Among people who did not need outreach, "+f1(100*t.faB)+"% of Group B were flagged and "+f1(100*t.faA)+"% of Group A, a ratio of "+f2(t.ratio)+" to 1. Across "+S.log.length+" runs, the ratio ranged from "+f2(Math.min(...S.log.map(l=>l.ratio)))+" to "+f2(Math.max(...S.log.map(l=>l.ratio)))+". "+recPhrase(rec)+condSentence(c)+" I would revisit this after a retest on real county records shows the false-alarm gap for Group B."}
+ });
+ render();
+})();
+
+/* ===== Tool 2: Session note scribe ===== */
+(function(){
+ const host=$("#b2-app");if(!host)return;
+ const TX={"A": [["SW", "Good morning, Mr. Hayes. I'm Dana, the social worker. I'd like to talk about what getting home would take.", ""], ["Cl", "Morning. I want to go home. Renee keeps saying rehab, but I have my own place and I know where everything is.", "X"], ["SW", "Tell me about the place. Stairs, anything like that?", ""], ["Cl", "Eleven steps to the front door, and the bathroom is upstairs. I did it before the stroke with no trouble.", "R M"], ["SW", "And the left side, how is it feeling today?", ""], ["Cl", "Weak. The therapist says my grip is about half. I dropped the cup this morning and felt foolish.", "M"], ["SW", "Who is around to help if you go home?", ""], ["Cl", "Renee works days. My church family, Deacon Moore and the Tuesday ladies, have been bringing food since I got here. They would come by. They always do.", "S X"], ["SW", "That's a lot of people in your corner. What worries you most?", ""], ["Cl", "Being a burden. My mama used to say you never put your people out. I am not going to be anybody's burden.", "X"], ["SW", "I want to ask about something you said to the nurse yesterday, that some days the Lord ought to just take you. What did you mean by that?", ""], ["Cl", "Oh, no ma'am. I'm not talking about hurting myself. I'm tired, that's all, and the Lord is who I talk to about it. I am not going anywhere on my own.", "R X"], ["SW", "Thank you for telling me plainly. Are you taking your blood pressure pills?", ""], ["Cl", "I stopped the water pill in March. It had me up all night and I could not get to the bathroom in time. Nobody asked me why.", "R M"], ["SW", "I'm glad you told me. I will let Dr. Okafor know today so the team can look at that pill and the timing.", "P"], ["Cl", "I would go to a short rehab if it is close to home and Renee can bring me to church on Sundays. If I have a say in it.", "P X"], ["SW", "You do have a say. I will ask the rehab places near Renee's about Sunday transport and call you back this afternoon.", "P"], ["SW", "Is it all right if Renee joins us tomorrow at ten?", "P"], ["Cl", "Yes. Ten is good.", "P"]], "B": [["SW", "Hi Ms. Reyes, thanks for coming in. What brings you in today?", ""], ["Cl", "My sister said I should come. I have, how do you say, nervios. Since I lost the job at the plant in June I cannot sleep and my chest gets tight.", "M X N"], ["SW", "I'm sorry. How many hours are you sleeping?", ""], ["Cl", "Maybe three, four. I lie there counting what I owe. The rent is late already.", "M N"], ["SW", "Who lives with you?", ""], ["Cl", "My two kids, Mateo is nine and Sofi is five. Mateo asks why I cry in the bathroom. I tell him it is allergies.", "X S"], ["SW", "You are doing a lot to protect them.", ""], ["Cl", "I want to ask something first. If I tell you everything, does it go to immigration? My husband's papers are not finished.", "X"], ["SW", "What you tell me stays in this clinic. We do not report anyone's status. The only exceptions are if someone is in danger or a child is being harmed, and I will tell you before I ever share anything.", "P X"], ["Cl", "Okay. Okay. Then I can say the rest.", "X"], ["Cl", "Some days I think the kids would have an easier time with a mother who did not carry all this. Then I think no, they need me.", "R S"], ["SW", "Thank you for trusting me with that. We are nearly out of time, so I want to start there at your next visit. Can you do Thursday at two?", "P R"], ["Cl", "Thursday works if my sister can take the kids.", "P S"], ["SW", "I will also connect you with the rent assistance line today and give you the number for the food pantry on Division.", "P N"], ["Cl", "Thank you. Nobody ever tells me what the next step is.", "X"], ["SW", "Here is the plan. Thursday at two, the rent assistance call today, and the pantry number in your hand. Would you like it in Spanish or English?", "P N"], ["Cl", "Spanish, por favor.", "X P"]]};
+ const META={A:{name:"Hospital discharge interview"},B:{name:"Community clinic intake"}};
+ const CATS=[["R","Safety and health risks","r"],["M","Symptoms and medications","m"],["P","Plan and commitments","p"],["X","What it means to the client (faith, family, language, fear)","x"],["S","Strengths and supports","s"],["N","Money, housing, and food needs","n"]];
+ const TPL=[
+  {id:"t1",text:"Appearance: well-groomed. Mood: calm. Affect: congruent. Client cooperative.",truth:{A:["no","A scribe hears audio. It cannot see appearance, and nothing in the recording says calm. Mr. Hayes described feeling foolish, tired, and like a burden."],B:["no","A scribe hears audio. It cannot see appearance, and \"calm\" does not fit a woman who says she cries in the bathroom most nights."]}},
+  {id:"t2",text:"Client denies suicidal and homicidal ideation.",truth:{A:["partly","Mr. Hayes denied intent to harm himself when asked (turn 12). Homicidal ideation was never asked, so half of this line has no source."],B:["no","The only statement about risk was that the children might do better with a different mother. The direct question was set aside until Thursday. This line would record a denial for a question nobody asked."]}},
+  {id:"t3",text:"Client verbalized understanding of the plan and agrees to follow up.",truth:{A:["partly","He agreed to a meeting at ten and set a condition for rehab (a say, and Sundays at church). That is not agreement with the whole plan."],B:["partly","She agreed to Thursday at two, if her sister can take the children. Agreement was conditional."]}}
+ ];
+ const LEX0={stroke:2.5,pills:2,pill:2,medication:2,pressure:2,sleep:2,sleeping:2,pain:2,weak:2,grip:2,dizzy:2,chest:2,tight:1.5,anxiety:2.5,depressed:2.5,doctor:1.5,dr:1.5,nurse:1,therapist:1.5,rehab:2,discharge:2,appointment:2,hurting:3,myself:1.5,suicide:3.5,suicidal:3.5,kill:3,die:2,harm:3,fall:2,stairs:2.5,steps:1.5,bathroom:1,hours:1.5,referral:2,connect:1.5,rent:0.4,food:0.4,pantry:0.4,church:0.3,burden:0.3,mama:0.2,nervios:0.3,immigration:0.4,papers:0.3,kids:0.3,allergies:0.2,spanish:0.4,thursday:1.5,tomorrow:1.5,ten:1,two:1,today:1.5,transport:1.5,call:1.5,plan:1.5,will:1};
+ const S={tx:"A",mode:"std",k:6,custom:{},restored:{},dec:{},touched:0};
+ const tok=s=>s.toLowerCase().match(/[a-záéíóúñ']+/g)||[];
+ const wt=(w,cu)=>(cu&&cu[w]!==undefined)?cu[w]:(LEX0[w]||0);
+ function turns(k){return TX[k].map((t,i)=>({n:i+1,sp:t[0],text:t[1],tags:t[2].split(" ").filter(Boolean)}))}
+ function scoreTurn(t,cu){const w=tok(t.text);let s=0;w.forEach(x=>s+=wt(x,cu));s=s/Math.sqrt(Math.max(w.length,6));if(t.text.trim().slice(-1)==="?")s*=0.4;return s}
+ function draft(k,K,cu){const T=turns(k),sc=T.map(t=>scoreTurn(t,cu));const idx=T.map((t,i)=>i).sort((a,b)=>sc[b]-sc[a]||a-b).slice(0,K).sort((a,b)=>a-b);return {T,sc,kept:new Set(idx.map(i=>T[i].n))}}
+ function cover(T,kept){const o={};CATS.forEach(c=>o[c[0]]={tot:0,got:0});T.forEach(t=>t.tags.forEach(g=>{if(o[g]){o[g].tot++;if(kept.has(t.n))o[g].got++}}));return o}
+ const isPlan=t=>t.sp==="SW"&&/\b(i will|i'll|let you know|call you|connect you|plan)\b/i.test(t.text);
+ const catOf=g=>CATS.find(c=>c[0]===g);
+
+ host.innerHTML='<div id="b2-pred"></div>'+stepHead(1,"Operate the tool")+
+ winHTML("ScribeNote Studio","Fictional tool, real math",
+ '<p class="dim">A small extractive scribe: it scores each turn and quotes the highest-scoring ones. Real scribes are generative and fail differently. The scoring here is deliberately simple so you can see every part of it. Its vocabulary favors medical words, as tools trained mostly on medical visits tend to. You can see and change that vocabulary below.</p>'+
+ '<div class="grid2"><div><fieldset><legend>Recorded conversation</legend><label class="row"><input type="radio" name="b2tx" value="A" checked><span>Hospital discharge interview (Mr. Hayes)</span></label><label class="row"><input type="radio" name="b2tx" value="B"><span>Community clinic intake (Ms. Reyes)</span></label></fieldset>'+
+ '<fieldset><legend>Note style</legend><label class="row"><input type="radio" name="b2mode" value="std" checked><span>Standard: only sentences from the conversation</span></label><label class="row"><input type="radio" name="b2mode" value="full"><span>Complete note: also fills template lines (appearance, mood, risk screen, understanding)</span></label></fieldset>'+
+ '<label for="b2k"><b>Note length</b>: <b id="b2kv">6</b> lines</label><input type="range" id="b2k" min="3" max="12" value="6">'+
+ '<fieldset><legend>Custom vocabulary</legend><p class="dim">Many vendors let you add words the tool should treat as important.</p><label for="b2w">Word</label> <input type="text" id="b2w" size="14" maxlength="24"> <label for="b2wt">Weight</label> <select id="b2wt"><option value="2.5">Important</option><option value="1.2">Some</option></select> <button type="button" class="wb ghost" id="b2add">Add</button><div id="b2cu" class="dim" aria-live="polite"></div></fieldset>'+
+ '</div><div><h4>The conversation</h4><div class="tx" id="b2-tx" tabindex="0" role="region" aria-label="Transcript"></div></div></div>'+
+ '<h4>The scribe\'s draft</h4><div class="note" id="b2-note" aria-live="polite"></div>')+
+ stepHead(2,"Audit what the draft kept")+
+ winHTML("Audit view","Annotated by the course team",'<p class="dim">Each turn in the conversation was tagged in advance by a person for what it carries. The scribe never sees the tags. They are used here only to measure what it kept.</p><div id="b2-aud"></div>')+
+ stepHead(3,"Repair the note and count the time")+
+ winHTML("Review desk","Fictional tool, real math",'<div id="b2-rep"></div>')+
+ stepHead(4,"Open the hood")+
+ '<details class="bx-hood"><summary>How the scribe decides what to keep</summary><div id="b2-hood"></div></details>'+
+ stepHead(5,"Compare with other ways to get the note done")+
+ '<div class="bx-alt"><p>Objective 7 asks what else could do this job. Each option changes who carries the work.</p><ul><li><b>Write it yourself right after the session.</b> About 10 minutes in this example. You decide what mattered, so any omission is your own.</li><li><b>A short structured template with the client\'s own words.</b> A person fills three fields while the memory is fresh. Less time saved, and little to audit.</li><li><b>A scribe, with a rule to read the recording or transcript every time.</b> The time saved shrinks. The dropped content gets caught.</li><li><b>A peer or supervisor spot-check of a monthly sample.</b> This catches patterns, such as whose words get dropped, that no single review shows.</li></ul></div>'+
+ stepHead(6,"Decide")+'<div id="b2-ck"></div>';
+
+ function final(){
+  const d=draft(S.tx,S.k,S.custom),inc=new Set(d.kept);Object.keys(S.restored).forEach(n=>{if(S.restored[n])inc.add(+n)});
+  return {d,inc};
+ }
+ function render(){
+  const {d,inc}=final(),T=d.T;
+  $("#b2kv").textContent=S.k;
+  $("#b2-tx").innerHTML=T.map(t=>'<div class="turn '+(d.kept.has(t.n)?"kept":"drop")+'"><span class="who">'+(t.sp==="SW"?"Clinician":"Client")+' '+t.n+'</span>'+esc(t.text)+'</div>').join("");
+  const lines=T.filter(t=>d.kept.has(t.n)).map(t=>({t:(t.sp==="Cl"?"Client: ":isPlan(t)?"Plan: ":"Clinician: ")+t.text,ref:"turn "+t.n}));
+  let h=lines.map(l=>'<div class="ln"><span class="t">'+esc(l.t)+'</span><span class="ref">'+l.ref+'</span></div>').join("");
+  if(S.mode==="full")h+=TPL.map(p=>'<div class="ln'+(S.dec[p.id]==="keep"&&p.truth[S.tx][0]==="no"?" bad":"")+'"><span class="t">'+esc(p.text)+'</span><span class="ref">no source</span></div>').join("");
+  $("#b2-note").innerHTML=h;
+  const cv0=cover(T,d.kept);
+  let a='<div class="grid2"><div>'+CATS.map(c=>{const o=cv0[c[0]];if(!o.tot)return"";return hbar('<span class="chip '+c[2]+'">'+c[0]+'</span> '+c[1].split(" (")[0],o.got,o.tot,o.got===o.tot?"":"b",o.got+" of "+o.tot)}).join("")+'<p class="dim">Bars show the draft before your repairs.</p></div><div>';
+  const dropped=T.filter(t=>t.tags.length&&!inc.has(t.n));
+  a+='<h4>Dropped, and it carried something ('+dropped.length+')</h4>'+(dropped.length?dropped.map(t=>'<div class="note"><div>'+t.tags.map(g=>'<span class="chip '+catOf(g)[2]+'">'+catOf(g)[1].split(" (")[0]+'</span>').join(" ")+'</div><div>'+(t.sp==="SW"?"Clinician":"Client")+' '+t.n+': '+esc(t.text)+'</div><button type="button" class="wb ghost" data-add="'+t.n+'">Add to the note</button></div>').join(""):'<p>Nothing tagged was dropped.</p>')+'</div></div>';
+  $("#b2-aud").innerHTML=a;
+  let r='';
+  if(S.mode==="full"){
+   r+='<h4>Template lines the scribe added</h4><p class="dim">These have no source turn. Decide for each whether the recording supports it.</p>';
+   r+=TPL.map(p=>{const tr=p.truth[S.tx],dec=S.dec[p.id];let fb="";if(dec){fb='<p>'+(dec==="keep"?"You kept it. ":"You removed it. ")+(tr[0]==="no"?"Supported by the recording: no. ":"Supported by the recording: partly. ")+esc(tr[1])+'</p>'}
+    return '<div class="note"><div>'+esc(p.text)+'</div><div class="row"><button type="button" class="wb ghost" data-dec="'+p.id+':keep"'+(dec==="keep"?' aria-pressed="true"':'')+'>Keep</button> <button type="button" class="wb ghost" data-dec="'+p.id+':remove"'+(dec==="remove"?' aria-pressed="true"':'')+'>Remove</button></div>'+fb+'</div>'}).join("");
+  }
+  const fin=T.filter(t=>inc.has(t.n)),words=fin.reduce((x,t)=>x+tok(t.text).length,0);
+  const kept=d.kept.size,added=Object.keys(S.restored).filter(n=>S.restored[n]).length;
+  const tplN=S.mode==="full"?TPL.length:0,removed=Object.keys(S.dec).filter(k=>S.dec[k]==="remove").length;
+  const srcWords=T.reduce((x,t)=>x+tok(t.text).length,0);
+  const quick=(kept+tplN)*0.33+words/200+added*0.7+removed*0.25,careful=quick+srcWords/200,scratch=10;
+  const riskLeft=T.filter(t=>t.tags.indexOf("R")>=0&&!inc.has(t.n)).length;
+  const badKept=S.mode==="full"?TPL.filter(p=>p.truth[S.tx][0]==="no"&&S.dec[p.id]!=="remove").length:0;
+  S.stats={quick,careful,scratch,riskLeft,badKept,added,kept,srcWords};
+  r+='<div class="kpis">'+kpi(f1(quick)+" min","review the draft only (fast, misses what you cannot see)")+kpi(f1(careful)+" min","review the draft and re-read the source",careful>=scratch?"warn":"")+kpi(scratch+" min","write it yourself (assumed)")+kpi(riskLeft,"risk turns still missing from your note",riskLeft?"bad":"")+(S.mode==="full"?kpi(badKept,"template lines kept with no support",badKept?"bad":""):"")+'</div>'+
+  '<p class="dim">Time assumptions: 20 seconds to check each draft line, 40 seconds to restore a dropped turn, 15 seconds to remove a line, reading at 200 words a minute. The "draft only" figure is the one a busy clinician will be tempted to report. Dropped content shows up only when someone returns to the source.</p>';
+  $("#b2-rep").innerHTML=r;
+  const sc=T.map((t,i)=>({n:t.n,s:d.sc[i]})).sort((x,y)=>y.s-x.s),cuKeys=Object.keys(S.custom);
+  $("#b2-hood").innerHTML='<p>Each turn gets a score: the weights of its words added up and divided by the square root of its length, so long turns do not win by size alone. A question is cut to 40%. The top '+S.k+' turns are kept, in order. Words the tool was built to recognize carry weight. Words it was not built to recognize carry almost none. From the vocabulary: "stroke" 2.5, "pills" 2, "sleep" 2, "suicidal" 3.5, "rent" 0.4, "church" 0.3, "burden" 0.3, "nervios" 0.3.</p>'+
+  '<div class="tscroll"><table><thead><tr><th scope="col">Turn</th><th scope="col">Score</th><th scope="col">Kept</th></tr></thead><tbody>'+sc.slice(0,8).map(x=>'<tr><td>'+x.n+'</td><td>'+f2(x.s)+'</td><td>'+(d.kept.has(x.n)?"yes":"no")+'</td></tr>').join("")+'</tbody></table></div><p class="bx-hint">Top eight turns shown.'+(cuKeys.length?" Your custom words: "+cuKeys.map(k=>esc(k)+" ("+S.custom[k]+")").join(", ")+".":"")+'</p>'+
+  '<p>Custom vocabulary helps and also shows the limit. Someone has to know which words to add before the conversation happens, and a word like "burden" means something different from one speaker to the next.</p>';
+  $("#b2cu").textContent=cuKeys.length?"Added: "+cuKeys.join(", "):"";
+ }
+ host.addEventListener("input",e=>{if(e.target.id==="b2k"){S.k=+e.target.value;S.touched++;render()}});
+ host.addEventListener("change",e=>{
+  if(e.target.name==="b2tx"){S.tx=e.target.value;S.restored={};S.dec={};S.touched++;render()}
+  if(e.target.name==="b2mode"){S.mode=e.target.value;S.dec={};S.touched++;render()}
+ });
+ host.addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  if(b.dataset.add){S.restored[b.dataset.add]=true;S.touched++;render()}
+  else if(b.dataset.dec){const p=b.dataset.dec.split(":");S.dec[p[0]]=p[1];S.touched++;render()}
+  else if(b.id==="b2add"){const w=($("#b2w").value||"").trim().toLowerCase().replace(/[^a-záéíóúñ']/g,"");if(w){S.custom[w]=+$("#b2wt").value;$("#b2w").value="";S.touched++;render()}}
+ });
+
+ predictUI($("#b2-pred"),"b2","At the default length of 6 lines, which kind of content will the scribe most reliably keep across both conversations?",
+  [["R","The safety and health risks"],["P","The plan and commitments"],["X","What the situation means to the client (faith, family, language, fear)"]],
+  ()=>{const o=["A","B"].map(k=>{const d=draft(k,6,{});return cover(d.T,d.kept)});
+   const tot=g=>o.reduce((x,c)=>x+c[g].got,0)+" of "+o.reduce((x,c)=>x+c[g].tot,0);
+   return {correct:null,html:'<div class="tscroll"><table><thead><tr><th scope="col">Kind of content</th><th scope="col">Kept, both conversations</th><th scope="col">Hospital interview</th><th scope="col">Clinic intake</th></tr></thead><tbody>'+["R","P","X"].map(g=>'<tr><th scope="row">'+catOf(g)[1].split(" (")[0]+'</th><td>'+tot(g)+'</td><td>'+o[0][g].got+' of '+o[0][g].tot+'</td><td>'+o[1][g].got+' of '+o[1][g].tot+'</td></tr>').join("")+'</tbody></table></div><p>The scribe kept explicit medical and scheduling language best. Where Mr. Hayes said "hurting myself," the tool had a word to catch. Where Ms. Reyes said the children might have it easier with a different mother, it had none. What the situation means to the client is carried in words the vocabulary barely weights. The pattern comes from the vocabulary, which you can see in the hood panel. Real tools have their own vocabularies and their own gaps, and an overall accuracy figure will not show them.</p>'}});
+
+ checkpoint($("#b2-ck"),{id:"b2",ta:"ans-bench2",
+  ready:()=>S.touched>=2,
+  gateMsg:"Change a setting or repair a line in the review desk first, so your finding reflects what you saw.",
+  conds:["The clinician listens to or reads the source for every note before signing it.","Clients are told about the recording and can decline it, in their own language, before the session.","Template and default lines are turned off so nothing enters the record that was not said.","The agency audits a monthly sample of notes for dropped risk and safety content, broken out by language and client group.","Custom vocabulary is built with clients and staff from the communities served.","Recordings are deleted on a set schedule and never used to train the vendor's model."],
+  compose:(rec,c)=>{const st=S.stats,d=draft(S.tx,S.k,S.custom),cv=cover(d.T,d.kept),g=k=>cv[k].got+" of "+cv[k].tot;
+   return "I ran a note scribe on a fictional "+META[S.tx].name.toLowerCase()+" ("+TX[S.tx].length+" turns). At a draft length of "+S.k+" lines in "+(S.mode==="full"?"complete-note":"standard")+" style, it kept "+g("R")+" turns about safety and health risk, "+g("P")+" about the plan, and "+g("X")+" in which the client explained what the situation means to them. After my repairs, "+st.riskLeft+" risk turn"+(st.riskLeft===1?"":"s")+" "+(st.riskLeft===1?"was":"were")+" still missing"+(S.mode==="full"?" and "+st.badKept+" template line"+(st.badKept===1?"":"s")+" without support remained":"")+". Reviewing the draft alone took about "+f1(st.quick)+" minutes. Re-reading the source to catch what was dropped brought it to about "+f1(st.careful)+", against about "+st.scratch+" minutes to write the note directly. "+recPhrase(rec)+condSentence(c)+" I would revisit this after the agency audits a month of real notes for dropped safety content."}});
+ render();
+})();
+
+/* ===== Tool 3: Benefits case reader ===== */
+(function(){
+ const host=$("#b3-app");if(!host)return;
+ const r=mulberry(3301),N=300,A=[];
+ const DOCS=["Typed pay stub","Phone photo of a pay stub","Handwritten employer note","Letter in another language"];
+ const CONF=[[0.94,0.03],[0.80,0.08],[0.63,0.12],[0.70,0.10]];
+ function pick(w){let x=r(),c=0;for(let i=0;i<w.length;i++){c+=w[i];if(x<c)return i}return w.length-1}
+ for(let i=0;i<N;i++){
+  const lang=pick([0.62,0.22,0.16]); // 0 English, 1 Spanish, 2 Other language
+  const d=[[0.60,0.25,0.15,0],[0.30,0.35,0.20,0.15],[0.25,0.30,0.20,0.25]][lang],doc=pick(d);
+  const irregular=r()<(lang===0?0.25:0.35);
+  const ti=Math.round(Math.min(4000,Math.max(600,1900+600*gauss(r))));
+  const err=r()<0.14;
+  const ri=err?Math.round(ti+(r()<0.8?-1:1)*(200+700*r())):ti;
+  const docInc=Math.round(ti*(1+(irregular?0.11:0.02)*gauss(r)));
+  const conf=Math.min(0.99,Math.max(0.3,CONF[doc][0]+CONF[doc][1]*gauss(r)));
+  const ocr=Math.round(docInc*(1+(1-conf)*0.28*gauss(r)));
+  A.push({lang,doc,irregular,ti,err:Math.abs(ri-ti)>150?1:0,ri,docInc,conf,ocr});
+ }
+ const LN=["English","Spanish","Another language"];
+ const S={tau:0.70,tol:200,unread:"resubmit",act:"look",log:[],last:null,touched:0};
+
+ function evaluate(o){
+  const g=[0,1,2].map(()=>({n:0,nonErr:0,flagNonErr:0,wait:0,err:0,caught:0,wrongDeny:0}));
+  let staffMin=0,missed=0,errs=0,caught=0,flagged=0,denied=0,wrong=0,unr=0;
+  A.forEach(a=>{
+   const s=g[a.lang];s.n++;if(a.err){s.err++;errs++}else s.nonErr++;
+   let fl=false,wait=0,dn=false,min=2;
+   if(a.conf<o.tau){fl=true;unr++;if(o.unread==="resubmit"){wait=7;min=3}else{wait=1;min=8}}
+   else if(Math.abs(a.ocr-a.ri)>o.tol){fl=true;if(o.act==="look"){wait=2;min=10}else if(o.act==="ask"){wait=10;min=5}else{wait=10;min=3;dn=true}}
+   if(fl){flagged++;if(a.err){caught++;s.caught++}else{s.flagNonErr++;s.wait+=wait}}
+   if(dn){denied++;if(!a.err){wrong++;s.wrongDeny++}}
+   if(a.err&&!fl)missed++;
+   staffMin+=min;
+  });
+  const base=A.length*14;
+  const wait=g.map(s=>s.nonErr?s.wait/s.nonErr:0);
+  const waitNon=(g[1].wait+g[2].wait)/Math.max(1,g[1].nonErr+g[2].nonErr);
+  return {g,waitNon,staffMin,base,missed,errs,caught,flagged,denied,wrong,unr,catchRate:caught/errs,falseShare:(flagged-caught)/Math.max(flagged,1),wait,gap:waitNon-wait[0],wrongShare:denied?wrong/denied:0};
+ }
+ function desc(o){return "confidence cutoff "+f2(o.tau)+", tolerance $"+o.tol+", "+(o.act==="look"?"staff look first":o.act==="ask"?"ask client for proof":"pause benefits until proof")+", unreadable "+(o.unread==="resubmit"?"resubmitted":"read by staff")}
+ function actLabel(a){return a==="look"?"A staff member looks first (2 days)":a==="ask"?"Ask the client for more proof (10 days)":"Pause benefits until proof arrives (10 days, benefits stop)"}
+
+ host.innerHTML='<div id="b3-pred"></div>'+stepHead(1,"Operate the tool")+
+ winHTML("ClearCase Application Reader","Fictional tool, real math",
+ '<p class="dim">Fictional state food assistance office. 300 applications. The tool reads each income document with optical character recognition (OCR: software that turns a picture of a document into numbers) and compares the number it reads with the income the applicant reported. A mismatch gets flagged. The simulation knows which applicants truly made a reporting error (14%). The office does not. Some applicants have irregular income, so their documents differ from their reported income without any error.</p>'+
+ '<div class="grid2"><div>'+
+ '<label for="b3tau"><b>Reading confidence cutoff</b>: <b id="b3tauv">0.70</b></label><input type="range" id="b3tau" min="0.5" max="0.95" step="0.01" value="0.70"><p class="dim">Below this, the tool says it could not read the document reliably.</p>'+
+ '<label for="b3tol"><b>Mismatch tolerance</b>: <b id="b3tolv">$200</b> a month</label><input type="range" id="b3tol" min="50" max="500" step="10" value="200">'+
+ '<fieldset><legend>When the tool cannot read a document</legend><label class="row"><input type="radio" name="b3un" value="resubmit" checked><span>Ask the applicant to send it again (7 days)</span></label><label class="row"><input type="radio" name="b3un" value="staff"><span>Send it to a staff member to read by eye (1 day, more staff time)</span></label></fieldset>'+
+ '<fieldset><legend>When the numbers do not match</legend><label class="row"><input type="radio" name="b3act" value="look" checked><span>A staff member looks first (2 days)</span></label><label class="row"><input type="radio" name="b3act" value="ask"><span>Ask the applicant for more proof (10 days)</span></label><label class="row"><input type="radio" name="b3act" value="deny"><span>Pause benefits until proof arrives (10 days, benefits stop)</span></label></fieldset>'+
+ '<div class="button-row"><button type="button" class="wb ghost" data-b3p="careful">Preset: cautious</button> <button type="button" class="wb ghost" data-b3p="fast">Preset: fastest</button></div>'+
+ '</div><div id="b3-res" aria-live="polite"></div></div>')+
+ '<div id="b3-log"></div>'+
+ stepHead(2,"Open the hood")+
+ '<details class="bx-hood"><summary>How readable each kind of document is, and how the flags are made</summary><div id="b3-hood"></div></details>'+
+ stepHead(3,"Try the challenge")+
+ '<div class="bx-alt" id="b3-chal"></div>'+
+ stepHead(4,"Compare with other ways to catch errors")+
+ '<div class="bx-alt" id="b3-alt"></div>'+
+ stepHead(5,"Decide")+'<div id="b3-ck"></div>';
+
+ function render(){
+  const o={tau:S.tau,tol:S.tol,unread:S.unread,act:S.act},R=evaluate(o);S.last={o,R};
+  $("#b3tauv").textContent=f2(S.tau);$("#b3tolv").textContent="$"+S.tol;
+  const key=JSON.stringify(o);if(S.touched&&!S.log.some(l=>l.key===key)){S.log.push({key,desc:desc(o),catchRate:R.catchRate,wait:R.wait,gap:R.gap,wrong:R.wrong,hours:(R.base-R.staffMin)/60});if(S.log.length>8)S.log.shift()}
+  const saved=(R.base-R.staffMin)/60;
+  $("#b3-res").innerHTML='<div class="kpis">'+kpi(f1(100*R.catchRate)+"%","of real errors get a second look ("+R.caught+" of "+R.errs+")")+kpi(R.errs-R.caught,"real errors approved without a look",R.errs-R.caught>8?"warn":"")+kpi(f1(saved)+" h","staff time saved, compared with reading every case by hand")+kpi(f1(100*R.falseShare)+"%","of flagged applicants made no error",R.falseShare>0.5?"bad":"warn")+(S.act==="deny"?kpi(R.wrong,"people with no error had benefits paused","bad"):"")+'</div>'+
+  '<h4>Extra days waited by applicants who made no error</h4>'+LN.map((n,i)=>hbar(n,R.wait[i],10,i?"b":"",f1(R.wait[i])+" d")).join("")+
+  '<p class="dim">Applicants who sent a letter in another language, a handwritten note, or a phone photo are read with lower confidence, so more of them are asked to resubmit. The tool is not told anyone\'s language. Document type carries it in.</p>'+
+  '<div class="tscroll"><table><thead><tr><th scope="col">Applicants</th><th scope="col">Count</th><th scope="col">Real errors</th><th scope="col">No-error applicants flagged</th></tr></thead><tbody>'+LN.map((n,i)=>'<tr><th scope="row">'+n+'</th><td>'+R.g[i].n+'</td><td>'+R.g[i].err+'</td><td>'+pc(R.g[i].flagNonErr,R.g[i].nonErr)+'%</td></tr>').join("")+'</tbody></table></div>';
+  // hood
+  const byDoc=DOCS.map((d,k)=>{const x=A.filter(a=>a.doc===k);const c=x.reduce((s,a)=>s+a.conf,0)/Math.max(1,x.length);return {d,n:x.length,c,un:x.filter(a=>a.conf<S.tau).length}});
+  $("#b3-hood").innerHTML='<p>For every application: (1) if the reading confidence is below your cutoff, the document is treated as unreadable; (2) otherwise the tool compares the number it read with the reported income, and flags a gap larger than your tolerance; (3) otherwise it approves automatically. Reading error grows as confidence falls. Irregular earners have real month-to-month swings that look like mismatches.</p>'+
+  '<div class="tscroll"><table><thead><tr><th scope="col">Document type</th><th scope="col">Applications</th><th scope="col">Average reading confidence</th><th scope="col">Unreadable at your cutoff</th></tr></thead><tbody>'+byDoc.map(x=>'<tr><th scope="row">'+x.d+'</th><td>'+x.n+'</td><td>'+f2(x.c)+'</td><td>'+pc(x.un,x.n)+'%</td></tr>').join("")+'</tbody></table></div>';
+  // challenge
+  const ok=R.catchRate>=0.85;
+  $("#b3-chal").innerHTML='<p><b>Challenge.</b> Find settings that give a second look to at least 85% of real errors and keep the gap in extra waiting days under half a day between applicants who wrote in a language other than English and English-language applicants (among people who made no error). Staff time saved is the tiebreaker.</p><p>Right now: second look to <b>'+f1(100*R.catchRate)+'%</b> of errors; gap in extra waiting days: <b>'+f1(R.gap)+'</b>. '+(ok&&R.gap<0.5?'<b>You meet the challenge.</b> Staff time saved: '+f1(saved)+' hours.':ok?'You catch enough errors. The waiting-time gap is still half a day or more.':'You need to give a second look to more of the real errors.')+'</p>';
+  // alt
+  const rnd=A.length*0.2,audit=Math.round(100*0.2);
+  $("#b3-alt").innerHTML='<p>Objective 7 asks what else could catch errors.</p><ul><li><b>Random audit of 20% of cases by staff.</b> About '+Math.round(R.errs*0.2)+' of '+R.errs+' errors found, no applicant waits for a machine, and staff spend about '+f1(A.length*0.2*14/60)+' hours. It catches fewer errors and spreads the burden evenly.</li><li><b>Staff read first, tool only sorts.</b> Use the "staff look first" and "read by staff" settings. More hours, far less waiting for applicants.</li><li><b>Match against payroll records the agency already holds</b> (wage data matching) and use documents only when no record exists. Less reading by machine at all.</li><li><b>Fix the front end.</b> A plain-language income form in the applicant\'s language, text reminders, and drop-in help reduce reporting errors before they happen.</li></ul>';
+  // log
+  $("#b3-log").innerHTML=S.log.length?'<h4>Your runs so far ('+S.log.length+')</h4><div class="tscroll"><table><thead><tr><th scope="col">Settings</th><th scope="col">Errors given a look</th><th scope="col">Waiting-time gap (days)</th><th scope="col">Paused with no error</th><th scope="col">Hours saved</th></tr></thead><tbody>'+S.log.map(l=>'<tr><td>'+esc(l.desc)+'</td><td>'+f1(100*l.catchRate)+'%</td><td>'+f1(l.gap)+'</td><td>'+l.wrong+'</td><td>'+f1(l.hours)+'</td></tr>').join('')+'</tbody></table></div>':'<p class="bx-hint">Change any setting. Each different run is logged here.</p>';
+ }
+ host.addEventListener("input",e=>{
+  if(e.target.id==="b3tau"){S.tau=+e.target.value}else if(e.target.id==="b3tol"){S.tol=+e.target.value}else return;
+  S.touched++;render();
+ });
+ host.addEventListener("change",e=>{
+  if(e.target.name==="b3un"){S.unread=e.target.value}else if(e.target.name==="b3act"){S.act=e.target.value}else return;
+  S.touched++;render();
+ });
+ host.addEventListener("click",e=>{
+  const b=e.target.closest("button[data-b3p]");if(!b)return;
+  const p=b.dataset.b3p;
+  if(p==="careful"){S.tau=0.6;S.tol=250;S.act="look";S.unread="staff"}else{S.tau=0.85;S.tol=100;S.act="deny";S.unread="resubmit"}
+  $("#b3tau").value=S.tau;$("#b3tol").value=S.tol;
+  $$('input[name="b3act"]',host).forEach(i=>i.checked=(i.value===S.act));$$('input[name="b3un"]',host).forEach(i=>i.checked=(i.value===S.unread));
+  S.touched++;render();
+ });
+
+ predictUI($("#b3-pred"),"b3","Suppose the office turns on the setting that pauses benefits automatically when numbers do not match, with a tight $100 tolerance, to save staff time. What share of the people whose benefits are paused will have made no error?",
+  [["low","Under 10%"],["mid","Between 10% and 40%"],["high","More than 40%"]],
+  ()=>{const R=evaluate({tau:0.85,tol:100,unread:"resubmit",act:"deny"}),s=R.wrongShare;const truth=s<0.1?"low":s<=0.4?"mid":"high";
+   return {correct:null,html:'<p>With those settings, <b>'+R.denied+'</b> people had benefits paused and <b>'+R.wrong+'</b> of them ('+f1(100*s)+'%) made no error. Staff time saved: '+f1((R.base-R.staffMin)/60)+' hours. Real errors given a second look: '+f1(100*R.catchRate)+'%.</p><p>The mismatches come from two places: reading mistakes on hard-to-read documents, and irregular income that varies without any error. Michigan\'s 2013 unemployment fraud system followed a similar pattern. It flagged small discrepancies as fraud and demanded repayment, and the state auditor found 93% of 22,000 reviewed cases did not involve fraud.</p>'};});
+
+ checkpoint($("#b3-ck"),{id:"b3",ta:"ans-bench3",
+  ready:()=>S.log.length>=3,gateMsg:()=>"Run at least three different settings first. You have "+S.log.length+" so far.",
+  conds:["A person reviews every flag before benefits are paused, reduced, or denied.","Unreadable documents go to staff, not back to the applicant.","The office reports waiting time and flag rates by language and document type every quarter.","Applicants can submit a document in any language and in any format, including a photo.","Payroll data matching comes first, and documents are requested only when no record exists.","The tool is paused if the share of flagged applicants who made no error exceeds a limit the office sets in advance."],
+  compose:(rec,c)=>{const L=S.last,R=L.R;
+   return "I tested an application reader on 300 fictional food assistance applications. With my last settings ("+desc(L.o)+"), it gave a second look to "+f1(100*R.catchRate)+"% of real errors and saved about "+f1((R.base-R.staffMin)/60)+" staff hours. "+f1(100*R.falseShare)+"% of flagged applicants had made no error. Applicants who made no error waited an average of "+f1(R.wait[0])+" extra days if they wrote in English and "+f1(R.waitNon)+" extra days if they wrote in Spanish or another language, because those documents are harder for the tool to read."+(L.o.act==="deny"?" "+R.wrong+" people with no error had benefits paused.":"")+" "+recPhrase(rec)+condSentence(c)+" I would revisit this after the office publishes a quarter of real flag and wait-time data by language."}});
+ render();
+})();
+
+/* ===== Tool 4: Message assistant (Naive Bayes intent model) ===== */
+(function(){
+ const host=$("#b4-app");if(!host)return;
+ const INT=["schedule","refill","billing","support","resources","crisis","other"];
+ const INAME={schedule:"Scheduling",refill:"Refill",billing:"Billing",support:"Stress or low mood",resources:"Community resources",crisis:"Possible crisis",other:"Other"};
+ const TRAIN0=[
+ ["schedule","I need to reschedule my appointment"],["schedule","can I move my visit to next week"],["schedule","what time is my appointment tomorrow"],["schedule","I want to book a session"],["schedule","cancel my appointment on thursday"],["schedule","do you have anything open on monday"],["schedule","I need to see my counselor again"],["schedule","is my appointment still on"],
+ ["refill","I need a refill on my prescription"],["refill","can you send my medication to the pharmacy"],["refill","I ran out of my pills"],["refill","my prescription is almost empty"],["refill","refill request for my medicine"],["refill","when will my medication be ready"],["refill","I need my meds renewed"],
+ ["billing","how much do I owe"],["billing","I got a bill I do not understand"],["billing","does my insurance cover this visit"],["billing","can I set up a payment plan"],["billing","I was charged twice"],["billing","what is my copay"],["billing","I need a receipt for my visit"],
+ ["support","I have been feeling really stressed lately"],["support","I am anxious about my job"],["support","I feel sad today"],["support","I can't sleep and my mind keeps racing"],["support","I have been feeling overwhelmed with work"],["support","I am worried about my kids"],["support","I just need someone to talk to"],["support","I feel lonely lately"],
+ ["resources","where can I get food this week"],["resources","I need help paying my rent"],["resources","do you have a bus pass program"],["resources","I need a ride to my appointment"],["resources","who can help with my electric bill"],["resources","I am looking for housing help"],["resources","how do I apply for food assistance"],
+ ["crisis","I want to kill myself"],["crisis","I am thinking about suicide"],["crisis","I want to end my life"],["crisis","I don't want to live anymore"],["crisis","I am going to hurt myself"],["crisis","I have a plan to end it all"],["crisis","I took too many pills on purpose"],["crisis","I feel like dying"],["crisis","I want to die"],["crisis","I am thinking of hurting myself tonight"],
+ ["other","hello"],["other","thank you so much"],["other","good morning"],["other","what are your office hours"],["other","where are you located"],["other","okay thanks bye"],["other","who am I talking to"],["other","is this a real person"]
+ ];
+ // held-out test set: [text, true intent, style]
+ const TEST=[
+ ["I am thinking about killing myself","crisis","Direct"],
+ ["i dont want to be here no more","crisis","Everyday dialect"],
+ ["everybody would be better off without me","crisis","Indirect"],
+ ["I just can't keep doing this","crisis","Indirect"],
+ ["ain't nothing left for me here","crisis","Everyday dialect"],
+ ["wish I could go to sleep and not wake up","crisis","Indirect"],
+ ["me quiero morir","crisis","Spanish"],
+ ["no puedo más con esta vida","crisis","Spanish"],
+ ["i wana end it all","crisis","Misspelled"],
+ ["prob nothing but i keep thinking about the pills in the cabinet","crisis","Minimized"],
+ ["this traffic is killing me, I will be late to my appointment","schedule","Bait"],
+ ["I am dying to get my refill sorted","refill","Bait"],
+ ["my back is killing me, can I see someone sooner","schedule","Bait"],
+ ["I could die of embarrassment about this bill","billing","Bait"],
+ ["my boss is killing me with these hours, I just feel worn down","support","Bait"],
+ ["can I get an appointment for friday","schedule","Plain"],
+ ["please send my meds to the walgreens on main","refill","Plain"],
+ ["why was I billed for last month","billing","Plain"],
+ ["I'm feeling kind of down and tired today","support","Plain"],
+ ["I've been so stressed I can't focus","support","Plain"],
+ ["need help with groceries this month","resources","Plain"],
+ ["do you offer rides to the clinic","resources","Plain"],
+ ["hola, necesito cambiar mi cita","schedule","Spanish"],
+ ["necesito ayuda con la renta","resources","Spanish"],
+ ["thx, see u then","other","Plain"],
+ ["what is the address of the clinic","other","Plain"],
+ ["need to reschedule b/c work","schedule","Plain"],
+ ["my nerves are bad this week and I'm not sleeping","support","Everyday dialect"],
+ ["I been feeling low since my mama passed","support","Everyday dialect"]
+ ];
+ const NET=/(kill myself|killing myself|suicid|end my life|want to die|hurt myself|end it all|better off without me)/i;
+ const REPLY={schedule:"I can help with appointments. A staff member will confirm a time with you by text today.",refill:"I sent your refill request to your care team. Pharmacy updates come by text.",billing:"Billing questions go to our billing office. They reply within 2 business days.",support:"I'm sorry things feel heavy. Would you like a staff member to call you?",resources:"I can share community resources. A staff member will follow up with options for food, rent, and rides.",other:"I'm an automated assistant for the clinic. The clinic is open 8 to 5 on weekdays.",fallback:"I'm not sure I understood. Would you like me to connect you with a person?"};
+ const S={train:TRAIN0.slice(),tc:0.5,tf:0.4,net:false,norm:false,policy:{disclose:false,n988:true,handoff:true,minor:false,train:true,retain:365},model:null,touched:0,added:0,last:null,chat:[]};
+
+ const norm=t=>{let s=t.toLowerCase();if(S.norm){s=s.replace(/['’]/g,"").normalize("NFD").replace(/[̀-ͯ]/g,"")}return s};
+ const tokens=t=>{const w=(norm(t).match(/[a-z0-9']+/g)||[]),o=w.slice();for(let i=0;i<w.length-1;i++)o.push(w[i]+"_"+w[i+1]);return o};
+ function fit(){
+  const cnt={},tot={},prior={},vocab=new Set();INT.forEach(c=>{cnt[c]={};tot[c]=0;prior[c]=0});
+  S.train.forEach(([c,t])=>{prior[c]++;tokens(t).forEach(w=>{cnt[c][w]=(cnt[c][w]||0)+1;tot[c]++;vocab.add(w)})});
+  S.model={cnt,tot,prior,vocab,n:S.train.length};
+ }
+ function infer(text){
+  const m=S.model,tk=tokens(text),seen=tk.filter(w=>m.vocab.has(w)),V=m.vocab.size;
+  const lp=INT.map(c=>{let s=Math.log((m.prior[c]+1)/(m.n+INT.length));seen.forEach(w=>{s+=Math.log(((m.cnt[c][w]||0)+1)/(m.tot[c]+V))});return s});
+  const mx=Math.max(...lp),ex=lp.map(x=>Math.exp(x-mx)),sum=ex.reduce((a,b)=>a+b,0),p=ex.map(x=>x/sum);
+  const res={};INT.forEach((c,i)=>res[c]=p[i]);
+  const unseen=tk.filter(w=>!m.vocab.has(w)&&w.indexOf("_")<0);
+  const top=INT.filter(c=>c!=="crisis").sort((a,b)=>res[b]-res[a])[0];
+  let action,why;
+  if(res.crisis>=S.tc){action="crisis";why="crisis score "+Math.round(100*res.crisis)+"% is at or above your threshold of "+Math.round(100*S.tc)+"%"}
+  else if(S.net&&NET.test(text)){action="crisis";why="safety-net phrase matched (crisis score was only "+Math.round(100*res.crisis)+"%)"}
+  else if(res[top]<S.tf){action="fallback";why="best guess "+INAME[top]+" at only "+Math.round(100*res[top])+"%, below your confidence floor of "+Math.round(100*S.tf)+"%"}
+  else{action=top;why="read as "+INAME[top]+" ("+Math.round(100*res[top])+"%); crisis score "+Math.round(100*res.crisis)+"%"}
+  return {p:res,action,why,unseen,seenN:seen.length,tk:tk.length};
+ }
+ function evalTest(){
+  const rows=TEST.map(t=>{const r=infer(t[0]);return {t,r,flag:r.action==="crisis",fb:r.action==="fallback"}});
+  const cr=rows.filter(x=>x.t[1]==="crisis"),nc=rows.filter(x=>x.t[1]!=="crisis");
+  const styles={};cr.forEach(x=>{const s=x.t[2];styles[s]=styles[s]||{n:0,hit:0};styles[s].n++;if(x.flag)styles[s].hit++});
+  const bait=nc.filter(x=>x.t[2]==="Bait");
+  return {rows,recall:cr.filter(x=>x.flag).length,offer:cr.filter(x=>!x.flag&&x.fb).length,crN:cr.length,fa:nc.filter(x=>x.flag).length,ncN:nc.length,baitFa:bait.filter(x=>x.flag).length,baitN:bait.length,fb:rows.filter(x=>x.fb).length,styles,
+   wrongIntent:nc.filter(x=>!x.flag&&!x.fb&&x.r.action!==x.t[1]).length};
+ }
+
+ host.innerHTML='<div id="b4-pred"></div>'+stepHead(1,"Talk to the assistant")+
+ winHTML("Compass Assist","Fictional tool, real math",
+ '<p class="dim">A small text assistant for a fictional clinic. It learns from the 56 example messages listed under "Open the hood." It turns every message into words and word pairs, and picks the most likely of seven kinds of message using a Naive Bayes model (it multiplies how often each word showed up in each kind of message). It is not a language model and it cannot hold a conversation. It does show how any message sorter learns from examples and fails on what the examples left out.</p>'+
+ '<div class="grid2"><div><div class="chat" id="b4-chat" role="log" aria-label="Conversation" aria-live="polite" tabindex="0"></div>'+
+ '<label for="b4in"><b>Type a message</b></label><div class="row"><input type="text" id="b4in" size="34" maxlength="200" autocomplete="off"> <button type="button" class="wb" id="b4send">Send</button></div>'+
+ '<p class="dim">Try: <button type="button" class="wb ghost" data-b4ex="can you move my visit to friday">a plain request</button> <button type="button" class="wb ghost" data-b4ex="i been so tired of all of it">a way people talk</button> <button type="button" class="wb ghost" data-b4ex="no quiero seguir viviendo">Spanish</button></p></div>'+
+ '<div><fieldset><legend>When it sends a message to a person</legend><label for="b4tc"><b>Crisis threshold</b>: <b id="b4tcv">50%</b></label><input type="range" id="b4tc" min="5" max="90" step="1" value="50"><p class="dim">Lower means more messages go to a staff member, including false alarms.</p><label for="b4tf"><b>Confidence floor</b>: <b id="b4tfv">40%</b></label><input type="range" id="b4tf" min="10" max="80" step="1" value="40"><p class="dim">Below this, the assistant offers a person instead of guessing.</p>'+
+ '<label class="row"><input type="checkbox" id="b4net"><span>Add a keyword safety net (a list of phrases that always send a message to a person)</span></label><label class="row"><input type="checkbox" id="b4norm"><span>Normalize spelling (drop apostrophes and accents before reading)</span></label></fieldset></div></div>')+
+ stepHead(2,"Run the test set")+
+ winHTML("Held-out test set","29 messages the assistant has not seen",'<p class="dim">Ten of these are people in crisis, written the way real people write. Five contain frightening words and are not crises (for example "this traffic is killing me"). The test messages are never used for training.</p><div id="b4-eval" aria-live="polite"></div>')+
+ stepHead(3,"Teach it")+
+ winHTML("Training data","You can add examples",
+ '<p class="dim">Add a message and the kind it should be labeled as. The model retrains instantly. Examples that repeat a test message are refused, because that would be teaching to the test.</p><div class="row"><label for="b4nt" class="visually-hidden">Example message</label><input type="text" id="b4nt" size="34" maxlength="200" placeholder="Example message"> <label for="b4nl" class="visually-hidden">Kind of message</label><select id="b4nl">'+INT.map(c=>'<option value="'+c+'">'+INAME[c]+'</option>').join("")+'</select> <button type="button" class="wb" id="b4addx">Add example</button> <button type="button" class="wb ghost" id="b4reset">Reset to the original 56</button></div><p class="dim" id="b4msg" aria-live="polite"></p><p id="b4count" class="dim"></p>')+
+ stepHead(4,"Check the rules")+
+ winHTML("Policy checks","Good-practice checklist",
+ '<p class="dim">Set up how this fictional clinic runs the assistant. Oregon SB 1546 takes effect on January 1, 2027 and applies to AI companion chatbots (systems that simulate a sustained human-like relationship). A clinic scheduling bot may not count as one. Ask your compliance office. These checks are good practice either way.</p>'+
+ '<div class="grid2"><div><label class="row"><input type="checkbox" data-b4p="disclose"><span>The first message says it is an automated assistant, not a person</span></label><label class="row"><input type="checkbox" data-b4p="n988" checked><span>Crisis replies include the 988 call or text line</span></label><label class="row"><input type="checkbox" data-b4p="handoff" checked><span>Crisis replies connect to a staff member and say how fast</span></label><label class="row"><input type="checkbox" data-b4p="minor"><span>It asks or detects whether the user is under 18 and changes how it responds</span></label><label class="row"><input type="checkbox" data-b4p="train" checked><span>The vendor may use conversation logs to train its models</span></label><label for="b4ret"><b>Log retention</b></label> <select id="b4ret"><option value="30">30 days</option><option value="90">90 days</option><option value="365" selected>1 year</option><option value="9999">No limit</option></select></div><div id="b4-pol" aria-live="polite"></div></div>')+
+ stepHead(5,"Open the hood")+
+ '<details class="bx-hood"><summary>What the model learned and what it never saw</summary><div id="b4-hood"></div></details>'+
+ stepHead(6,"Compare with other ways to answer clients")+
+ '<div class="bx-alt"><p>Objective 7 asks what else could do this job.</p><ul><li><b>A phone line and a text number staffed by a person</b> during open hours, with a voicemail that says when the call will be returned. Slower, and no one is misread.</li><li><b>Fixed menu buttons</b> (Reschedule, Refill, Billing, Talk to someone now). The assistant never interprets free text, so it cannot misread it. People can still type to a person.</li><li><b>The assistant handles scheduling and refills only</b>, with a visible "Talk to a person now" button on every screen and no attempt to read feelings.</li><li><b>Peer-run warm line</b> for people who want to talk and are not in crisis.</li></ul></div>'+
+ stepHead(7,"Decide")+'<div id="b4-ck"></div>';
+
+ function say(role,text,cls,why){S.chat.push({role,text,cls,why});}
+ function renderChat(){
+  $("#b4-chat").innerHTML=!S.chat.length?'<p class="dim">Messages appear here. Type one below, or use an example.</p>':S.chat.map(m=>'<div class="m '+(m.role==="u"?"u":m.cls==="alert"?"b alert":"b")+'">'+esc(m.text)+(m.why?'<span class="why">'+esc(m.why)+'</span>':'')+'</div>').join("");
+  const c=$("#b4-chat");c.scrollTop=c.scrollHeight;
+ }
+ function reply(r){
+  if(r.action==="crisis"){let t="I'm hearing that you may be in danger. ";if(S.policy.handoff)t+="I'm connecting you with a staff member now, and someone will respond within 5 minutes. ";t+="If you are in immediate danger, call 911. ";if(S.policy.n988)t+="You can call or text 988 at any time.";return t}
+  return REPLY[r.action]||REPLY.fallback;
+ }
+ function send(text){
+  text=(text||"").trim();if(!text)return;
+  if(!S.chat.length&&S.policy.disclose)say("b","Hi, I'm an automated assistant for the clinic, not a person. A staff member can join anytime.");
+  const r=infer(text);S.last=r;S.touched++;say("u",text);say("b",reply(r),r.action==="crisis"?"alert":"", r.why+(r.unseen.length?". Words it has never seen: "+r.unseen.slice(0,6).join(", "):""));
+  renderChat();renderHood();
+ }
+ function renderEval(){
+  const E=evalTest();S.E=E;
+  const ss=Object.keys(E.styles);
+  $("#b4-eval").innerHTML='<div class="kpis">'+kpi(E.recall+" of "+E.crN,"crisis messages sent to a person as an alert",E.recall<E.crN?"bad":"")+kpi(E.offer,"more crisis messages only got an offer to talk to a person",E.offer?"warn":"")+kpi(E.fa+" of "+E.ncN,"non-crisis messages sent as crisis",E.fa>3?"warn":"")+kpi(E.baitFa+" of "+E.baitN,"frightening-sounding but fine messages flagged")+kpi(E.fb,"messages offered a person because the assistant was unsure")+kpi(E.wrongIntent,"routine messages answered with the wrong kind of reply",E.wrongIntent>3?"warn":"")+'</div>'+
+  '<h4>Crisis messages it caught, by how people wrote them</h4>'+ss.map(s=>hbar(s,E.styles[s].hit,E.styles[s].n,E.styles[s].hit===E.styles[s].n?"":"b",E.styles[s].hit+" of "+E.styles[s].n)).join("")+
+  '<p class="dim">'+(E.recall<E.crN?"The messages it missed were written in ways its examples did not cover. Overall accuracy would look fine here because most messages are routine.":"It caught all ten at these settings. Check what the false alarms cost, and try the same settings on messages of your own.")+'</p>'+
+  '<details><summary>Every test message and what the assistant did</summary><div class="tscroll"><table><thead><tr><th scope="col">Message</th><th scope="col">Truth</th><th scope="col">Style</th><th scope="col">Assistant did</th></tr></thead><tbody>'+E.rows.map(x=>'<tr><td>'+esc(x.t[0])+'</td><td>'+INAME[x.t[1]]+'</td><td>'+x.t[2]+'</td><td>'+(x.flag?"Sent to a person":x.fb?"Offered a person":INAME[x.r.action])+'</td></tr>').join("")+'</tbody></table></div></details>';
+  const key=S.tc+"|"+S.tf+"|"+S.net+"|"+S.norm+"|"+S.train.length;
+  if(S.touched&&!(S.logs||(S.logs=[])).some(l=>l.key===key)){S.logs.push({key,recall:E.recall,fa:E.fa,fb:E.fb,d:"threshold "+Math.round(100*S.tc)+"%, floor "+Math.round(100*S.tf)+"%, safety net "+(S.net?"on":"off")+", normalizing "+(S.norm?"on":"off")+", "+S.train.length+" examples"});if(S.logs.length>8)S.logs.shift()}
+  $("#b4count").textContent="Training examples: "+S.train.length+" ("+S.train.filter(x=>x[0]==="crisis").length+" labeled possible crisis, "+(S.train.length-TRAIN0.length>=0?(S.train.length-TRAIN0.length)+" added by you":"")+")";
+ }
+ function renderPolicy(){
+  const p=S.policy,items=[
+   ["Says it is automated",p.disclose,"Users know they are not talking to a person, which Oregon requires of companion chatbots and which is good practice for any client-facing tool."],
+   ["Crisis reply includes 988",p.n988,"Gives a direct route to trained counselors."],
+   ["Crisis reply reaches a person",p.handoff,"A reply that only shows a phone number leaves the person alone with the problem."],
+   ["Has a plan for users under 18",p.minor,"Oregon adds protections when the operator knows or has reason to believe the user is a minor."],
+   ["Logs not used to train the vendor's model",!p.train,"Messages about crisis, money, and health become training data otherwise."],
+   ["Logs kept for 1 year or less",p.retain<=365,"Shorter retention limits what a breach or subpoena can expose."]];
+  const gaps=items.filter(x=>!x[1]).length;S.gaps=gaps;
+  $("#b4-pol").innerHTML='<div class="kpis">'+kpi(items.length-gaps+" of "+items.length,"practices in place",gaps?"warn":"")+'</div>'+items.map(x=>'<div class="note"><b>'+(x[1]?"In place: ":"Gap: ")+esc(x[0])+'</b><br><span class="dim">'+esc(x[2])+'</span></div>').join("");
+ }
+ function renderHood(){
+  const m=S.model,V=m.vocab.size,cw=[];
+  m.vocab.forEach(w=>{if(w.indexOf("_")>=0)return;const pc_=((m.cnt.crisis[w]||0)+1)/(m.tot.crisis+V);let o=0,ot=0;INT.forEach(c=>{if(c!=="crisis"){o+=(m.cnt[c][w]||0);ot+=m.tot[c]}});const po=(o+1)/(ot+V);cw.push([w,Math.log(pc_/po)])});
+  cw.sort((a,b)=>b[1]-a[1]);const mx=cw[0][1];
+  $("#b4-hood").innerHTML='<p>The model counts how often each word and word pair appears in each kind of message, then scores a new message by multiplying those frequencies. Words it never saw in training add nothing. Here are the words that push a message most strongly toward "possible crisis":</p>'+cw.slice(0,8).map(x=>hbar(esc(x[0]),x[1],mx,"",f1(x[1]))).join("")+
+  '<p>The safety-net phrases, if you turn it on: <span class="mono">kill myself, killing myself, suicid*, end my life, want to die, hurt myself, end it all, better off without me</span>. A list like this catches exact wording and nothing else.</p>'+
+  (S.last?'<p><b>Last message you sent.</b> Words the model has never seen: '+(S.last.unseen.length?esc(S.last.unseen.join(", ")):"none")+'. It used '+S.last.seenN+' of '+S.last.tk+' words and word pairs.</p>':'<p class="bx-hint">Send a message to see which of its words the model has never seen.</p>')+
+  '<details><summary>All 56 original training examples</summary><div class="tscroll"><table><thead><tr><th scope="col">Kind</th><th scope="col">Example</th></tr></thead><tbody>'+TRAIN0.map(x=>'<tr><td>'+INAME[x[0]]+'</td><td>'+esc(x[1])+'</td></tr>').join("")+'</tbody></table></div></details>';
+  const lg=S.logs||[];
+  $("#b4-hood").insertAdjacentHTML("beforeend",lg.length?'<h4>Your runs so far ('+lg.length+')</h4><div class="tscroll"><table><thead><tr><th scope="col">Settings</th><th scope="col">Crisis messages caught</th><th scope="col">False alarms</th><th scope="col">Offered a person</th></tr></thead><tbody>'+lg.map(l=>'<tr><td>'+esc(l.d)+'</td><td>'+l.recall+' of 10</td><td>'+l.fa+'</td><td>'+l.fb+'</td></tr>').join("")+'</tbody></table></div>':"");
+ }
+ function refresh(){fit();renderEval();renderPolicy();renderHood()}
+ host.addEventListener("input",e=>{
+  if(e.target.id==="b4tc"){S.tc=+e.target.value/100;$("#b4tcv").textContent=e.target.value+"%";S.touched++;refresh()}
+  else if(e.target.id==="b4tf"){S.tf=+e.target.value/100;$("#b4tfv").textContent=e.target.value+"%";S.touched++;refresh()}
+ });
+ host.addEventListener("change",e=>{
+  const t=e.target;
+  if(t.id==="b4net"){S.net=t.checked;S.touched++;refresh()}
+  else if(t.id==="b4norm"){S.norm=t.checked;S.touched++;refresh()}
+  else if(t.dataset&&t.dataset.b4p){S.policy[t.dataset.b4p]=t.checked;S.touched++;renderPolicy()}
+  else if(t.id==="b4ret"){S.policy.retain=+t.value;S.touched++;renderPolicy()}
+ });
+ host.addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  if(b.id==="b4send"){send($("#b4in").value);$("#b4in").value="";refresh()}
+  else if(b.dataset.b4ex){send(b.dataset.b4ex);refresh()}
+  else if(b.id==="b4addx"){
+   const txt=($("#b4nt").value||"").trim(),lab=$("#b4nl").value,msg=$("#b4msg");
+   if(!txt){msg.textContent="Type an example message first.";return}
+   const n=x=>x.toLowerCase().replace(/[^a-z0-9áéíóúñ ]/g,"").replace(/\s+/g," ").trim();
+   if(TEST.some(t=>n(t[0])===n(txt))){msg.textContent="That is one of the test messages. Adding it would be teaching to the test, so it was refused. Write a different example.";return}
+   S.train.push([lab,txt]);S.added++;S.touched++;msg.textContent="Added as "+INAME[lab]+". The model retrained.";$("#b4nt").value="";refresh();
+  }
+  else if(b.id==="b4reset"){S.train=TRAIN0.slice();S.added=0;$("#b4msg").textContent="Reset to the original 56 examples.";refresh()}
+ });
+ host.addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.id==="b4in"){e.preventDefault();send(e.target.value);e.target.value="";refresh()}});
+
+ predictUI($("#b4-pred"),"b4","The test set has ten crisis messages. At the original settings (threshold 50%, no safety net), how many will the assistant send to a person?",
+  [["low","0 to 3"],["mid","4 to 6"],["high","7 to 10"]],
+  ()=>{const keep={tc:S.tc,tf:S.tf,net:S.net,norm:S.norm,train:S.train};S.tc=0.5;S.tf=0.4;S.net=false;S.norm=false;S.train=TRAIN0.slice();fit();const E=evalTest();Object.assign(S,keep);fit();
+   return {correct:null,html:'<p>At the original settings the assistant sent <b>'+E.recall+' of 10</b> crisis messages to a person. It sent '+E.fa+' of '+E.ncN+' messages that were not crises.</p><div>'+Object.keys(E.styles).map(s=>hbar(s,E.styles[s].hit,E.styles[s].n,E.styles[s].hit===E.styles[s].n?"":"b",E.styles[s].hit+" of "+E.styles[s].n)).join("")+'</div><p>The model learned crisis from ten examples that mostly state it directly. People write it many other ways. The ones it missed were written in ways no example covered. Try lowering the threshold, then try adding your own examples, and watch what each change costs.</p>'}});
+
+ checkpoint($("#b4-ck"),{id:"b4",ta:"ans-bench4",
+  ready:()=>(S.logs||[]).length>=3||S.touched>=4,gateMsg:"Change a few settings or send a few messages first, so your finding rests on what you saw.",
+  conds:["A visible \"Talk to a person now\" button is on every screen.","The assistant is limited to scheduling and refills and does not interpret feelings.","Crisis detection is tested every quarter on messages in the languages and dialects of the people served, written with them.","Every crisis hand-off reaches a named staff member within a stated time, day and night.","The first message says it is automated, and the vendor may not train on conversation logs.","Conversation logs are deleted within 90 days."],
+  compose:(rec,c)=>{const E=S.E;
+   return "I tested a message assistant that learned from 56 example messages. At a crisis threshold of "+Math.round(100*S.tc)+"%"+(S.net?" with a keyword safety net":"")+" and "+S.train.length+" training examples, it sent "+E.recall+" of 10 held-out crisis messages to a person, and it sent "+E.fa+" of "+E.ncN+" non-crisis messages as crisis. "+(Object.keys(E.styles).filter(s=>E.styles[s].hit<E.styles[s].n).length?"The messages it missed were written in these ways: "+Object.keys(E.styles).filter(s=>E.styles[s].hit<E.styles[s].n).join(", ")+". ":"")+"On the clinic's policy checks it has "+S.gaps+" gap"+(S.gaps===1?"":"s")+". "+recPhrase(rec)+condSentence(c)+" I would revisit this after the clinic tests it on real messages written by the people it serves."}});
+ fit();renderEval();renderPolicy();renderHood();renderChat();
+})();
+
+/* ===== Tool 5: Paste check (privacy filter + re-identification) ===== */
+(function(){
+ const host=$("#b5-app");if(!host)return;
+ const SAMPLE="Session note, 03/14/2026. Client: Ms. Denise Whitfield, DOB 07/22/1961, phone (503) 555-0142, 1180 NE Alder St, Pine Valley, OR 97999. MRN 4471093.\n\nMs. Whitfield is a 64-year-old retired school bus driver and a deacon at Mt. Zion Baptist Church. Her family has been the only Black family on Alder Street since 1994. Her son Marcus was arrested in January on a drug charge and is in a methadone program at Valley Recovery Center. She reports panic attacks since her husband died of a stroke last spring and takes sertraline 50 mg. She said her nephew who stays with her has no papers and asked whether I would report him.\n\nPlan: follow up Thursday. Call her sister Loretta at 503-555-0199 about transportation.";
+ const GT=[["Name: Denise Whitfield","Whitfield"],["Date of birth","07/22/1961"],["Visit date","03/14/2026"],["Phone (client)","555-0142"],["Street address","1180"],["ZIP code","97999"],["Medical record number","4471093"],["Town: Pine Valley","Pine Valley"],["Street name in a description","Alder Street"],["Exact age","64-year-old"],["Former job","bus driver"],["Congregation and role","Mt. Zion"],["Race in a small-town context","Black family"],["Son's first name","Marcus"],["Son's arrest","arrested"],["Treatment program","Valley Recovery"],["Husband's cause of death","stroke"],["Sister's first name","Loretta"],["Phone (sister)","555-0199"]];
+ const FIRST=["Denise","Marcus","Loretta","James","Mary","John","Maria","Jose","Linda","Robert","Michael","David","Sarah","Carlos","Ana","Tom","Anna","Keisha","Latoya","Tyrone","Jamal","Aisha","Fatima","Omar","Mei","Wei","Hoa","Luis","Rosa","Elena","Daniel","Jennifer","Patricia","Barbara","William","Susan","Karen","Charles","Joseph","Thomas"];
+ const RULES=[
+  {c:"Phone",lv:1,re:/\(?\b\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}\b/g},
+  {c:"Email",lv:1,re:/\b[\w.+-]+@[\w-]+\.[\w.]+\b/g},
+  {c:"SSN",lv:1,re:/\b\d{3}-\d{2}-\d{4}\b/g},
+  {c:"Record number",lv:1,re:/\b(?:MRN|ID|case)\s*#?\s*\d{4,}\b/gi},
+  {c:"Date",lv:1,re:/\b\d{1,2}\/\d{1,2}\/\d{2,4}\b/g},
+  {c:"Address",lv:2,re:/\b\d{1,5}\s+(?:[NSEW]{1,2}\s+)?[A-Z][a-z]+\s+(?:St|Street|Ave|Avenue|Rd|Road|Blvd|Dr|Drive|Ln|Lane|Way|Ct)\b\.?/g},
+  {c:"Name",lv:2,re:/\b(?:Mr|Ms|Mrs|Mx|Dr)\.?\s+[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?/g},
+  {c:"ZIP code",lv:2,re:/\b\d{5}(?:-\d{4})?\b/g},
+  {c:"Name",lv:3,re:/\b(?:son|daughter|sister|brother|husband|wife|nephew|niece|mother|father)\s+(?:named\s+)?[A-Z][a-z]+/g,keep:1},
+  {c:"Name",lv:3,re:new RegExp("\\b(?:"+FIRST.join("|")+")\\b","g")},
+  {c:"Organization",lv:3,re:/\b(?:[A-Z][\w.']+\s+){1,3}(?:Church|Center|Hospital|Clinic|School|Program|Agency|Mosque|Temple)\b/g},
+  {c:"Place",lv:3,re:/\bPine Valley(?:,\s*OR)?\b/g},
+  {c:"Street name",lv:3,re:/\b[A-Z][a-z]+\s+(?:Street|Avenue|Road|Drive|Lane)\b/g},
+  {c:"Age",lv:3,re:/\b\d{1,3}-year-old\b/g}
+ ];
+ const SENS=[
+  ["Substance use treatment",/methadone|buprenorphine|suboxone|detox|recovery center|relapse|overdose|drug charge|substance use/gi,"Records from substance use treatment programs can carry their own consent rules (42 CFR Part 2). Ask your privacy officer before this goes anywhere."],
+  ["Mental health",/panic|anxiety|depress|sertraline|trauma|suicid|psychiatr|PTSD|therapy/gi,"Mental health details are among the most harmful to expose. Use the minimum needed."],
+  ["Immigration status",/\bno papers\b|undocumented|immigration|\bICE\b|asylum|visa|deport/gi,"Immigration details can put a person, and the people around them, at risk if exposed. Keep them out of any tool the agency does not control."],
+  ["Criminal legal",/arrest|charged|probation|jail|incarcerat|court\b|drug charge/gi,"Legal history follows people into housing, jobs, and custody decisions."],
+  ["Abuse or neglect",/abuse|neglect|mandated report|child welfare|\bCPS\b/gi,"Reports and mandated-reporter reasoning have legal handling rules."],
+  ["A child or minor",/\b(?:[0-9]|1[0-7])-year-old|\bteen\b|\bminor\b/gi,"Minors have additional protections and consent rules."],
+  ["Faith or belief",/church|deacon|mosque|temple|congregation/gi,"Faith details narrow who a person could be, quickly, in a small community."],
+  ["Medical details",/stroke|diagnos|medication|\bmg\b|sertraline|HIV|pregnan/gi,"Health details are protected health information when held by a covered entity."]
+ ];
+ // ---------- Pine Valley synthetic town ----------
+ const rr=mulberry(5150),POP=[],N=2400;
+ const AREAS=["Alder Street area","Mill Road","Downtown","Hillcrest","River Flats","Orchard Heights","East End","Cedar Court"];
+ const OCC=["Retired","Retired school bus driver","Teacher or school staff","Farm or orchard work","Retail or food service","Health care","Skilled trades","Office or government","Driver or delivery","Self-employed","Student","Home or caregiving"];
+ function pickW(w){let x=rr(),c=0;for(let i=0;i<w.length;i++){c+=w[i];if(x<c)return i}return w.length-1}
+ for(let i=0;i<N-1;i++){
+  const age=[()=>18+Math.floor(rr()*12),()=>30+Math.floor(rr()*15),()=>45+Math.floor(rr()*15),()=>60+Math.floor(rr()*15),()=>75+Math.floor(rr()*20)][pickW([0.15,0.22,0.24,0.25,0.14])]();
+  const sex=rr()<0.51?"F":"M",eth=["White","Latino","Black","Asian","Native","Other"][pickW([0.79,0.12,0.03,0.03,0.01,0.02])];
+  let occ;if(age>=65&&rr()<0.72)occ=(rr()<0.012)?1:0;else if(age<24&&rr()<0.5)occ=10;else occ=[2,3,4,5,6,7,8,9,11][pickW([0.09,0.18,0.12,0.14,0.09,0.13,0.07,0.08,0.10])];
+  let area=eth==="Black"&&rr()<0.55?0:Math.floor(rr()*AREAS.length);
+  let faith=eth==="Black"?(rr()<0.62?"Mt. Zion Baptist":"Other or none"):(rr()<0.004?"Mt. Zion Baptist":"Other or none");
+  POP.push({age,sex,eth,occ:OCC[occ],area:AREAS[area],faith,wid:age>=55&&rr()<0.05,kid:rr()<0.02});
+ }
+ POP.push({age:64,sex:"F",eth:"Black",occ:"Retired school bus driver",area:AREAS[0],faith:"Mt. Zion Baptist",wid:true,kid:true});
+ const TARGET=POP[POP.length-1];
+
+ const S={level:2,text:SAMPLE,ran:{},pv:{age:"none",sex:false,eth:false,occ:false,area:"none",faith:false,wid:false,kid:false},pvTouched:0,custom:false,dest:"consumer",runs:0};
+
+ host.innerHTML='<div id="b5-pred"></div>'+stepHead(1,"Run the filter")+
+ winHTML("Paste Check","Fictional tool, real math",
+ '<p class="dim">Paste text below. Everything runs in your browser; nothing is sent anywhere. The sample is a fictional session note full of the kinds of details staff paste into AI tools. Choose how strict the filter is and read what it finds.</p>'+
+ '<label for="b5t"><b>Text to check</b></label><textarea id="b5t" rows="9" spellcheck="false"></textarea>'+
+ '<div class="row"><fieldset><legend>Filter strength</legend><label class="row"><input type="radio" name="b5lv" value="1"><span>Basic: phone, email, ID numbers, numeric dates</span></label><label class="row"><input type="radio" name="b5lv" value="2" checked><span>Standard: adds street addresses, titled names, ZIP codes</span></label><label class="row"><input type="radio" name="b5lv" value="3"><span>Strict: adds first names, organizations, places, ages, street names</span></label></fieldset><button type="button" class="wb ghost" id="b5reset">Reset to the sample</button></div>'+
+ '<div id="b5-out" aria-live="polite"></div>')+
+ stepHead(2,"Audit what the filter missed")+
+ winHTML("Audit view","Only works on the sample note",'<div id="b5-aud"></div>')+
+ stepHead(3,"Count who the note could still describe")+
+ winHTML("Pine Valley estimator","Synthetic town of 2,400",'<p class="dim">Pine Valley is a fictional town of 2,400 residents. The note describes one of them. Choose which details stay in the "de-identified" note and see how many residents still match all of them. Counting matches is how privacy researchers measure re-identification risk. A group of 1 is a person anyone in town could name.</p><div id="b5-pv"></div>')+
+ stepHead(4,"Where is it going?")+
+ winHTML("Destination check","Questions, not legal rulings",'<label for="b5d"><b>Where would you paste this text?</b></label> <select id="b5d"><option value="consumer">A free consumer AI chatbot account</option><option value="enterprise">An enterprise AI tool with a signed business associate agreement and no training on your data</option><option value="agency">An AI tool your agency built or approved after its own review</option></select><div id="b5-dest" aria-live="polite"></div>')+
+ stepHead(5,"Open the hood")+
+ '<details class="bx-hood"><summary>How the filter works and where it cannot see</summary><div id="b5-hood"></div></details>'+
+ stepHead(6,"Compare with other ways to get help from a tool")+
+ '<div class="bx-alt"><p>Objective 7 asks what else could do this job.</p><ul><li><b>Describe the situation without the person.</b> Ask for help with a type of situation, not this client\'s story. The tool never receives anything about anyone.</li><li><b>Use synthetic or composite cases.</b> Write a made-up case that has the same structure. This is how this course handles it.</li><li><b>Use the agency\'s own approved tool,</b> inside its security boundary, for work that needs real details.</li><li><b>Do the writing yourself and spend the saved risk on your supervision time.</b></li></ul></div>'+
+ stepHead(7,"Decide")+'<div id="b5-ck"></div>';
+
+ // ---------- engine ----------
+ function scan(text,lv){
+  const hits=[];
+  RULES.filter(r=>r.lv<=lv).forEach(r=>{r.re.lastIndex=0;let m;while((m=r.re.exec(text))){hits.push({s:m.index,e:m.index+m[0].length,c:r.c});if(m[0].length===0)r.re.lastIndex++}});
+  hits.sort((a,b)=>a.s-b.s||(b.e-b.s)-(a.e-a.s));
+  const out=[];let end=-1;hits.forEach(h=>{if(h.s>=end){out.push(h);end=h.e}});
+  return out;
+ }
+ function redact(text,hits){let o="",p=0;hits.forEach(h=>{o+=text.slice(p,h.s)+"["+h.c.toUpperCase()+"]";p=h.e});return o+text.slice(p)}
+ function highlight(text,hits){let o="",p=0;hits.forEach(h=>{o+=esc(text.slice(p,h.s))+'<mark class="m1">'+esc(text.slice(h.s,h.e))+'</mark>';p=h.e});return o+esc(text.slice(p))}
+ function sens(text){return SENS.map(x=>{x[1].lastIndex=0;const m=text.match(x[1])||[];return {n:x[0],cnt:m.length,adv:x[2],words:Array.from(new Set(m.map(w=>w.toLowerCase())))}}).filter(x=>x.cnt)}
+ function pvCount(p){
+  const a=p.age;
+  return POP.filter(q=>{
+   if(a==="decade"&&Math.floor(q.age/10)!==Math.floor(TARGET.age/10))return false;
+   if(a==="five"&&Math.floor(q.age/5)!==Math.floor(TARGET.age/5))return false;
+   if(a==="exact"&&q.age!==TARGET.age)return false;
+   if(p.sex&&q.sex!==TARGET.sex)return false;
+   if(p.eth&&q.eth!==TARGET.eth)return false;
+   if(p.occ&&q.occ!==TARGET.occ)return false;
+   if(p.area==="area"&&q.area!==TARGET.area)return false;
+   if(p.faith&&q.faith!==TARGET.faith)return false;
+   if(p.wid&&!q.wid)return false;
+   if(p.kid&&!q.kid)return false;
+   return true;
+  }).length;
+ }
+ function remaining(redacted){ // which Pine Valley attributes survive in the redacted sample
+  const r=redacted.toLowerCase();
+  return {age:/64-year-old/.test(r)?"exact":"none",sex:/\bher\b|\bshe\b|ms\./.test(r),eth:/black/.test(r),occ:/bus driver/.test(r),area:/alder street/.test(r)?"area":"none",faith:/mt\. zion/.test(r),wid:/husband died/.test(r),kid:/arrested/.test(r)};
+ }
+ function run(){
+  const t=S.text,hits=scan(t,S.level),red=redact(t,hits);
+  S.hits=hits;S.red=red;S.ran[S.level]=true;
+  const sv=sens(t);S.sv=sv;
+  const byC={};hits.forEach(h=>byC[h.c]=(byC[h.c]||0)+1);
+  $("#b5-out").innerHTML='<div class="grid2"><div><h4>What it found</h4><div class="note" style="white-space:pre-wrap">'+highlight(t,hits)+'</div></div><div><h4>What would be sent</h4><div class="note" style="white-space:pre-wrap">'+esc(red)+'</div></div></div>'+
+  '<p>'+(hits.length?Object.keys(byC).map(c=>'<span class="chip">'+c+' '+byC[c]+'</span>').join(" "):"Nothing found.")+'</p>'+
+  '<h4>Sensitive content, whatever the names</h4>'+(sv.length?sv.map(x=>'<div class="note"><b>'+x.n+'</b> <span class="chip n">'+x.cnt+' match'+(x.cnt>1?"es":"")+'</span> <span class="dim">'+esc(x.words.slice(0,5).join(", "))+'</span><br><span class="dim">'+esc(x.adv)+'</span></div>').join(""):'<p>No sensitive categories found.</p>');
+  // audit
+  if(t===SAMPLE){
+   const rows=GT.map(g=>({l:g[0],n:g[1],caught:red.toLowerCase().indexOf(g[1].toLowerCase())<0}));
+   S.aud={caught:rows.filter(x=>x.caught).length,tot:rows.length,miss:rows.filter(x=>!x.caught)};
+   $("#b5-aud").innerHTML='<p class="dim">A person marked '+rows.length+' details in the sample that could point to this client. Here is how the filter did at the strength you chose.</p><div class="kpis">'+kpi(S.aud.caught+" of "+S.aud.tot,"identifying details removed",S.aud.caught<S.aud.tot?"warn":"")+kpi(S.aud.miss.length,"still in the text that is sent",S.aud.miss.length?"bad":"")+'</div><div class="tscroll"><table><thead><tr><th scope="col">Detail</th><th scope="col">Result</th></tr></thead><tbody>'+rows.map(x=>'<tr><td>'+esc(x.l)+'</td><td>'+(x.caught?"Removed":"<b>Still there</b>")+'</td></tr>').join("")+'</tbody></table></div>';
+  }else{S.aud=null;$("#b5-aud").innerHTML='<p>This audit works only on the sample note. A filter cannot tell what it missed in text it has not been checked against, and only a person can mark what could identify someone. In real use, that person is you.</p>'}
+  renderDest();renderHood();
+ }
+ function renderPV(){
+  const p=S.pv,n=pvCount(p),pa=Object.assign({},p);
+  const single=[["Age (exact)",{age:"exact"}],["Female",{sex:true}],["Black",{eth:true}],["Retired school bus driver",{occ:true}],["Lives in the Alder Street area",{area:"area"}],["Member of Mt. Zion Baptist",{faith:true}],["Widowed in the past two years",{wid:true}],["Adult child arrested in the past year",{kid:true}]];
+  const base={age:"none",sex:false,eth:false,occ:false,area:"none",faith:false,wid:false,kid:false};
+  const bar=n<=1?"bad":n<=10?"warn":"";
+  $("#b5-pv").innerHTML='<div class="grid2"><div><fieldset><legend>Details left in the note</legend>'+
+  '<label for="b5age"><b>Age</b></label> <select id="b5age"><option value="none">Left out</option><option value="decade">Decade (60s)</option><option value="five">Five-year band (60 to 64)</option><option value="exact">Exact (64)</option></select>'+
+  '<label class="row"><input type="checkbox" data-pv="sex"><span>Woman</span></label><label class="row"><input type="checkbox" data-pv="eth"><span>Black</span></label><label class="row"><input type="checkbox" data-pv="occ"><span>Retired school bus driver</span></label>'+
+  '<label for="b5area"><b>Where she lives</b></label> <select id="b5area"><option value="none">Left out (town only)</option><option value="area">Alder Street area</option></select>'+
+  '<label class="row"><input type="checkbox" data-pv="faith"><span>Deacon at Mt. Zion Baptist Church</span></label><label class="row"><input type="checkbox" data-pv="wid"><span>Husband died in the past two years</span></label><label class="row"><input type="checkbox" data-pv="kid"><span>Adult son arrested in the past year</span></label></fieldset></div>'+
+  '<div><div class="kpis">'+kpi(n,"Pine Valley residents match everything you kept",bar)+'</div>'+hbar("Matching residents",Math.log10(Math.max(n,1)),Math.log10(N),bar==="bad"?"neg":bar?"b":"",n)+
+  '<p>'+(n<=1?'<b>Only one person.</b> Anyone who knows the town can name her from this note.':n<=10?'<b>'+n+' people.</b> Small groups like this are unsafe to describe. One common rule: the Centers for Medicare &amp; Medicaid Services does not publish counts of 1 to 10 in its public data files.':'<b>'+n+' people.</b> Larger groups give more cover. That cover shrinks every time you add a detail.')+'</p>'+
+  '<h4>Each detail alone</h4>'+single.map(x=>hbar(x[0],Math.log10(Math.max(pvCount(Object.assign({},base,x[1])),1)),Math.log10(N),"",pvCount(Object.assign({},base,x[1])))).join("")+'</div></div>';
+  $("#b5age").value=p.age;$("#b5area").value=p.area;$$('[data-pv]',host).forEach(i=>i.checked=!!p[i.dataset.pv]);
+  S.pvN=n;
+ }
+ function renderDest(){
+  const d=S.dest,sv=S.sv||[],names=(S.hits||[]).length;
+  const q=[];
+  if(d==="consumer")q.push("A free consumer account is usually not covered by a business associate agreement (the contract HIPAA requires before a vendor handles protected health information). If your agency is a covered entity, identifiable client information does not belong here.","Consumer terms often let the company keep and review what you type. Read them for \"training\" and \"human review.\"");
+  if(d==="enterprise")q.push("A signed business associate agreement is necessary and does not settle everything. Ask: where is the data stored, who at the vendor can read it, how long is it kept, and can it be deleted?","Even with a contract, send the minimum needed. The estimator above still applies to anything that leaves your control.");
+  if(d==="agency")q.push("Ask who reviewed it, what it logs, who can read the logs, and whether clients were told.","Approval is a starting point. Check that the approved use covers this kind of text.");
+  if(sv.some(x=>x.n==="Substance use treatment"))q.push("This text touches substance use treatment. Ask the privacy officer whether special consent rules apply before any disclosure.");
+  if(sv.some(x=>x.n==="Immigration status"))q.push("This text includes immigration details about a person other than the client. Consider leaving them out entirely.");
+  if(sv.some(x=>x.n==="A child or minor"))q.push("This text involves a minor. Check consent and parental-access rules.");
+  q.push("This text describes other people (a son, a sister, a nephew) who did not agree to be in it.");
+  $("#b5-dest").innerHTML='<ul>'+q.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul><p class="dim">These are questions for your privacy officer and supervisor. They are not legal conclusions.</p>';
+ }
+ function renderHood(){
+  $("#b5-hood").innerHTML='<p>The filter is a list of pattern rules, checked in order. Basic looks for the shape of phone numbers, email addresses, ID numbers, and numeric dates. Standard adds the shape of a street address, a title followed by a name, and a five-digit ZIP code. Strict adds a list of '+FIRST.length+' common first names, organization names that end in words like Church or Center, a fixed place name, street names, and ages written as "64-year-old."</p><p>A rule can only find what it was written to find. It cannot see "the only Black family on Alder Street since 1994," because that is a description, not a pattern. It cannot see that a retired bus driver who is also a deacon is one of very few people in town. Those are the details the estimator counts.</p><div class="tscroll"><table><thead><tr><th scope="col">Rule</th><th scope="col">Starts at</th></tr></thead><tbody>'+RULES.map(r=>'<tr><td>'+r.c+(r.keep?" (family name pattern)":"")+'</td><td>'+(r.lv===1?"Basic":r.lv===2?"Standard":"Strict")+'</td></tr>').join("")+'</tbody></table></div>';
+ }
+ host.addEventListener("input",e=>{if(e.target.id==="b5t"){S.text=e.target.value;run()}});
+ host.addEventListener("change",e=>{
+  const t=e.target;
+  if(t.name==="b5lv"){S.level=+t.value;run()}
+  else if(t.id==="b5age"){S.pv.age=t.value;S.pvTouched++;renderPV()}
+  else if(t.id==="b5area"){S.pv.area=t.value;S.pvTouched++;renderPV()}
+  else if(t.dataset&&t.dataset.pv){S.pv[t.dataset.pv]=t.checked;S.pvTouched++;renderPV()}
+  else if(t.id==="b5d"){S.dest=t.value;renderDest()}
+ });
+ host.addEventListener("click",e=>{if(e.target.id==="b5reset"){S.text=SAMPLE;$("#b5t").value=SAMPLE;run()}});
+
+ predictUI($("#b5-pred"),"b5","The filter blacks out names, dates, phone numbers, and street addresses from the sample note. The result goes to an AI tool. How many of Pine Valley's 2,400 residents could the remaining text still describe?",
+  [["many","Hundreds. Without names and numbers it is effectively anonymous."],["few","A few dozen."],["one","Five or fewer, possibly just one."]],
+  ()=>{const red=redact(SAMPLE,scan(SAMPLE,2)),rem=remaining(red),n=pvCount(rem);const d1=GT.filter(g=>red.toLowerCase().indexOf(g[1].toLowerCase())<0).length;
+   return {correct:null,html:'<p>At Standard strength the filter removed <b>'+d1+' of '+GT.length+'</b> marked details. The text that remains still names her age, her former job, her congregation and role, the street, her race in a town where few share it, her husband\'s death, and her son\'s arrest. Together those match <b>'+n+'</b> of Pine Valley\'s 2,400 residents.</p><p>No single detail identifies her. The combination does. Removing identifiers and protecting a person from being identified are different jobs. Use the estimator to see how few details it takes.</p>'};});
+
+ checkpoint($("#b5-ck"),{id:"b5",ta:"ans-bench5",
+  ready:()=>Object.keys(S.ran).length>=2&&S.pvTouched>=1,gateMsg:"Run the filter at two strengths and try the Pine Valley estimator first, so your finding rests on what you saw.",
+  conds:["Staff may paste only into AI tools approved by the agency, with a signed business associate agreement and no training on agency data.","Staff remove direct identifiers and also generalize age, place, occupation, and rare events before any text leaves the agency.","Information about people other than the client (family, friends, other clients) stays out of any prompt.","Substance use treatment details, immigration status, and abuse reports stay out unless the privacy officer approves.","Clients are told when AI tools touch their information and can decline.","If fewer than 11 people could match the details in a note, the note does not go into any outside tool."],
+  compose:(rec,c)=>{const a=S.aud,rem=S.red?remaining(S.red):null,n=rem?pvCount(rem):"unknown";
+   return "I tested a privacy filter on a fictional session note. At "+(S.level===1?"basic":S.level===2?"standard":"strict")+" strength it removed "+(a?a.caught+" of "+a.tot:"some")+" details that could point to the client"+(a&&a.miss.length?" and left "+a.miss.length+" in, including "+a.miss.slice(0,3).map(x=>x.l.toLowerCase()).join(", "):"")+". The sensitive-content scan found "+(S.sv||[]).map(x=>x.n.toLowerCase()).join(", ")+". In the fictional town of Pine Valley, the details left in the filtered note match "+n+" of 2,400 residents"+(n===1?", which is one identifiable person":"")+". "+recPhrase(rec)+condSentence(c)+" I would revisit this after the agency reviews which AI tools staff already use."}});
+ $("#b5t").value=SAMPLE;run();renderPV();renderDest();
+})();
+
+/* ===== Tool 6: Vendor desk ===== */
+(function(){
+ const host=$("#b6-app");if(!host)return;
+ const CLAIMS=[
+  {c:"Cuts documentation time by 70%.",o:["Is that per note, per week, or per clinician, who measured it, and against what baseline?","Can you send a brochure with that number?","Does it connect to our records system?"],why:"A percentage means little without its denominator: which tasks, whose time, measured by whom, against what. Vendor pilots often count only the typing and leave out the review time you measured in the scribe."},
+  {c:"99% accurate.",o:["Is that the best accuracy on the market?","Accurate at what, on whose data, and how many of the cases that matter does it miss?","Can we see a demo?"],why:"Accuracy counts every right answer, including the many easy ones. When a thing you care about is rare, a tool can score 97% by flagging nobody. The calculator below shows it."},
+  {c:"Detects suicide risk before clinicians do.",o:["Compared with which clinicians, in what setting, and how many false alerts do staff review for each real catch?","How fast does the alert arrive?","Is there a mobile app?"],why:"\"Before clinicians do\" depends on who was compared and how many alerts staff must work through to find one real one. Alert fatigue is a safety problem of its own."},
+  {c:"Bias-tested across diverse populations.",o:["Do you have a diversity statement?","Which groups, which measures, who ran the test, and can we see the results by group?","Is the test certified by an outside body?"],why:"\"Tested\" says an action happened and nothing about the result. Ask for performance broken out by language, race, age, and disability, from someone other than the vendor."},
+  {c:"HIPAA compliant.",o:["Is the cloud secure?","Do you have a compliance badge we can show our board?","Will you sign a business associate agreement, and where is data stored, who can read it, and is it used to train models?"],why:"The federal government does not certify products as HIPAA compliant. Compliance depends on how an agency uses a tool and what the contract requires. The useful questions are about contracts, storage, access, and training."}
+ ];
+ const DOMS=["Data and consent","Evidence and performance","Human oversight and accountability","Staff and workflow","Exit and community"];
+ const ITEMS=[
+  {d:0,hard:true,t:"The vendor may use de-identified data to improve its products and services.",k:0,q:"Who de-identifies client data, by what method, and will you agree in writing not to use agency data to train or improve any product?",why:"Who de-identifies it and by what method? The Pine Valley estimator showed that removing names and numbers can leave one person identifiable. Without a stated method and a ban on re-identification, this lets client data become the vendor's training material."},
+  {d:0,t:"Customer data are retained for the term of the agreement plus seven years.",k:0,q:"Will you delete all agency data within 30 days of exit and certify the deletion?",why:"Seven years of retention after you leave widens what a breach or subpoena can reach. Ask for deletion within 30 days of exit, with a certificate."},
+  {d:0,t:"Customer is responsible for obtaining all necessary consents from end users.",k:1,q:"What consent language, translations, and opt-out process do you provide for clients?",why:"This is common and fair only if the vendor provides consent language, translations, and a way for a client to say no without losing service. Otherwise the whole burden lands on front-line staff."},
+  {d:1,t:"Accuracy exceeds 95% in internal testing.",k:0,q:"Please share the test data, the groups included, and the full results behind the accuracy figure, ideally from an outside evaluator.",why:"Internal testing, no stated data, no groups, no definition of accuracy. The calculator shows why a single accuracy number can hide the cases that matter."},
+  {d:1,t:"Vendor will provide validation results, including performance by language, race, and age, on request and annually, and Customer may publish them.",k:2,q:"Please confirm this clause stays as written.",why:"This gives you evidence, broken out by group, on a schedule, and the freedom to share it. It is what a strong clause looks like."},
+  {d:1,t:"The model may be updated at any time without notice.",k:0,q:"Will you give 60 days' notice and release notes before any model change, and let us re-test or pause first?",why:"A changed model is a changed tool. Ask for advance notice, release notes, and the right to re-test or pause before a change goes live."},
+  {d:2,t:"All outputs are advisory. Customer remains solely responsible for clinical and administrative decisions.",k:1,q:"Which defects will you take responsibility for, and what logs and explanations will you provide so we can review decisions?",why:"Human responsibility is right. Sole responsibility with no logs, no explanations, and no vendor accountability for defects is not. Pair this with audit access and shared responsibility for known defects."},
+  {d:2,hard:true,t:"No audit or log access is provided. Customer may submit support tickets.",k:0,q:"What logs of inputs, outputs, and edits can we access, and how?",why:"You cannot check what you cannot see. Without logs of inputs, outputs, and edits, no one can find a pattern, answer a complaint, or review a harm."},
+  {d:2,t:"Vendor provides a documented process for staff and clients to contest an output, with a named contact who responds within five business days.",k:2,q:"Please confirm this process and name the contact.",why:"A real route for a person to say \"this is wrong\" and get a human answer. It is the difference between oversight in the contract and oversight in practice."},
+  {d:3,t:"Customer shall train staff to rely on the tool's output to improve efficiency.",k:0,q:"Will you change this to training that teaches staff to check output against the source?",why:"Training staff to rely on output invites automation bias (trusting a machine's answer over your own reading). Training should teach checking, not deferring."},
+  {d:3,t:"Each output is shown beside the source text it came from, with links to the passage.",k:2,q:"Please confirm outputs will always link to their source text.",why:"Traceability makes review fast and omissions easier to spot. Compare the note lines in the scribe that carried turn numbers with the template lines that had no source."},
+  {d:4,t:"On termination, data are returned in a proprietary format within 90 days, and Vendor may retain backups for up to seven years.",k:0,q:"Will you return data in an open format within 30 days and delete backups with a certificate?",why:"A proprietary format makes leaving costly, and seven-year backups mean your clients' data stay with the vendor after you do."},
+  {d:4,t:"Vendor discloses all subcontractors and model providers and gives 30 days' notice of any change.",k:2,q:"Please confirm this notice period and the list of subcontractors.",why:"You need to know who else touches client information. Notice gives you time to review before a new party does."},
+  {d:4,hard:true,t:"Customer will not publicly disclose performance results or evaluation findings.",k:0,q:"Will you remove this clause and allow us to publish evaluation results?",why:"A gag clause keeps staff, clients, and the community from learning how the tool performs. Evidence you cannot share cannot protect anyone."}
+ ];
+ const LV=["Weak","Needs a change","Strong"];
+ const S={claims:{},rate:{},calcTouched:0,calc:{prev:3,sens:60,spec:98}};
+
+ host.innerHTML='<div id="b6-pred"></div>'+stepHead(1,"Read the sales sheet")+
+ winHTML("NarraCare Pro","Fictional vendor sheet",
+ '<p class="dim">NarraCare Pro (fictional) sells AI documentation and risk alerts to behavioral health agencies. For each claim on its sheet, choose the first question you would ask. Your choice shows what the claim leaves out.</p><div id="b6-claims"></div>')+
+ stepHead(2,"Test the accuracy claim yourself")+
+ winHTML("Accuracy calculator","Real arithmetic",
+ '<p class="dim">One thousand clinic notes. Some contain a real risk statement. A tool reads each one and either raises an alert or stays quiet. Set how common the risk is, how many real risks the tool catches (sensitivity), and how often it correctly stays quiet on a safe note (specificity).</p>'+
+ '<div class="grid2"><div>'+
+ '<label for="b6p"><b>How common the risk is</b>: <b id="b6pv">3</b> in 100 notes</label><input type="range" id="b6p" min="1" max="20" value="3">'+
+ '<label for="b6s"><b>Real risks the tool catches</b>: <b id="b6sv">60</b>%</label><input type="range" id="b6s" min="0" max="100" value="60">'+
+ '<label for="b6c"><b>Safe notes it correctly leaves alone</b>: <b id="b6cv">98</b>%</label><input type="range" id="b6c" min="80" max="100" value="98">'+
+ '<div class="button-row"><button type="button" class="wb ghost" data-b6c="never">A tool that never alerts</button> <button type="button" class="wb ghost" data-b6c="story">The "99% accurate" story</button> <button type="button" class="wb ghost" data-b6c="catch">A tool that catches 95%</button></div>'+
+ '</div><div id="b6-calc" aria-live="polite"></div></div>')+
+ stepHead(3,"Read the contract")+
+ winHTML("Contract excerpts","Fictional agreement",'<p class="dim">Rate each clause: Weak, Needs a change, or Strong, from your agency\'s side of the table. After you rate a clause, the review shows how the course team read it and why.</p><div id="b6-items"></div>')+
+ '<div id="b6-prof"></div>'+
+ stepHead(4,"Open the hood")+
+ '<details class="bx-hood"><summary>How the vendor profile is scored</summary><div id="b6-hood"></div></details>'+
+ stepHead(5,"Compare with other ways to meet the need")+
+ '<div class="bx-alt"><p>Objective 7 asks what else could meet the need this product claims to meet.</p><ul><li><b>Do nothing and name the need.</b> If documentation time is the problem, measure it first. The cause may be forms or staffing.</li><li><b>Change the documentation requirement.</b> Shorter notes, fewer fields, and a template with the client\'s own words can cut hours with no vendor.</li><li><b>Buy a narrower tool.</b> Scheduling reminders or form translation carry less risk than a tool that reads sessions and flags people.</li><li><b>Run a small pilot with an exit clause,</b> a baseline from writing by hand, and a stop rule agreed in advance.</li><li><b>Peer review across agencies.</b> Ask three agencies that use it what went wrong.</li></ul></div>'+
+ stepHead(6,"Decide")+'<div id="b6-ck"></div>';
+
+ function renderClaims(){
+  $("#b6-claims").innerHTML=CLAIMS.map((c,i)=>'<fieldset><legend>Claim '+(i+1)+': "'+esc(c.c)+'"</legend>'+c.o.map((o,j)=>'<label class="row"><input type="radio" name="b6c'+i+'" value="'+j+'"'+(S.claims[i]===j?" checked":"")+'><span>'+esc(o)+'</span></label>').join("")+(S.claims[i]!==undefined?'<p><b>'+(isBest(i,S.claims[i])?"That question gets at it. ":"A better first question is: \""+esc(bestQ(i))+"\" ")+'</b>'+esc(c.why)+'</p>':'')+'</fieldset>').join("");
+ }
+ const BEST=[0,1,0,1,2];
+ const isBest=(i,j)=>BEST[i]===j,bestQ=i=>CLAIMS[i].o[BEST[i]];
+ function calc(){
+  const c=S.calc,N=1000,pos=Math.round(N*c.prev/100),neg=N-pos;
+  const tp=Math.round(pos*c.sens/100),fn=pos-tp,tn=Math.round(neg*c.spec/100),fp=neg-tn;
+  const acc=(tp+tn)/N,ppv=tp+fp?tp/(tp+fp):0;
+  S.cs={pos,tp,fn,fp,tn,acc,ppv,alerts:tp+fp};
+  const dots=[];for(let i=0;i<tp;i++)dots.push("a");for(let i=0;i<fn;i++)dots.push("c");for(let i=0;i<fp;i++)dots.push("b");while(dots.length<N)dots.push("");
+  $("#b6pv").textContent=c.prev;$("#b6sv").textContent=c.sens;$("#b6cv").textContent=c.spec;
+  $("#b6-calc").innerHTML='<div class="kpis">'+kpi(f1(100*acc)+"%","accuracy (the number on the sales sheet)")+kpi(tp+" of "+pos,"real risks caught",fn?"bad":"")+kpi(fn,"real risks missed",fn?"bad":"")+kpi(fp,"false alerts staff must review",fp>tp?"warn":"")+'</div>'+
+  '<div class="dots10" role="img" aria-label="One thousand notes: '+tp+' real risks caught, '+fn+' real risks missed, '+fp+' false alerts, the rest correctly left alone">'+dots.map(d=>'<i class="'+d+'"></i>').join("")+'</div>'+
+  '<p class="dim"><span class="chip s">green</span> real risk, caught &nbsp; <span class="chip r">red</span> real risk, missed &nbsp; <span class="chip v">amber</span> false alert &nbsp; dim: safe note, left alone</p>'+
+  '<p>'+(tp+fp?'When this tool raises an alert, it is a real risk '+f1(100*ppv)+'% of the time. Staff review about '+f1((tp+fp)/Math.max(tp,1))+' alerts for each real catch.':'This tool never raises an alert.')+' Accuracy of '+f1(100*acc)+'% '+(fn>tp?'sits next to a tool that misses more real risks than it catches.':'comes with the miss and false-alert counts above.')+'</p>';
+ }
+ function renderItems(){
+  $("#b6-items").innerHTML=ITEMS.map((it,i)=>'<fieldset><legend>'+DOMS[it.d]+'</legend><p>'+esc(it.t)+'</p><div class="row">'+LV.map((l,j)=>'<label class="row"><input type="radio" name="b6i'+i+'" value="'+j+'"'+(S.rate[i]===j?" checked":"")+'><span>'+l+'</span></label>').join("")+'</div>'+(S.rate[i]!==undefined?'<p><b>Course team: '+LV[it.k]+'.'+(S.rate[i]===it.k?' You agreed.':' You rated it '+LV[S.rate[i]]+'.')+'</b> '+esc(it.why)+'</p>':'')+'</fieldset>').join("");
+ }
+ function profile(){
+  const done=Object.keys(S.rate).length;
+  if(done<4){$("#b6-prof").innerHTML='<p class="bx-hint">Rate at least four clauses to see the vendor profile.</p>';S.prof=null;return}
+  const dom=DOMS.map((n,d)=>{const x=ITEMS.map((it,i)=>[it,i]).filter(p=>p[0].d===d&&S.rate[p[1]]!==undefined);const sc=x.reduce((a,p)=>a+S.rate[p[1]],0),mx=x.length*2;return {n,sc,mx,cnt:x.length}});
+  const hard=ITEMS.map((it,i)=>[it,i]).filter(p=>p[0].hard&&S.rate[p[1]]===0);
+  const agree=ITEMS.filter((it,i)=>S.rate[i]===it.k).length;
+  const asks=ITEMS.map((it,i)=>[it,i]).filter(p=>S.rate[p[1]]!==undefined&&p[0].k<2);
+  S.prof={dom,hard,agree,done,asks:asks.length};
+  $("#b6-prof").innerHTML=winHTML("Vendor profile","Built from your ratings",'<div class="kpis">'+kpi(done+" of "+ITEMS.length,"clauses rated")+kpi(agree+" of "+done,"ratings that matched the course team's")+kpi(hard.length,"dealbreaker clauses rated Weak",hard.length?"bad":"")+'</div>'+dom.filter(x=>x.cnt).map(x=>hbar(x.n,x.sc,x.mx,x.sc/x.mx<0.5?"neg":x.sc/x.mx<0.8?"b":"",Math.round(100*x.sc/x.mx)+"%")).join("")+
+  (hard.length?'<h4>Dealbreakers until changed</h4><ul>'+hard.map(p=>'<li>'+esc(p[0].t)+'</li>').join("")+'</ul>':'')+
+  '<h4>Questions to send the vendor ('+asks.length+')</h4>'+(asks.length?'<ol>'+asks.slice(0,8).map(p=>'<li>'+esc(p[0].q)+'</li>').join("")+'</ol>':'<p>None.</p>'));
+ }
+ host.addEventListener("change",e=>{
+  const n=e.target.name||"";
+  let m;
+  if((m=/^b6c(\d)$/.exec(n))){S.claims[+m[1]]=+e.target.value;renderClaims()}
+  else if((m=/^b6i(\d+)$/.exec(n))){S.rate[+m[1]]=+e.target.value;renderItems();profile()}
+ });
+ host.addEventListener("input",e=>{
+  const id=e.target.id;
+  if(id==="b6p"){S.calc.prev=+e.target.value}else if(id==="b6s"){S.calc.sens=+e.target.value}else if(id==="b6c"){S.calc.spec=+e.target.value}else return;
+  S.calcTouched++;calc();
+ });
+ host.addEventListener("click",e=>{
+  const b=e.target.closest("button[data-b6c]");if(!b)return;
+  const p=b.dataset.b6c;
+  if(p==="never")S.calc={prev:3,sens:0,spec:100};else if(p==="story")S.calc={prev:3,sens:67,spec:100};else S.calc={prev:3,sens:95,spec:90};
+  $("#b6p").value=S.calc.prev;$("#b6s").value=S.calc.sens;$("#b6c").value=S.calc.spec;S.calcTouched++;calc();
+ });
+
+ predictUI($("#b6-pred"),"b6","In a clinic where 3 of every 100 notes contain a risk statement, a vendor says its alert tool is \"97% accurate.\" What accuracy score would a tool get if it never raised an alert on anyone?",
+  [["3","3%"],["50","50%"],["97","97%"]],
+  ()=>{const prev=3,N=1000,pos=30,neg=970,acc=(0+neg)/N;
+   return {correct:null,html:'<p>A tool that never alerts on anyone is right about all 970 safe notes and wrong about all 30 risks, so its accuracy is <b>'+f1(100*acc)+'%</b>. The sales sheet figure would be identical for a tool that catches every real risk and for a tool that catches none. Try the first button in the calculator. Then ask for sensitivity (real risks caught), the false-alert count, and results broken out by group.</p>'};});
+
+ checkpoint($("#b6-ck"),{id:"b6",ta:"ans-bench6",
+  ready:()=>Object.keys(S.claims).length>=3&&S.calcTouched>=1&&Object.keys(S.rate).length>=8,
+  gateMsg:()=>"Answer at least three claims, move the calculator, and rate at least eight contract clauses first. You have "+Object.keys(S.claims).length+" claims, "+S.calcTouched+" calculator moves, and "+Object.keys(S.rate).length+" clauses so far.",
+  conds:["The vendor signs a business associate agreement and agrees in writing never to train on agency data.","The agency receives validation results by language, race, and age before purchase and every year, and may publish them.","The agency has audit-log access and a way for staff and clients to contest an output.","The contract requires notice before any model change, a pilot, and an exit clause.","Data return in an open format with certified deletion within 30 days of exit.","A pilot runs on one small team first, measured against writing the notes by hand."],
+  compose:(rec,c)=>{const p=S.prof,cs=S.cs,right=Object.keys(S.claims).filter(i=>isBest(+i,S.claims[i])).length;
+   return "I reviewed a fictional vendor, NarraCare Pro. I picked the most revealing first question on "+right+" of "+Object.keys(S.claims).length+" sales claims. In the accuracy calculator, a tool with "+f1(100*cs.acc)+"% accuracy caught "+cs.tp+" of "+cs.pos+" real risks and raised "+cs.fp+" false alerts per 1,000 notes, so the accuracy figure alone told me almost nothing. I rated "+p.done+" contract clauses; "+p.agree+" matched the course team's reading, and "+p.hard.length+" of the three dealbreaker clauses were rated Weak"+(p.hard.length?" ("+p.hard.map(h=>h[0].t.split(" ").slice(0,6).join(" ").toLowerCase()+"...").join("; ")+")":"")+". The weakest domain was "+p.dom.filter(x=>x.cnt).sort((a,b)=>a.sc/a.mx-b.sc/b.mx)[0].n.toLowerCase()+". "+recPhrase(rec)+condSentence(c)+" I would revisit this after the vendor answers the questions in my list in writing."}});
+ renderClaims();calc();renderItems();profile();
+ $("#b6-hood").innerHTML='<p>Each clause you rate is worth 0 (Weak), 1 (Needs a change), or 2 (Strong). Each domain shows the share of possible points across the clauses you have rated. Three clauses are marked as dealbreakers because strength elsewhere does not repair them: reuse of client data for the vendor\'s own purposes, no audit or log access, and a gag on publishing results. A Weak rating on any of them rules out "use it as designed," whatever the average says. An average can hide a single fatal clause.</p>';
+})();
+
+ const fixScroll=r=>$$('.tscroll',r).forEach(t=>{if(!t.hasAttribute('tabindex')){t.setAttribute('tabindex','0');t.setAttribute('role','region');t.setAttribute('aria-label','Scrollable table')}});
+ $$('.panel.bench').forEach(pn=>{fixScroll(pn);new MutationObserver(()=>fixScroll(pn)).observe(pn,{childList:true,subtree:true})});
+ const go=document.getElementById("goto-bench");if(go)go.addEventListener("click",()=>{const t=document.getElementById("tabb1");if(t)t.click()});
+
+})();
+</script>
+
 </body>
 </html>
